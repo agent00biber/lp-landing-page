@@ -2,18 +2,19 @@
   <article class="home">
     <section class="svg-cutout">
       <div id="svg-overlay" class="svg-overlay">
-        <img src="@/assets/into-name-lp.svg" alt="iPad OS " />
+        <img src="@/assets/into-name-lp.svg" alt="lucas paetow" />
       </div>
     </section>
     <section class="sticky-wrapper">
       <div class="sticky-content">
+        <aside class="sticky-background"></aside>
         <header class="hero-content" id="hero-content">
           <h1 class="headline headline-top">Building Bridges</h1>
           <h3 class="headline headline-bottom">Between different deparments</h3>
         </header>
       </div>
     </section>
-    <section class="intro">
+    <section class="intro observe-section" id="intro">
       <p class="text--intro">
         I can help to reduce conflict within your team, because I understand
         their pain points.
@@ -24,136 +25,99 @@
       </router-link>
     </section>
 
-    <section class="section-layout developer-section observe-section">
-      <aside class="section-overlay"></aside>
-      <div class="icon-wrapper">
+    <section class="main-content">
+      <home-section
+        class="observe-section"
+        headline="WEB-DEVELOPMENT"
+        body="I build javascript web apps with vue"
+        link="Meet the developer"
+        sectionID="development"
+        gradient="linear-gradient(135deg, #3a6186 0%, #89253e 100%)"
+        sectionColor="hsla(210, 39%, 38%, 100)"
+      >
         <cube-icon class="icon icon1" />
         <cube-icon class="icon icon2" />
         <cube-icon class="icon icon3" />
-      </div>
-      <header class="section-header">
-        <h3 class="topline--section">Understanding</h3>
-        <h2 class="headline--section">
-          <span class="span--headline">WEB-DEVELOPMENT</span>
-        </h2>
-      </header>
-      <p class="body-text">I build javascript web apps with vue</p>
-      <router-link class="link--section" :to="{ name: '', params: {} }"
-        ><p class="text--link">Meet the developer</p>
-        <arrow-icon class="icon--link developer-link" />
-      </router-link>
-    </section>
+      </home-section>
 
-    <section class="section-layout ux-section observe-section">
-      <aside class="section-overlay"></aside>
-      <div class="icon-wrapper">
+      <home-section
+        class="observe-section"
+        headline="UX DESIGN"
+        body="I balance asthetics and functions for the user"
+        link="Meet the designer"
+        sectionID="design"
+        gradient="linear-gradient(
+            135deg,
+            #d08aff 0%,
+            #ff6767 51%,
+            #ffce89 100%
+          )"
+        sectionColor="hsla(360, 100%, 70%, 100)"
+      >
         <circle-icon class="icon icon1" />
         <circle-icon class="icon icon2" />
         <circle-icon class="icon icon3" />
-      </div>
-      <header class="section-header">
-        <h3 class="topline--section">Understanding</h3>
-        <h2 class="headline--section">
-          <span class="span--headline">UX DESIGN</span>
-        </h2>
-      </header>
-      <p class="body-text">I balance asthetics and functions for the user</p>
-      <router-link class="link--section" :to="{ name: '', params: {} }"
-        ><p class="text--link">Meet the designer</p>
-        <arrow-icon class="icon--link developer-link" />
-      </router-link>
-    </section>
+      </home-section>
 
-    <section class="section-layout marketing-section observe-section">
-      <aside class="section-overlay"></aside>
-      <div class="icon-wrapper">
+      <home-section
+        class="observe-section"
+        headline="MARKETING"
+        body="I use digital psychology to create persuasive landing pages"
+        link="Meet the marketeer"
+        sectionID="marketing"
+        gradient="linear-gradient(135deg, #e96443 0%, #904e95 100%)"
+        sectionColor="hsla(305, 31%, 45%, 100)"
+      >
         <triangle-icon class="icon icon1" />
         <triangle-icon class="icon icon2" />
         <triangle-icon class="icon icon3" />
-      </div>
-      <header class="section-header">
-        <h3 class="topline--section">Understanding</h3>
-        <h2 class="headline--section">
-          <span class="span--headline">Marketing</span>
-        </h2>
-      </header>
-      <p class="body-text">
-        I use digital psychology to create performant landing pages
-      </p>
-      <router-link class="link--section" :to="{ name: '', params: {} }"
-        ><p class="text--link">Meet the marketeer</p>
-        <arrow-icon class="icon--link developer-link" />
-      </router-link>
-    </section>
+      </home-section>
 
-    <section class="section-layout science-section observe-section">
-      <aside class="section-overlay"></aside>
-      <div class="icon-wrapper">
+      <home-section
+        class="observe-section"
+        headline="SCIENCE"
+        body="I dive deep into medical topics with a master in pharmcutical sciences"
+        link="Meet the scientist"
+        sectionID="science"
+        gradient="linear-gradient(135deg, #2b5876 0%, #4e4376 100%)"
+        sectionColor="hsla(204, 68%, 21%, 100)"
+      >
         <hexagon-icon class="icon icon1" />
         <hexagon-icon class="icon icon2" />
         <hexagon-icon class="icon icon3" />
-      </div>
-      <header class="section-header">
-        <h3 class="topline--section">Understanding</h3>
-        <h2 class="headline--section">
-          <span class="span--headline">Science</span>
-        </h2>
-      </header>
-      <p class="body-text">
-        I dive deep into medical topics with a master in pharmcutical sciences
-      </p>
-      <router-link class="link--section" :to="{ name: '', params: {} }"
-        ><p class="text--link">Meet the scientist</p>
-        <arrow-icon class="icon--link developer-link" />
-      </router-link>
-    </section>
+      </home-section>
 
-    <section class="section-layout teamwork-section observe-section">
-      <aside class="section-overlay"></aside>
-      <div class="icon-wrapper">
+      <home-section
+        class="observe-section"
+        headline="TEAMWORK"
+        body="I thrive within creative discurse and in pursuit of a common goal"
+        link="Meet the collaborateur"
+        sectionID="teamwork"
+        gradient="linear-gradient(135deg, #f1719c 0%, #f49472 100%)"
+        sectionColor="hsla(15, 85%, 71%, 100)"
+      >
         <heart-icon class="icon icon1" />
         <heart-icon class="icon icon2" />
         <heart-icon class="icon icon3" />
-      </div>
-      <header class="section-header">
-        <h3 class="topline--section">Understanding</h3>
-        <h2 class="headline--section">
-          <span class="span--headline">Teamwork</span>
-        </h2>
-      </header>
-      <p class="body-text">
-        I thrive within creative discurse and in pursuit of a common goal
-      </p>
-      <router-link class="link--section" :to="{ name: '', params: {} }"
-        ><p class="text--link">Meet the collaborateur</p>
-        <arrow-icon class="icon--link developer-link" />
-      </router-link>
-    </section>
+      </home-section>
 
-    <section class="section-layout learning-section observe-section">
-      <aside class="section-overlay"></aside>
-      <div class="icon-wrapper">
+      <home-section
+        class="observe-section"
+        headline="LIVE LONG LEARNING"
+        body="I embrace the puzzle and grind for the solution or a workaround"
+        link="Meet the student"
+        sectionID="learning"
+        gradient="linear-gradient(135deg, #3a6186 0%, #2c8925 100%)"
+        sectionColor="hsla(116, 56%, 34%, 100)"
+      >
         <cube-icon class="icon icon1" />
         <circle-icon class="icon icon2" />
         <triangle-icon class="icon icon3" />
         <hexagon-icon class="icon icon4" />
-      </div>
-      <header class="section-header">
-        <h3 class="topline--section">Understanding</h3>
-        <h2 class="headline--section">
-          <span class="span--headline">Live long learners</span>
-        </h2>
-      </header>
-      <p class="body-text">
-        I embrace the puzzle and grind for the solution or a workaround
-      </p>
-      <router-link class="link--section" :to="{ name: '', params: {} }"
-        ><p class="text--link">Meet the student</p>
-        <arrow-icon class="icon--link developer-link" />
-      </router-link>
+      </home-section>
     </section>
 
-    <section class="outro">
+    <section class="outro observe-section" id="outro">
       <p class="text--outro">
         Get to know me
       </p>
@@ -172,6 +136,7 @@ import triangleIcon from "@/components/icons/triangle.vue";
 import hexagonIcon from "@/components/icons/hexagon.vue";
 import heartIcon from "@/components/icons/heart.vue";
 import emailIcon from "@/components/icons/email.vue";
+import homeSection from "@/components/homepage/HomeSection.vue";
 
 export default {
   name: "home",
@@ -182,7 +147,8 @@ export default {
     triangleIcon,
     hexagonIcon,
     heartIcon,
-    emailIcon
+    emailIcon,
+    homeSection
   },
   methods: {
     scrollSVG() {
@@ -193,7 +159,6 @@ export default {
       //get the amount of downward scroll
       let ratio = Math.max(window.scrollY) / window.innerHeight;
       let navbarScale = ratio - 1.5;
-      console.log(navbarScale);
       navBar.style.backgroundColor = `rgba(71, 71, 71, ${
         navbarScale < 1 ? navbarScale : 1
       })`;
@@ -209,6 +174,18 @@ export default {
         decreaseScale > 1 ? decreaseScale : 1
       } )`;
       heroContent.style.opacity = Math.pow(ratio, 2);
+    },
+    addClasses(entry) {
+      let navId = document.getElementById(`${entry.target.id}-nav`);
+
+      navId.classList.add("active");
+      entry.target.classList.add("active");
+    },
+    removeClasses(entry) {
+      let navId = document.getElementById(`${entry.target.id}-nav`);
+
+      navId.classList.remove("active");
+      entry.target.classList.remove("active");
     }
   },
   mounted() {
@@ -217,15 +194,15 @@ export default {
 
     const options = {
       rootMargin: "0px",
-      threshold: 0.75
+      threshold: 0.85
     };
 
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("active");
+          this.addClasses(entry);
         } else {
-          entry.target.classList.remove("active");
+          this.removeClasses(entry);
         }
       });
     }, options);
@@ -259,7 +236,7 @@ export default {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 3;
+  z-index: 6;
   pointer-events: none;
 }
 
@@ -288,16 +265,47 @@ img {
   width: 100%;
   top: 0;
   height: 100vh;
-  background-image: linear-gradient(128deg, #f46b45 0%, #eea849 100%);
   display: grid;
   grid-template-columns: 1fr 7fr 1fr;
   grid-template-rows: 1fr 1fr;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.sticky-background {
+  grid-column: 1/4;
+  grid-row: 1/3;
+  background-image: linear-gradient(133deg, #f46b45 17%, #eea849 81%);
+  position: relative;
+  z-index: 1;
+  transform: scale(2.5);
+  animation: 5s ease-in infinite running rotate;
+}
+
+@keyframes rotate {
+  0% {
+    transform: scale(2.5) translate(0%, 0%);
+  }
+  25% {
+    transform: scale(2.5) translate(0, 25%);
+  }
+  50% {
+    transform: scale(2.5) translate(25%, 25%);
+  }
+  75% {
+    transform: scale(2.5) translate(25%, 0%);
+  }
+  100% {
+    transform: scale(2.5) translate(0%, 0%);
+  }
 }
 
 .hero-content {
   opacity: 0;
   grid-column: 2/3;
   grid-row: 2/3;
+  position: relative;
+  z-index: 2;
 }
 
 .headline-top {
@@ -313,7 +321,7 @@ img {
   display: grid;
   grid-template-columns: 1fr 7fr 1fr;
   grid-auto-rows: min-content;
-  padding: 4rem 0;
+  padding: 5rem 0;
   grid-row-gap: var(--padding-rows);
   border-bottom: 1px solid white;
 }
@@ -338,72 +346,6 @@ img {
   padding-right: var(--halfbase);
 }
 
-.section-layout {
-  height: 61.8vh;
-  display: grid;
-  grid-template-columns: 1fr 7fr 1fr;
-  grid-auto-rows: min-content;
-  padding: 4rem 0;
-  grid-row-gap: var(--padding-rows);
-  border-bottom: 1px solid white;
-  position: relative;
-}
-
-.developer-section {
-  background-image: linear-gradient(135deg, #3a6186 0%, #89253e 100%);
-}
-
-.ux-section {
-  background-image: linear-gradient(
-    135deg,
-    #d08aff 0%,
-    #ff6767 51%,
-    #ffce89 100%
-  );
-}
-
-.marketing-section {
-  background-image: linear-gradient(135deg, #e96443 0%, #904e95 100%);
-}
-
-.science-section {
-  background-image: linear-gradient(135deg, #2b5876 0%, #4e4376 100%);
-}
-.teamwork-section {
-  background-image: linear-gradient(135deg, #f1719c 0%, #f49472 100%);
-}
-.learning-section {
-  background-image: linear-gradient(135deg, #3a6186 0%, #2c8925 100%);
-}
-
-.section-overlay {
-  background-color: hsla(0, 0%, 28%, 100);
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  opacity: 1;
-  transition: opacity 0.2s ease;
-}
-
-.active > .section-overlay {
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
-
-.icon-wrapper,
-.section-header,
-.body-text,
-.link--section {
-  grid-column: 2/3;
-  position: relative;
-  z-index: 3;
-}
-
-.icon-wrapper {
-  position: relative;
-  height: 3rem;
-}
-
 .icon {
   position: absolute;
   left: 0;
@@ -420,55 +362,6 @@ img {
 
 .icon4 {
   left: 4.5rem;
-}
-
-.headline--section {
-  font-size: var(--5base);
-  line-height: 125%;
-  padding-top: 0.2rem;
-}
-
-.span--headline {
-  background-color: hsla(0, 0%, 28%, 100);
-}
-
-.developer-section .headline--section {
-  color: hsla(210, 39%, 38%, 100);
-}
-.ux-section .headline--section {
-  color: hsla(360, 100%, 70%, 100);
-}
-.marketing-section .headline--section {
-  color: hsla(305, 31%, 45%, 100);
-}
-.science-section .headline--section {
-  color: hsla(204, 68%, 21%, 100);
-}
-.teamwork-section .headline--section {
-  color: hsla(15, 85%, 71%, 100);
-}
-.learning-section .headline--section {
-  color: hsla(116, 56%, 34%, 100);
-}
-
-.body-text {
-  font-size: var(--2base);
-  font-weight: bold;
-}
-
-.link--section {
-  grid-column: 2/3;
-  text-decoration: underline hsla(0, 0%, 8%, 100);
-  display: flex;
-  flex-direction: row;
-}
-
-.developer-section .svg-icon {
-  fill: hsla(210, 39%, 38%, 100);
-  color: hsla(210, 39%, 38%, 100);
-}
-.developer-section .link--section {
-  text-decoration: underline hsla(210, 39%, 38%, 100);
 }
 
 .outro {
