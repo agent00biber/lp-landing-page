@@ -1,0 +1,5 @@
+
+
+
+- sections trimmen: component mit slots (für die Icons), Rest über Props (Text, Farben)
+- obersten Hintergrund bewegbar machen
