@@ -1,5 +1,27 @@
 
+-cutout der headline statt eigene headlinefarbe in active mode
 
 
-- sections trimmen: component mit slots (für die Icons), Rest über Props (Text, Farben)
-- obersten Hintergrund bewegbar machen
+Navbar und Navigation
+- Gradienten und Farben der Sectionen als Object in Data
+  - {development: {Gradient: XY, color: XZ}}
+  - Das kann man dann auch an die Navbar weitergeben
+
+  - Sections brauchen noch ne ID damit (durch die Navbar) dorthin gescrollt werden kann
+
+  - Navbar braucht keine durchsichtige Farbe, sondern eine abgestimmte Farbe zum Hintergrund
+
+
+Routes
+- Beim Übergang soll die Section-Farbe den Bildschirm füllen und dann kommt man zur neuen Route und muss wieder scollen (so wie bei Apple card)
+
+
+
+Fixes:
+- zu Root hinzufügen
+  - Grid-Abstände
+  - Paddings
+  - Row-Abstände
+  - Farben
+  - Easings
+  - Transition timings
