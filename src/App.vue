@@ -52,28 +52,62 @@ export default {
 
   /*colors*/
   /*greys*/
-  --grey-100: #f7fafc;
-  --grey-200: #edf2f7;
-  --grey-300: #e2e8f0;
-  --grey-400: #cbd5e0;
-  --grey-500: #a0aec0;
-  --grey-600: #718096;
-  --grey-700: #4a5568;
-  --grey-800: #2d3748;
-  --grey-900: #1a202c;
+  --grey-400: hsla(0, 0%, 28%, 100);
+  --grey-500: hsla(0, 0%, 20%, 100);
+  --grey-600: hsla(0, 0%, 15%, 100);
+  --grey-700: hsla(0, 0%, 10%, 100);
+  --grey-800: hsla(0, 0%, 5%, 100);
+  --grey-900: hsla(0, 0%, 2%, 100);
 
   /*signaling*/
   --red-700: #c53030;
   --green-700: #2f855a;
 
+  /*sections*/
+
+  --development-gradient: linear-gradient(135deg, #3a6186 0%, #89253e 100%);
+  --development-color: hsla(210, 39%, 38%, 100);
+
+  --design-gradient: linear-gradient(
+    135deg,
+    #d08aff 0%,
+    #ff6767 51%,
+    #ffce89 100%
+  );
+  --design-color: hsla(360, 100%, 70%, 100);
+
+  --marketing-gradient: linear-gradient(135deg, #e96443 0%, #904e95 100%);
+  --marketing-color: hsla(305, 31%, 45%, 100);
+
+  --science-gradient: linear-gradient(135deg, #2b5876 0%, #4e4376 100%);
+  --science-color: hsla(204, 68%, 21%, 100);
+
+  --teamwork-gradient: linear-gradient(135deg, #f1719c 0%, #f49472 100%);
+  --teamwork-color: hsla(15, 85%, 71%, 100);
+
+  --learning-gradient: linear-gradient(135deg, #3a6186 0%, #2c8925 100%);
+  --learning-color: hsla(116, 56%, 34%, 100);
+
+  --intro-gradient: linear-gradient(135deg, #3a6186 0%, #2c8925 100%);
+  --intro-color: hsla(116, 56%, 34%, 100);
+
+  --outro-gradient: linear-gradient(135deg, #3a6186 0%, #2c8925 100%);
+  --outro-color: hsla(116, 56%, 34%, 100);
+
   /*spacing*/
   /*padding*/
   --padding-top: var(--7base);
-  --padding-main: var(--1base);
-  --padding-rows: var(--5base);
+  --row-gap: var(--2base);
 
   /*views*/
-  --view-main: 1fr;
+  --view-main: 1fr 8fr 1fr;
+  --view-sections: var(--1base) 1fr var(--1base);
+
+  /*easings*/
+  --moving-out: cubic-bezier(0.4, 0, 1, 1);
+  --moving-in: cubic-bezier(0, 0, 0.2, 1);
+  --timing-out: 0.2s;
+  --timing-in: 0.4s;
 }
 
 /* Positioning */
@@ -87,6 +121,8 @@ export default {
 /* Misc */
 
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,700&display=swap");
+
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap");
 
 /*Borderbox*/
 *,
@@ -122,7 +158,7 @@ html,
   -moz-osx-font-smoothing: grayscale;
 
   /* Visual */
-  background-color: hsla(0, 0%, 28%, 100);
+  background-color: var(--grey-400);
 
   /* Misc */
 }
@@ -206,32 +242,4 @@ ul {
   /* Misc */
   list-style: none;
 }
-/*
-body * {
-  background-color: rgba(255, 0, 0, 0.2);
-}
-body * * {
-  background-color: rgba(0, 255, 0, 0.2);
-}
-body * * * {
-  background-color: rgba(0, 0, 255, 0.2);
-}
-body * * * * {
-  background-color: rgba(255, 0, 255, 0.2);
-}
-body * * * * * {
-  background-color: rgba(0, 255, 255, 0.2);
-}
-body * * * * * * {
-  background-color: rgba(255, 255, 0, 0.2);
-}
-body * * * * * * * {
-  background-color: rgba(255, 0, 0, 0.2);
-}
-body * * * * * * * * {
-  background-color: rgba(0, 255, 0, 0.2);
-}
-body * * * * * * * * * {
-  background-color: rgba(0, 0, 255, 0.2);
-}*/
 </style>

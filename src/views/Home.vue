@@ -1,5 +1,5 @@
 <template>
-  <article class="home">
+  <article class="home" id="home">
     <section class="svg-cutout">
       <div id="svg-overlay" class="svg-overlay">
         <img src="@/assets/into-name-lp.svg" alt="lucas paetow" />
@@ -32,8 +32,6 @@
         body="I build javascript web apps with vue"
         link="Meet the developer"
         sectionID="development"
-        gradient="linear-gradient(135deg, #3a6186 0%, #89253e 100%)"
-        sectionColor="hsla(210, 39%, 38%, 100)"
       >
         <cube-icon class="icon icon1" />
         <cube-icon class="icon icon2" />
@@ -46,13 +44,6 @@
         body="I balance asthetics and functions for the user"
         link="Meet the designer"
         sectionID="design"
-        gradient="linear-gradient(
-            135deg,
-            #d08aff 0%,
-            #ff6767 51%,
-            #ffce89 100%
-          )"
-        sectionColor="hsla(360, 100%, 70%, 100)"
       >
         <circle-icon class="icon icon1" />
         <circle-icon class="icon icon2" />
@@ -65,8 +56,6 @@
         body="I use digital psychology to create persuasive landing pages"
         link="Meet the marketeer"
         sectionID="marketing"
-        gradient="linear-gradient(135deg, #e96443 0%, #904e95 100%)"
-        sectionColor="hsla(305, 31%, 45%, 100)"
       >
         <triangle-icon class="icon icon1" />
         <triangle-icon class="icon icon2" />
@@ -79,8 +68,6 @@
         body="I dive deep into medical topics with a master in pharmcutical sciences"
         link="Meet the scientist"
         sectionID="science"
-        gradient="linear-gradient(135deg, #2b5876 0%, #4e4376 100%)"
-        sectionColor="hsla(204, 68%, 21%, 100)"
       >
         <hexagon-icon class="icon icon1" />
         <hexagon-icon class="icon icon2" />
@@ -93,8 +80,6 @@
         body="I thrive within creative discurse and in pursuit of a common goal"
         link="Meet the collaborateur"
         sectionID="teamwork"
-        gradient="linear-gradient(135deg, #f1719c 0%, #f49472 100%)"
-        sectionColor="hsla(15, 85%, 71%, 100)"
       >
         <heart-icon class="icon icon1" />
         <heart-icon class="icon icon2" />
@@ -107,8 +92,6 @@
         body="I embrace the puzzle and grind for the solution or a workaround"
         link="Meet the student"
         sectionID="learning"
-        gradient="linear-gradient(135deg, #3a6186 0%, #2c8925 100%)"
-        sectionColor="hsla(116, 56%, 34%, 100)"
       >
         <cube-icon class="icon icon1" />
         <circle-icon class="icon icon2" />
@@ -121,9 +104,9 @@
       <p class="text--outro">
         Get to know me
       </p>
-      <router-link class="link--outro" :to="{ name: '', params: {} }">
+      <a href="mailto:name@email.com">
         <email-icon class="icon--link" />
-      </router-link>
+      </a>
     </section>
   </article>
 </template>
@@ -150,8 +133,13 @@ export default {
     emailIcon,
     homeSection
   },
+
   methods: {
     scrollSVG() {
+      if (this.$route.name !== "home") {
+        return;
+      }
+
       const heroContent = document.getElementById("hero-content");
       const svgContainer = document.getElementById("svg-overlay");
       const navBar = document.querySelector("#nav");
@@ -176,16 +164,29 @@ export default {
       heroContent.style.opacity = Math.pow(ratio, 2);
     },
     addClasses(entry) {
+      //add active class to the section
+      entry.target.classList.add("active");
+
+      //add active class to navbar and color to the extended navbar
       let navId = document.getElementById(`${entry.target.id}-nav`);
+      let navIdExtended = document.getElementById(
+        `${entry.target.id}-nav-extended`
+      );
 
       navId.classList.add("active");
-      entry.target.classList.add("active");
+      navIdExtended.style.color = `var(--${entry.target.id}-color)`;
     },
     removeClasses(entry) {
-      let navId = document.getElementById(`${entry.target.id}-nav`);
-
-      navId.classList.remove("active");
+      //remove active class to the section
       entry.target.classList.remove("active");
+
+      //remove active class to navbar and color to the extended navbar
+      let navId = document.getElementById(`${entry.target.id}-nav`);
+      let navIdExtended = document.getElementById(
+        `${entry.target.id}-nav-extended`
+      );
+      navId.classList.remove("active");
+      navIdExtended.style.color = `var(--grey-400)`;
     }
   },
   mounted() {
@@ -212,7 +213,7 @@ export default {
     });
   },
   destroyed() {
-    window.removeEventListener("scroll", this.scrollSVG());
+    window.removeEventListener("scroll", this.scrollSVG);
   }
 };
 </script>
@@ -223,6 +224,10 @@ export default {
 /* Typography */
 /* Visual */
 /* Misc */
+
+.home {
+  background-color: var(--grey-600);
+}
 
 .svg-cutout {
   width: 100vw;
@@ -243,7 +248,7 @@ export default {
 .svg-overlay::before,
 .svg-overlay::after {
   content: " ";
-  background-color: hsla(0, 0%, 28%, 100);
+  background-color: var(--grey-400);
   flex-grow: 1;
 }
 
@@ -251,7 +256,7 @@ img {
   width: 100%;
   max-width: 80vh;
   margin: 0 auto;
-  outline: 50vh solid hsla(0, 0%, 28%, 100);
+  outline: 50vh solid var(--grey-400);
   outline-offset: -2px;
   background-color: rgba(0, 0, 0, 0.05);
 }
@@ -266,7 +271,7 @@ img {
   top: 0;
   height: 100vh;
   display: grid;
-  grid-template-columns: 1fr 7fr 1fr;
+  grid-template-columns: var(--view-main);
   grid-template-rows: 1fr 1fr;
   overflow: hidden;
   z-index: 5;
@@ -279,7 +284,7 @@ img {
   position: relative;
   z-index: 1;
   transform: scale(2.5);
-  animation: 5s ease-in infinite running rotate;
+  animation: 5s infinite running rotate;
 }
 
 @keyframes rotate {
@@ -319,11 +324,11 @@ img {
 
 .intro {
   display: grid;
-  grid-template-columns: 1fr 7fr 1fr;
+  grid-template-columns: var(--view-main);
   grid-auto-rows: min-content;
   padding: 5rem 0;
-  grid-row-gap: var(--padding-rows);
-  border-bottom: 1px solid white;
+  grid-row-gap: var(--row-gap);
+  margin-bottom: var(--1base);
 }
 
 .text--intro {
@@ -334,16 +339,21 @@ img {
 
 .link--intro {
   grid-column: 2/3;
-  text-decoration: underline hsla(0, 0%, 8%, 100);
+  text-decoration: underline hsla(0, 0%, 3%, 100);
   display: flex;
   flex-direction: row;
 }
 
 .text--link {
-  color: hsla(0, 0%, 8%, 100);
+  color: hsla(0, 0%, 3%, 100);
   font-weight: bold;
   font-size: var(--2base);
   padding-right: var(--halfbase);
+}
+
+.main-content {
+  display: grid;
+  grid-row-gap: var(--1base);
 }
 
 .icon {

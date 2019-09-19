@@ -2,7 +2,7 @@
   <section
     class="home-section"
     :id="sectionID"
-    :style="{ backgroundImage: gradient }"
+    :style="{ backgroundImage: `var(--${sectionID}-gradient)` }"
   >
     <aside class="overlay"></aside>
     <div class="icon-wrapper">
@@ -10,15 +10,15 @@
     </div>
     <header class="header">
       <h3 class="topline">Understanding</h3>
-      <h2 class="headline" :style="{ color: sectionColor }">
+      <h2 class="headline" :style="{ color: `var(--${sectionID}-color)` }">
         <span class="headline-background">{{ headline }}</span>
       </h2>
     </header>
     <p class="body">{{ body }}</p>
-    <a class="link-wrapper">
+    <router-link class="link-wrapper" :to="{ name: sectionID }">
       <p class="link-text">{{ link }}</p>
       <arrow-icon class="link-icon" />
-    </a>
+    </router-link>
   </section>
 </template>
 
@@ -33,9 +33,7 @@ export default {
     headline: String,
     body: String,
     link: String,
-    sectionID: String,
-    gradient: String,
-    sectionColor: String
+    sectionID: String
   },
   name: "homeSection",
   data() {
@@ -52,16 +50,15 @@ export default {
 .home-section {
   height: 66vh;
   display: grid;
-  grid-template-columns: 1fr 7fr 1fr;
+  grid-template-columns: var(--view-main);
   grid-auto-rows: min-content;
   padding: 4rem 0;
-  grid-row-gap: var(--padding-rows);
-  border-bottom: 1px solid white;
+  grid-row-gap: var(--row-gap);
   position: relative;
 }
 
 .overlay {
-  background-color: hsla(0, 0%, 28%, 100);
+  background-color: var(--grey-400);
   height: 100%;
   width: 100%;
   position: absolute;
@@ -95,7 +92,7 @@ export default {
 }
 
 .headline-background {
-  background-color: hsla(0, 0%, 28%, 100);
+  background-color: var(--grey-400);
 }
 
 .developer-section .headline {

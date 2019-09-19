@@ -1,27 +1,32 @@
 
--cutout der headline statt eigene headlinefarbe in active mode
+Science:
+  - Scrollintro: 6-8 Kugeln scrollen auf die Mitte zu und formen eine Kugel. Die wird dann groß und füllt den Bildschirm aus. Dann steht da "suprising science"... explosive von der Bedeutung her ohne Explosive zu schreiben
 
 
-Navbar und Navigation
-- Gradienten und Farben der Sectionen als Object in Data
-  - {development: {Gradient: XY, color: XZ}}
-  - Das kann man dann auch an die Navbar weitergeben
 
-  - Sections brauchen noch ne ID damit (durch die Navbar) dorthin gescrollt werden kann
+Design
+- Content
 
-  - Navbar braucht keine durchsichtige Farbe, sondern eine abgestimmte Farbe zum Hintergrund
+Marketing
+- Content
 
+Developer
+- Jeder Editor brauch noch Inhalt, der beim Clicken/Hovern sichtbar wird.
+- Die Contentbreiche brauchen noch content
 
-Routes
-- Beim Übergang soll die Section-Farbe den Bildschirm füllen und dann kommt man zur neuen Route und muss wieder scollen (so wie bei Apple card)
+Nav
+- Hintergrund fest?
+- Aktuelle Route zeigen? => Analog zu Home?
+- Aktuelle Route in der extended List highlighten
+
+General
+- Transition zwischen den views noch überlegen
 
 
 
 Fixes:
 - zu Root hinzufügen
-  - Grid-Abstände
   - Paddings
-  - Row-Abstände
   - Farben
-  - Easings
   - Transition timings
+  - Home: cutout der headline statt eigene headlinefarbe in active mode?
