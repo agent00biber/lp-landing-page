@@ -1,32 +1,78 @@
 <template>
   <article class="science">
     <section class="sticky-wrapper">
-      <div class="sticky-content">
+      <div class="sticky-content" id="js-sticky-container-color-change">
+        <h1 class="sticky-content--headline" id="js-sticky-headline-background">
+          Astounding Science
+        </h1>
+
         <div
-          class="circle-container outer-circle circle"
-          id="js-circle-container"
+          class="post-erruption-container"
+          id="js-post-erruption-container-zindex-change"
         >
-          <div
-            v-for="(circle, index) in smallCircles"
-            :style="{
-              transform: `rotate(${(360 / smallCircles) *
-                index}deg) translate(10em) rotate(${-(360 / smallCircles) *
-                index}deg)`,
-              margin: `-${circleSize / 2}rem`,
-              height: `${circleSize}rem`,
-              width: `${circleSize}rem`
-            }"
-            class="small-circle"
-          ></div>
+          <div class="atom-container ">
+            <div
+              class="atom js-atom"
+              v-for="(element, index) in chemicalElements"
+              :style="{ transitionDelay: `${index / 100}s` }"
+            >
+              <p class="atom--weight">{{ Math.round(element.mass) }}</p>
+              <p class="atom--number">{{ index }}</p>
+              <h3 class="atom--symbol">{{ element.symbol }}</h3>
+              <p class="atom--name">{{ element.name }}</p>
+              <aside
+                class="atom--background"
+                :style="{ transitionDelay: `${index / 10}s` }"
+              ></aside>
+            </div>
+          </div>
+          <aside
+            class="backgroud-transition"
+            id="js-atom-container-background-appear"
+          ></aside>
         </div>
-        <div class="inner-circle circle"></div>
       </div>
     </section>
-    <section class="main-content"></section>
+    <section class="main-content">
+      <header class="headline-wrapper">
+        <h1 class="main--headline">Creative web development</h1>
+      </header>
+
+      <div class="content-wrapper">
+        <h2 class="headline">Bringing your Ideas to live</h2>
+
+        <p class="text">
+          Dont waste a beautiful designed idea as a file on your screen.
+        </p>
+      </div>
+      <div class="content-wrapper">
+        <h2 class="headline">See some examples</h2>
+
+        <p class="text">
+          Link to github
+        </p>
+
+        <div class="text-box--small">
+          <a class="link" href="#">Feedback Creator</a>
+        </div>
+      </div>
+      <div class="content-wrapper">
+        <h2 class="headline">Where to go from here?</h2>
+
+        <p class="text">
+          Flutter
+        </p>
+      </div>
+      <footer class="footer">
+        <router-link :to="{ name: 'home' }">Back home</router-link>
+      </footer>
+    </section>
   </article>
 </template>
 
 <script>
+import elements from "@/assets/chemicalElements.js";
+
 export default {
   components: {},
   //if the basics are being edited, this array contains existing basic information
@@ -34,43 +80,50 @@ export default {
   name: "science",
   data() {
     return {
-      smallCircles: 8,
-      circleSize: 2
+      circleAmount: 8,
+      circleSizeDifference: 2,
+      circleBase: 20,
+      circleMultiplier: 15
     };
   },
   methods: {
     scrollSilos() {
-      const circleContainer = document.getElementById("js-circle-container");
-      //get the amount of downward scroll
+      const stickyContainer = document.getElementById(
+        "js-sticky-container-color-change"
+      );
+
+      const atomContainerBackground = document.getElementById(
+        "js-atom-container-background-appear"
+      );
+      const stickyHeadline = document.getElementById(
+        "js-sticky-headline-background"
+      );
+
+      const atoms = document.querySelectorAll(".js-atom");
+
       let ratio = Math.max(window.scrollY) / window.innerHeight;
 
-      let scaleDown = 1 - ratio;
-      let scaleUp = 1 / scaleDown;
-
-      console.log(scaleDown);
-
-      if (scaleDown >= 0) {
-        circleContainer.style.transform = `scale(${scaleDown}) rotate(${ratio *
-          90}deg)`;
-
-        const smallCircles = document.querySelectorAll(".small-circle");
-        smallCircles.forEach((circle, index) => {
-          circle.style.transform = `rotate(${(360 / this.smallCircles) *
-            index}deg) translate(10em) rotate(${-(360 / this.smallCircles) *
-            index}deg) scale(${scaleUp})`;
+      if (ratio > 0.5) {
+        atoms.forEach(atom => {
+          atom.classList.add("appear");
+          atom.childNodes[4].classList.add("appear--delayed");
         });
+        atomContainerBackground.classList.add("appear");
+      } else {
+        atoms.forEach(atom => {
+          atom.classList.remove("appear");
+          atom.childNodes[4].classList.remove("appear--delayed");
+        });
+        atomContainerBackground.classList.remove("appear");
       }
-
-      //shrink the editor in to visible field
-      /*let shrinkEditor = this.scaleValue - ratio * 3;
-        editor.style.transform = `scale( ${
-          shrinkEditor > 1 ? shrinkEditor : 1
-        } )`;
-
-        */
     }
   },
-  computed: {},
+  computed: {
+    chemicalElements() {
+      let size = 30;
+      return elements.elements.slice(0, size);
+    }
+  },
   created() {},
   //same check for route-view keep-alive
   activated() {},
@@ -92,7 +145,7 @@ export default {
   /* Typography */
 
   /* Visual */
-
+  background-color: var(--background-tertiary);
   /* Misc */
 }
 
@@ -107,58 +160,183 @@ export default {
   height: 100vh;
   z-index: 5;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 8fr 1fr;
+  grid-template-rows: 2fr 3fr;
+  background-color: var(--background-primary);
 }
 
-.circle-container {
-  height: 20rem;
-  width: 20rem;
-  border-radius: 50%;
+.sticky-content--headline {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  justify-self: center;
+  align-self: center;
   position: relative;
-  border: 1px solid grey;
+  z-index: 8;
+  color: var(--science-color);
+  background-color: var(--background-primary);
+  padding: var(--halfbase);
+  align-self: end;
+  font-size: var(--6base);
+  line-height: 120%;
 }
 
-.small-circle {
-  border-radius: 50%;
-  background-color: var(--grey-900);
+.post-erruption-container {
+  width: 100%;
+  height: 100vh;
   position: absolute;
-  left: 50%;
-  top: 50%;
+  z-index: 4;
+  overflow: hidden;
 }
 
-/*.small-circle:nth-last-of-type(1) {
-  transform: rotate(0) translate(10em) rotate(-0);
+.atom-container {
+  height: 100vh;
+  width: 200vw;
+  display: flex;
+  flex-wrap: wrap;
 }
-.small-circle:nth-last-of-type(2) {
-  transform: rotate(45deg) translate(10em) rotate(-45deg);
+
+.atom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: min-content;
+  grid-row-gap: var(--halfbase);
+  border: 1px solid grey;
+  padding: var(--halfbase);
+  width: 7rem;
+  position: relative;
+  background: var(--science-gradient);
+  opacity: 0;
+  transition: all 0.4s var(--moving-out);
 }
-.small-circle:nth-last-of-type(3) {
-  transform: rotate(90deg) translate(10em) rotate(-90deg);
+
+.atom--background {
+  position: absolute;
+  background-color: var(--background-tertiary);
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  transition: all 0.4s var(--moving-out);
+  transition-delay: 0.5s;
+  opacity: 0;
 }
-.small-circle:nth-last-of-type(4) {
-  transform: rotate(135deg) translate(10em) rotate(-135deg);
+
+.atom--background:hover {
+  opacity: 0;
+  transition: opacity 0.2s var(--moving-in);
 }
-.small-circle:nth-last-of-type(5) {
-  transform: rotate(180deg) translate(10em) rotate(-180deg);
+
+.appear--delayed {
+  opacity: 1;
+  transition: all 0.4s var(--moving-out);
+  transition-delay: 0.5s;
 }
-.small-circle:nth-last-of-type(6) {
-  transform: rotate(225deg) translate(10em) rotate(-225deg);
+
+.atom--number {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  justify-self: center;
+  z-index: 3;
+  position: relative;
 }
-.small-circle:nth-last-of-type(7) {
-  transform: rotate(270deg) translate(10em) rotate(-270deg);
+
+.atom--weight {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  justify-self: center;
+  z-index: 3;
+  position: relative;
 }
-.small-circle:nth-last-of-type(8) {
-  transform: rotate(315deg) translate(10em) rotate(-315deg);
-} */
+
+.atom--symbol {
+  grid-column: 1/3;
+  grid-row: 2/3;
+  justify-self: center;
+  font-size: var(--3base);
+  z-index: 3;
+  position: relative;
+}
+
+.atom--name {
+  grid-column: 1/3;
+  grid-row: 3/4;
+  justify-self: center;
+  z-index: 3;
+  position: relative;
+}
+
+.backgroud-transition {
+  position: relative;
+  height: 30vh;
+  width: 100%;
+  bottom: 30vh;
+  left: 0;
+  background-image: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    var(--grey-900) 90%
+  );
+  z-index: 5;
+  opacity: 0;
+  transition: all 0.4s var(--moving-out);
+}
+
+.appear {
+  opacity: 1;
+  transition: all 0.4s var(--moving-out);
+}
 
 .main-content {
-  padding: var(--4base) 0;
+  padding: 10vh 0 5vh 0;
   display: grid;
-  grid-template-columns: var(--view-sections);
-  grid-row-gap: var(--2base);
-  height: 100vh;
-  background-color: white;
+  grid-row-gap: var(--1base);
+}
+
+.headline-wrapper {
+  display: grid;
+  grid-template-columns: var(--view-main);
+}
+
+.main--headline {
+  grid-column: 2/3;
+  font-size: var(--5base);
+  line-height: 120%;
+  color: var(--science-color);
+  text-shadow: 0px 0px 5px hsla(0, 0%, 0%, 0.1);
+}
+
+.content-wrapper {
+  display: grid;
+  grid-template-columns: var(--view-main);
+  grid-auto-rows: min-content;
+  padding: 4rem 0;
+  grid-row-gap: var(--row-gap);
+  grid-gap: var(--1base);
+  background-color: var(--background-secondary);
+  min-height: 40vh;
+}
+
+.headline {
+  grid-column: 2/3;
+  color: var(--science-color);
+}
+
+.text {
+  grid-column: 2/3;
+  font-size: var(--2base);
+}
+
+.text-box--small {
+  background-color: var(--background-primary);
+  border-radius: var(--fourthbase);
+  padding: var(--2base);
+  grid-column: 2/3;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 10vh;
 }
 </style>

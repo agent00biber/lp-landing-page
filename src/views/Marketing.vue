@@ -22,39 +22,30 @@
     </section>
     <section class="main-content">
       <header class="headline-wrapper">
-        <h1 class="main--headline">Creative web development</h1>
+        <h1 class="main--headline">Persuasive Marketing</h1>
       </header>
 
       <div class="content-wrapper">
-        <h2 class="headline">Bringing your Ideas to live</h2>
+        <h2 class="headline">Why do I understand the marketing department?</h2>
 
         <p class="text">
-          Dont waste a beautiful designed idea as a file on your screen.
+          Because I worked in a marketing agency for over a year and experienced
+          the importance of KPIs, social media performance and persuasive design
         </p>
       </div>
       <div class="content-wrapper">
-        <h2 class="headline">See some examples</h2>
+        <h2 class="headline">digital psychology and behavioral sciences</h2>
 
         <p class="text">
-          Link to github
-        </p>
-
-        <div class="text-box--small">
-          <a class="link" href="#">Feedback Creator</a>
-        </div>
-      </div>
-      <div class="content-wrapper">
-        <h2 class="headline">Where to go from here?</h2>
-
-        <p class="text">
-          Flutter
+          I try to empower the user and paint him as the hero of his own story,
+          so I can guide and help him with a certain type of product or service.
         </p>
       </div>
+
       <footer class="footer">
         <router-link :to="{ name: 'home' }">Back home</router-link>
       </footer>
     </section>
-    <section class="main-content"></section>
   </article>
 </template>
 
@@ -109,7 +100,7 @@ export default {
   /* Typography */
 
   /* Visual */
-  background-color: var(--grey-600);
+  background-color: var(--background-tertiary);
   /* Misc */
 }
 
@@ -126,8 +117,8 @@ export default {
   overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 4fr 4fr 1fr;
-  grid-template-rows: 1fr 2fr;
-  background-color: var(--grey-900);
+  grid-template-rows: 2fr 3fr;
+  background-color: var(--background-tertiary);
 }
 
 .sticky-headline {
@@ -136,15 +127,16 @@ export default {
   align-self: end;
   color: var(--marketing-color);
   z-index: 7;
+
+  background-color: var(--background-primary);
+  padding: var(--halfbase);
   font-size: var(--6base);
   line-height: 120%;
-  background-color: var(--grey-500);
-  padding: var(--halfbase);
 }
 
 .silo {
   grid-row: 1/3;
-  background-color: var(--grey-500);
+  background-color: var(--background-primary);
   transform-origin: center right;
 }
 
@@ -197,7 +189,7 @@ export default {
   padding: 4rem 0;
   grid-row-gap: var(--row-gap);
   grid-gap: var(--1base);
-  background-color: var(--grey-400);
+  background-color: var(--background-secondary);
   min-height: 40vh;
 }
 
@@ -212,7 +204,7 @@ export default {
 }
 
 .text-box--small {
-  background-color: hsla(0, 0%, 35%, 1);
+  background-color: var(--background-primary);
   border-radius: var(--fourthbase);
   padding: var(--2base);
   grid-column: 2/3;

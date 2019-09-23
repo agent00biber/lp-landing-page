@@ -37,29 +37,39 @@
       </header>
 
       <div class="content-wrapper">
-        <h2 class="headline">Bringing your Ideas to live</h2>
+        <h2 class="headline">
+          Why do I understand the development department?
+        </h2>
 
         <p class="text">
-          Dont waste a beautiful designed idea as a file on your screen.
+          I bring engaging web apps and prototypes from designs to live with vue
+          and javascript. I have to implement the given specs and need to
+          consider performance and security.
+        </p>
+      </div>
+
+      <div class="content-wrapper">
+        <h2 class="headline">Always one puzzle away</h2>
+
+        <p class="text">
+          I enjoy coding and the art of solving a problem in different ways. For
+          me its a series of puzzles needing to solved
         </p>
       </div>
       <div class="content-wrapper">
-        <h2 class="headline">See some examples</h2>
+        <h2 class="headline">My Projects</h2>
 
         <p class="text">
-          Link to github
+          Here are some projects I did to showcase skill and get familar with
+          different topics and website types.
         </p>
 
         <div class="text-box--small">
           <a class="link" href="#">Feedback Creator</a>
         </div>
-      </div>
-      <div class="content-wrapper">
-        <h2 class="headline">Where to go from here?</h2>
-
-        <p class="text">
-          Flutter
-        </p>
+        <div class="text-box--small">
+          <a class="link" href="#">T-shirt store</a>
+        </div>
       </div>
       <footer class="footer">
         <router-link :to="{ name: 'home' }">Back home</router-link>
@@ -95,7 +105,7 @@ export default {
 
       //hide terminal on scroll
       if (ratio > 0) {
-        terminal.style.opacity = 1 - ratio * 3;
+        terminal.style.opacity = 1 - ratio * 3 > 0 ? ratio * 3 > 0 : 0;
       } else if (ratio > 0.5) {
         terminal.style.display = "none";
       } else {
@@ -141,7 +151,7 @@ export default {
   /* Typography */
 
   /* Visual */
-  background-color: var(--grey-600);
+  background-color: var(--background-tertiary);
   /* Misc */
 }
 
@@ -227,7 +237,7 @@ export default {
 }
 
 .require-text--inside {
-  color: white;
+  color: var(--white);
 }
 
 .import-text--inside {
@@ -260,7 +270,7 @@ export default {
   padding: 4rem 0;
   grid-row-gap: var(--row-gap);
   grid-gap: var(--1base);
-  background-color: var(--grey-400);
+  background-color: var(--background-secondary);
   min-height: 40vh;
 }
 
@@ -275,8 +285,7 @@ export default {
 }
 
 .text-box--small {
-  background-color: hsla(0, 0%, 35%, 1);
-  border-radius: var(--fourthbase);
+  background-color: var(--background-primary);
   padding: var(--2base);
   grid-column: 2/3;
 }

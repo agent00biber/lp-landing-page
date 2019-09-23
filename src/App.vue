@@ -52,12 +52,23 @@ export default {
 
   /*colors*/
   /*greys*/
-  --grey-400: hsla(0, 0%, 28%, 100);
-  --grey-500: hsla(0, 0%, 20%, 100);
-  --grey-600: hsla(0, 0%, 15%, 100);
-  --grey-700: hsla(0, 0%, 10%, 100);
-  --grey-800: hsla(0, 0%, 5%, 100);
-  --grey-900: hsla(0, 0%, 2%, 100);
+  --grey-400: hsla(0, 0%, 28%, 1);
+  --grey-500: hsla(0, 0%, 20%, 1);
+  --grey-600: hsla(0, 0%, 13%, 1);
+  --grey-700: hsla(0, 0%, 8%, 1);
+  --grey-800: hsla(0, 0%, 3%, 1);
+  --grey-900: hsla(0, 0%, 1%, 1);
+
+  --background-primary: var(--grey-700);
+  --background-secondary: var(--grey-800);
+  --background-tertiary: var(--grey-900);
+  --background-gradient: linear-gradient(
+    180deg,
+    var(--grey-800) 0%,
+    var(--grey-900) 100%
+  );
+
+  --white: hsla(0, 0%, 90%, 1);
 
   /*signaling*/
   --red-700: #c53030;
@@ -66,7 +77,7 @@ export default {
   /*sections*/
 
   --development-gradient: linear-gradient(135deg, #3a6186 0%, #89253e 100%);
-  --development-color: hsla(210, 39%, 38%, 100);
+  --development-color: hsla(210, 39%, 38%, 1);
 
   --design-gradient: linear-gradient(
     135deg,
@@ -74,25 +85,25 @@ export default {
     #ff6767 51%,
     #ffce89 100%
   );
-  --design-color: hsla(360, 100%, 70%, 100);
+  --design-color: hsla(360, 100%, 70%, 1);
 
   --marketing-gradient: linear-gradient(135deg, #e96443 0%, #904e95 100%);
-  --marketing-color: hsla(305, 31%, 45%, 100);
+  --marketing-color: hsla(305, 31%, 45%, 1);
 
   --science-gradient: linear-gradient(135deg, #2b5876 0%, #4e4376 100%);
-  --science-color: hsla(204, 68%, 21%, 100);
+  --science-color: hsla(204, 68%, 21%, 1);
 
   --teamwork-gradient: linear-gradient(135deg, #f1719c 0%, #f49472 100%);
-  --teamwork-color: hsla(15, 85%, 71%, 100);
+  --teamwork-color: hsla(15, 85%, 71%, 1);
 
   --learning-gradient: linear-gradient(135deg, #3a6186 0%, #2c8925 100%);
-  --learning-color: hsla(116, 56%, 34%, 100);
+  --learning-color: hsla(116, 56%, 34%, 1);
 
   --intro-gradient: linear-gradient(135deg, #3a6186 0%, #2c8925 100%);
-  --intro-color: hsla(116, 56%, 34%, 100);
+  --intro-color: hsla(116, 56%, 34%, 1);
 
   --outro-gradient: linear-gradient(135deg, #3a6186 0%, #2c8925 100%);
-  --outro-color: hsla(116, 56%, 34%, 100);
+  --outro-color: hsla(116, 56%, 34%, 1);
 
   /*spacing*/
   /*padding*/
@@ -172,7 +183,7 @@ h1 {
   line-height: 150%;
   font-size: var(--4base);
   /* Visual */
-  color: white;
+  color: var(--white);
 
   /* Misc */
 }
@@ -185,7 +196,7 @@ h2 {
   /* Typography */
   font-size: var(--3base);
   /* Visual */
-  color: white;
+  color: var(--white);
   /* Misc */
 }
 
@@ -197,7 +208,7 @@ h3 {
   /* Typography */
   font-size: var(--2base);
   /* Visual */
-  color: white;
+  color: var(--white);
   /* Misc */
 }
 
@@ -215,7 +226,7 @@ select {
   font-size: var(--1base);
   line-height: 150%;
   /* Visual */
-  color: white;
+  color: var(--white);
   /* Misc */
 }
 

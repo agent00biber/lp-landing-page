@@ -103,6 +103,7 @@ export default {
   display: grid;
   grid-template-columns: 4rem 1fr 4rem;
   z-index: 20;
+  background-color: var(--background-primary);
 }
 
 .initals-link {
@@ -113,7 +114,7 @@ export default {
 }
 
 .initals {
-  color: hsla(0, 0%, 0%, 100);
+  color: var(--background-tertiary);
   padding: 0;
 }
 
@@ -151,7 +152,7 @@ export default {
 
 .extended-navigation {
   position: absolute;
-  background-color: var(--grey-600);
+  background-color: var(--background-primary);
   height: 60vh;
   width: 100%;
   z-index: 5;
@@ -178,5 +179,8 @@ export default {
   font-weight: bold;
   margin-bottom: var(--2base);
   justify-self: end;
+}
+.item-extended .router-link-exact-active span {
+  color: hsla(0, 0%, 50%, 100);
 }
 </style>

@@ -19,7 +19,7 @@
         I can help to reduce conflict within your team, because I understand
         their pain points.
       </p>
-      <router-link class="link--intro" :to="{ name: '', params: {} }"
+      <router-link class="link--intro" :to="{ name: 'intro' }"
         ><p class="text--link">See conflitct examples</p>
         <arrow-icon class="icon--link" />
       </router-link>
@@ -30,73 +30,48 @@
         class="observe-section"
         headline="WEB-DEVELOPMENT"
         body="I build javascript web apps with vue"
-        link="Meet the developer"
         sectionID="development"
       >
-        <cube-icon class="icon icon1" />
-        <cube-icon class="icon icon2" />
-        <cube-icon class="icon icon3" />
       </home-section>
 
       <home-section
         class="observe-section"
         headline="UX DESIGN"
         body="I balance asthetics and functions for the user"
-        link="Meet the designer"
         sectionID="design"
       >
-        <circle-icon class="icon icon1" />
-        <circle-icon class="icon icon2" />
-        <circle-icon class="icon icon3" />
       </home-section>
 
       <home-section
         class="observe-section"
         headline="MARKETING"
         body="I use digital psychology to create persuasive landing pages"
-        link="Meet the marketeer"
         sectionID="marketing"
       >
-        <triangle-icon class="icon icon1" />
-        <triangle-icon class="icon icon2" />
-        <triangle-icon class="icon icon3" />
       </home-section>
 
       <home-section
         class="observe-section"
         headline="SCIENCE"
         body="I dive deep into medical topics with a master in pharmcutical sciences"
-        link="Meet the scientist"
         sectionID="science"
       >
-        <hexagon-icon class="icon icon1" />
-        <hexagon-icon class="icon icon2" />
-        <hexagon-icon class="icon icon3" />
       </home-section>
 
       <home-section
         class="observe-section"
         headline="TEAMWORK"
         body="I thrive within creative discurse and in pursuit of a common goal"
-        link="Meet the collaborateur"
         sectionID="teamwork"
       >
-        <heart-icon class="icon icon1" />
-        <heart-icon class="icon icon2" />
-        <heart-icon class="icon icon3" />
       </home-section>
 
       <home-section
         class="observe-section"
         headline="LIVE LONG LEARNING"
         body="I embrace the puzzle and grind for the solution or a workaround"
-        link="Meet the student"
         sectionID="learning"
       >
-        <cube-icon class="icon icon1" />
-        <circle-icon class="icon icon2" />
-        <triangle-icon class="icon icon3" />
-        <hexagon-icon class="icon icon4" />
       </home-section>
     </section>
 
@@ -226,7 +201,7 @@ export default {
 /* Misc */
 
 .home {
-  background-color: var(--grey-600);
+  background-color: var(--background-tertiary);
 }
 
 .svg-cutout {
@@ -248,7 +223,7 @@ export default {
 .svg-overlay::before,
 .svg-overlay::after {
   content: " ";
-  background-color: var(--grey-400);
+  background-color: var(--background-tertiary);
   flex-grow: 1;
 }
 
@@ -256,7 +231,7 @@ img {
   width: 100%;
   max-width: 80vh;
   margin: 0 auto;
-  outline: 50vh solid var(--grey-400);
+  outline: 50vh solid var(--background-tertiary);
   outline-offset: -2px;
   background-color: rgba(0, 0, 0, 0.05);
 }
@@ -327,6 +302,7 @@ img {
   grid-template-columns: var(--view-main);
   grid-auto-rows: min-content;
   padding: 5rem 0;
+  height: 50vh;
   grid-row-gap: var(--row-gap);
   margin-bottom: var(--1base);
 }
@@ -339,13 +315,13 @@ img {
 
 .link--intro {
   grid-column: 2/3;
-  text-decoration: underline hsla(0, 0%, 3%, 100);
+  text-decoration: underline var(--white);
   display: flex;
   flex-direction: row;
 }
 
 .text--link {
-  color: hsla(0, 0%, 3%, 100);
+  color: var(--white);
   font-weight: bold;
   font-size: var(--2base);
   padding-right: var(--halfbase);

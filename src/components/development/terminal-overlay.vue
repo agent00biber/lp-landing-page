@@ -1,5 +1,10 @@
 <template>
   <aside class="overlay">
+    <div class="overlay-container container0">
+      <span class="overlay-start">//</span>
+      <p class="overlay-text">CREATIVE WEB DEVELOPMENT</p>
+    </div>
+
     <div class="overlay-container container1">
       <span class="overlay-start">></span>
       <p class="overlay-text">I AM SORRY DAVE, I AM AFRAID I CANT DO THAT</p>
@@ -51,11 +56,17 @@ export default {
   grid-template-rows: 1fr min-content min-content min-content 1fr;
   grid-row-gap: var(--2base);
   z-index: 6;
+  background-color: var(--background-secondary);
 }
 
 .overlay-container {
   display: flex;
   flex-direction: row;
+}
+
+.container0 {
+  grid-row: 1/2;
+  align-self: center;
 }
 
 .container1 {

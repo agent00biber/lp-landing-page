@@ -3,22 +3,22 @@
     class="home-section"
     :id="sectionID"
     :style="{ backgroundImage: `var(--${sectionID}-gradient)` }"
+    @click="goTo(sectionID)"
   >
     <aside class="overlay"></aside>
-    <div class="icon-wrapper">
-      <slot></slot>
-    </div>
     <header class="header">
-      <h3 class="topline">Understanding</h3>
       <h2 class="headline" :style="{ color: `var(--${sectionID}-color)` }">
-        <span class="headline-background">{{ headline }}</span>
+        <span v-if="sectionID === 'development'" class="headline-background"
+          >WEB-DEVELOP-MENT</span
+        >
+        <span v-else class="headline-background">{{ headline }}</span>
       </h2>
     </header>
-    <p class="body">{{ body }}</p>
-    <router-link class="link-wrapper" :to="{ name: sectionID }">
-      <p class="link-text">{{ link }}</p>
+
+    <div class="body-wrapper">
+      <p class="body">{{ body }}</p>
       <arrow-icon class="link-icon" />
-    </router-link>
+    </div>
   </section>
 </template>
 
@@ -32,14 +32,19 @@ export default {
   props: {
     headline: String,
     body: String,
-    link: String,
     sectionID: String
   },
   name: "homeSection",
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    goTo(locationName) {
+      this.$router.push({
+        name: locationName
+      });
+    }
+  },
   computed: {},
   created() {},
   activated() {}
@@ -51,14 +56,14 @@ export default {
   height: 66vh;
   display: grid;
   grid-template-columns: var(--view-main);
-  grid-auto-rows: min-content;
-  padding: 4rem 0;
+  grid-template-rows: 1fr min-content 1fr 1fr;
   grid-row-gap: var(--row-gap);
   position: relative;
+  cursor: pointer;
 }
 
 .overlay {
-  background-color: var(--grey-400);
+  background: var(--background-gradient);
   height: 100%;
   width: 100%;
   position: absolute;
@@ -71,50 +76,47 @@ export default {
   transition: opacity 0.2s ease;
 }
 
-.icon-wrapper,
 .header,
-.body,
-.link-wrapper {
+.body-wrapper {
   grid-column: 2/3;
   position: relative;
   z-index: 3;
 }
 
-.icon-wrapper {
-  position: relative;
-  height: 3rem;
+.header {
+  grid-row: 2/3;
+}
+
+.body-wrapper {
+  grid-row: 3/4;
 }
 
 .headline {
-  font-size: var(--5base);
+  font-size: var(--6base);
   line-height: 125%;
   padding-top: 0.2rem;
 }
 
 .headline-background {
-  background-color: var(--grey-400);
-}
-
-.developer-section .headline {
-  color: hsla(210, 39%, 38%, 100);
+  background-color: var(--background-secondary);
+  padding: var(--halfbase);
+  box-decoration-break: clone;
 }
 
 .body {
-  font-size: var(--2base);
+  font-size: var(--3base);
   font-weight: bold;
 }
 
-.link-wrapper {
+.body-wrapper {
   grid-column: 2/3;
-  text-decoration: underline hsla(0, 0%, 8%, 100);
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-rows: 1fr var(--2base);
+  grid-row-gap: var(--row-gap);
+  text-decoration: none;
 }
 
-.link-text {
-  color: hsla(0, 0%, 8%, 100);
-  font-weight: bold;
-  font-size: var(--2base);
-  padding-right: var(--halfbase);
+.link-icon {
+  align-self: center;
 }
 </style>

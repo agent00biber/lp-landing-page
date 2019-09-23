@@ -17,7 +17,7 @@
 .editor {
   height: 100%;
   width: 100%;
-  background-color: hsla(0, 0%, 3%, 100);
+  background-color: var(--background-secondary);
   border-radius: var(--fourthbase);
   display: grid;
   grid-template-rows: 3rem 1fr;

@@ -1,18 +1,26 @@
 
-Science:
-  - Scrollintro: 6-8 Kugeln scrollen auf die Mitte zu und formen eine Kugel. Die wird dann groß und füllt den Bildschirm aus. Dann steht da "suprising science"... explosive von der Bedeutung her ohne Explosive zu schreiben
+Wo ist wohl noch mehr content nötig:
+- science, marketing, design, development, learning, teamwork, intro
+
+Eine Scroll-down Aufforderung
+- science, marketing, design, learning, teamwork, intro
 
 
-
-Design
-- Content
-
-Marketing
-- Content
 
 Developer
 - Jeder Editor brauch noch Inhalt, der beim Clicken/Hovern sichtbar wird.
-- Die Contentbreiche brauchen noch content
+
+Learning
+- Text für unterhalb/oberhalb der Headline
+- Content
+
+
+
+
+Beispiele/Intro
+- Eine zentrale Headline mit einer zweifelhaften Aussage in groß, darunter dann Erklärungsansätze
+- Als Animation/transition vllt einfach die Hintergrundfarbe, die sich rapide ändert, wenn man zu einer neuen Aussage kommt
+
 
 Nav
 - Hintergrund fest?
@@ -21,12 +29,4 @@ Nav
 
 General
 - Transition zwischen den views noch überlegen
-
-
-
-Fixes:
-- zu Root hinzufügen
-  - Paddings
-  - Farben
-  - Transition timings
-  - Home: cutout der headline statt eigene headlinefarbe in active mode?
+- Toggle für Dark/lightmode
