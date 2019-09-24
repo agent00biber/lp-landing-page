@@ -76,16 +76,16 @@ export default {
 
   /*sections*/
 
-  --development-gradient: linear-gradient(135deg, #3a6186 0%, #89253e 100%);
-  --development-color: hsla(210, 39%, 38%, 1);
+  --development-gradient: linear-gradient(135deg, #3a6186 0%, #2c8925 100%);
+  --development-color: hsla(133, 45%, 34%, 1);
 
   --design-gradient: linear-gradient(
     135deg,
-    #d08aff 0%,
-    #ff6767 51%,
-    #ffce89 100%
+    #dd3e54 0%,
+    #7abcb6 70%,
+    #6be585 100%
   );
-  --design-color: hsla(360, 100%, 70%, 1);
+  --design-color: hsla(352, 69%, 55%, 1);
 
   --marketing-gradient: linear-gradient(135deg, #e96443 0%, #904e95 100%);
   --marketing-color: hsla(305, 31%, 45%, 1);
@@ -96,8 +96,8 @@ export default {
   --teamwork-gradient: linear-gradient(135deg, #f1719c 0%, #f49472 100%);
   --teamwork-color: hsla(15, 85%, 71%, 1);
 
-  --learning-gradient: linear-gradient(135deg, #3a6186 0%, #2c8925 100%);
-  --learning-color: hsla(116, 56%, 34%, 1);
+  --learning-gradient: linear-gradient(135deg, #3a6186 0%, #89253e 100%);
+  --learning-color: hsla(210, 39%, 38%, 1);
 
   --intro-gradient: linear-gradient(135deg, #3a6186 0%, #2c8925 100%);
   --intro-color: hsla(116, 56%, 34%, 1);

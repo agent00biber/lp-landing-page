@@ -5,16 +5,8 @@ Wo ist wohl noch mehr content nötig:
 Eine Scroll-down Aufforderung
 - science, marketing, design, learning, teamwork, intro
 
-
-
 Developer
 - Jeder Editor brauch noch Inhalt, der beim Clicken/Hovern sichtbar wird.
-
-Learning
-- Text für unterhalb/oberhalb der Headline
-- Content
-
-
 
 
 Beispiele/Intro
@@ -22,10 +14,6 @@ Beispiele/Intro
 - Als Animation/transition vllt einfach die Hintergrundfarbe, die sich rapide ändert, wenn man zu einer neuen Aussage kommt
 
 
-Nav
-- Hintergrund fest?
-- Aktuelle Route zeigen? => Analog zu Home?
-- Aktuelle Route in der extended List highlighten
 
 General
 - Transition zwischen den views noch überlegen

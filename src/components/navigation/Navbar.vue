@@ -2,7 +2,7 @@
   <nav class="navbar" id="nav">
     <section class="nav-content">
       <router-link class="initals-link" :to="{ name: 'home' }">
-        <h2 class="initals">LP</h2></router-link
+        <h2 class="initals" @click="closeMenu()">LP</h2></router-link
       >
 
       <ul class="menu-items">
@@ -10,6 +10,7 @@
           class="item"
           :id="`${entry.id}-nav`"
           v-for="entry in sectionEntries"
+          :class="[$route.name === `${entry.id}` ? 'active' : '']"
         >
           {{ entry.text }}
         </li>
@@ -44,6 +45,10 @@
           class="item-extended"
           :id="`${entry.id}-nav-extended`"
           v-for="entry in sectionEntries"
+          :style="{
+            color:
+              $route.name === `${entry.id}` ? `var(--${entry.id}-color)` : ''
+          }"
         >
           <span @click="toggleMenu()">{{ entry.text }}</span>
         </router-link>
@@ -82,6 +87,11 @@ export default {
       this.activeHambuerMenu
         ? nav.classList.add("active")
         : nav.classList.remove("active");
+    },
+    closeMenu() {
+      this.activeHambuerMenu = false;
+      let nav = document.getElementById("nav-extended");
+      nav.classList.remove("active");
     }
   }
 };
@@ -102,8 +112,8 @@ export default {
   height: var(--7base);
   display: grid;
   grid-template-columns: 4rem 1fr 4rem;
-  z-index: 20;
-  background-color: var(--background-primary);
+
+  background-color: hsla(0, 0%, 3%, 0.75);
 }
 
 .initals-link {
@@ -111,10 +121,17 @@ export default {
   align-self: center;
   text-decoration: none;
   justify-self: center;
+  height: var(--7base);
+  width: var(--7base);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 25;
 }
 
 .initals {
-  color: var(--background-tertiary);
+  color: var(--white);
   padding: 0;
 }
 
@@ -126,7 +143,7 @@ export default {
 }
 
 .item {
-  color: hsla(0, 0%, 0%, 100);
+  color: var(--white);
   font-size: var(--2base);
   font-weight: bold;
   opacity: 0;
@@ -148,6 +165,8 @@ export default {
   grid-column: 3/4;
   align-self: center;
   justify-self: center;
+  position: relative;
+  z-index: 25;
 }
 
 .extended-navigation {
@@ -174,7 +193,7 @@ export default {
 
 .item-extended {
   grid-column: 2/3;
-  color: hsla(0, 0%, 0%, 100);
+  color: var(--white);
   font-size: var(--2base);
   font-weight: bold;
   margin-bottom: var(--2base);
