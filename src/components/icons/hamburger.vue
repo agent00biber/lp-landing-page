@@ -2,8 +2,8 @@
   <!-- hamburger icon with animation -->
   <section
     class="hamburger"
-    :class="{ open: hamburgerMenu }"
-    @click="toggleHamburgerMenu()"
+    :class="{ open: activeHambuerMenu }"
+    @click="$emit('hamburgerevent')"
   >
     <div class="line start"></div>
     <div class="line"></div>
@@ -14,18 +14,9 @@
 <script>
 export default {
   name: "hamburger",
-  data() {
-    return {
-      hamburgerMenu: false
-    };
-  },
-  methods: {
-    toggleHamburgerMenu() {
-      this.hamburgerMenu = !this.hamburgerMenu;
-      this.$emit("hamburgerevent", this.hamburgerMenu);
-    }
-  },
-  computed: {}
+  props: {
+    activeHambuerMenu: Boolean
+  }
 };
 </script>
 

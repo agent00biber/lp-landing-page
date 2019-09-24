@@ -1,34 +1,52 @@
 <template>
   <nav class="navbar" id="nav">
     <section class="nav-content">
-      <router-link :to="{ name: '', params: {} }" class="initals-link"
-        ><h2 class="initals">LP</h2>
-      </router-link>
+      <router-link class="initals-link" :to="{ name: 'home' }">
+        <h2 class="initals">LP</h2></router-link
+      >
+
       <ul class="menu-items">
-        <li class="item active" id="intro-nav">Intro</li>
-        <li class="item" id="development-nav">Web development</li>
-        <li class="item" id="design-nav">UX design</li>
-        <li class="item" id="marketing-nav">Marketing</li>
-        <li class="item" id="science-nav">Science</li>
-        <li class="item" id="teamwork-nav">Teamwork</li>
-        <li class="item" id="learning-nav">Learning</li>
-        <li class="item" id="outro-nav">Outro</li>
+        <li
+          class="item"
+          :id="`${entry.id}-nav`"
+          v-for="entry in sectionEntries"
+        >
+          {{ entry.text }}
+        </li>
       </ul>
-      <hamburger-icon class="icon-layout" @hamburgerevent="toggleMenu" />
+      <hamburger-icon
+        class="icon-layout"
+        :activeHambuerMenu="activeHambuerMenu"
+        @hamburgerevent="toggleMenu()"
+      />
     </section>
 
     <aside class="extended-navigation" id="nav-extended">
-      <ul class="menu-extended">
-        <li class="item-extended active" id="intro-nav">Intro</li>
-        <li class="item-extended" id="development-nav-extended">
-          Web development
-        </li>
-        <li class="item-extended" id="design-nav-extended">UX design</li>
-        <li class="item-extended" id="marketing-nav-extended">Marketing</li>
-        <li class="item-extended" id="science-nav-extended">Science</li>
-        <li class="item-extended" id="teamwork-nav-extended">Teamwork</li>
-        <li class="item-extended" id="learning-nav-extended">Learning</li>
-        <li class="item-extended" id="outro-nav-extended">Outro</li>
+      <ul class="menu-extended" v-if="$route.name === 'home'">
+        <a
+          v-scroll-to="{
+            el: `#${entry.id}`,
+            duration: 500,
+            easing: 'easeOutQuint',
+            offset: -100
+          }"
+          class="item-extended"
+          :id="`${entry.id}-nav-extended`"
+          v-for="entry in sectionEntries"
+          @click="toggleMenu()"
+        >
+          <span>{{ entry.text }}</span>
+        </a>
+      </ul>
+      <ul class="menu-extended" v-else>
+        <router-link
+          :to="{ name: entry.id }"
+          class="item-extended"
+          :id="`${entry.id}-nav-extended`"
+          v-for="entry in sectionEntries"
+        >
+          <span @click="toggleMenu()">{{ entry.text }}</span>
+        </router-link>
       </ul>
     </aside>
   </nav>
@@ -42,10 +60,26 @@ export default {
     hamburgerIcon
   },
   name: "navBar",
+  data() {
+    return {
+      activeHambuerMenu: false,
+      sectionEntries: [
+        { id: "intro", text: "Intro" },
+        { id: "development", text: "Web development" },
+        { id: "design", text: "UX design" },
+        { id: "marketing", text: "Marketing" },
+        { id: "science", text: "Science" },
+        { id: "teamwork", text: "Teamwork" },
+        { id: "learning", text: "Learning" },
+        { id: "outro", text: "Outro" }
+      ]
+    };
+  },
   methods: {
-    toggleMenu(hamburerState) {
+    toggleMenu() {
+      this.activeHambuerMenu = !this.activeHambuerMenu;
       let nav = document.getElementById("nav-extended");
-      hamburerState
+      this.activeHambuerMenu
         ? nav.classList.add("active")
         : nav.classList.remove("active");
     }
@@ -61,26 +95,26 @@ export default {
   left: 0;
   z-index: 20;
   height: var(--7base);
-  background-color: hsla(0, 0%, 8%, 0);
   box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.25);
 }
 
 .nav-content {
   height: var(--7base);
   display: grid;
-  grid-template-columns: min-content 1fr 3rem;
-  padding: 0 var(--2base);
+  grid-template-columns: 4rem 1fr 4rem;
   z-index: 20;
+  background-color: var(--background-primary);
 }
 
 .initals-link {
   grid-column: 1/2;
   align-self: center;
   text-decoration: none;
+  justify-self: center;
 }
 
 .initals {
-  color: hsla(0, 0%, 0%, 100);
+  color: var(--background-tertiary);
   padding: 0;
 }
 
@@ -96,7 +130,7 @@ export default {
   font-size: var(--2base);
   font-weight: bold;
   opacity: 0;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.2s var(--moving-out);
   grid-column: 1/2;
   grid-row: 1/2;
   justify-self: end;
@@ -106,35 +140,36 @@ export default {
 
 .active {
   opacity: 1;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.2s var(--moving-in);
   z-index: 11;
 }
 
 .icon-layout {
   grid-column: 3/4;
   align-self: center;
-  justify-self: end;
+  justify-self: center;
 }
 
 .extended-navigation {
   position: absolute;
-  background-color: white;
+  background-color: var(--background-primary);
   height: 60vh;
   width: 100%;
   z-index: 5;
   transform: translateY(calc(-100% - var(--7base)));
-  transition: all 0.2s cubic-bezier(0.4, 0, 1, 1);
+  transition: all 0.2s var(--moving-out);
+  box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.25);
 }
 
 .active {
   transform: translateY(0%);
-  transition: all 0.4s cubic-bezier(0, 0, 0.2, 1);
+  transition: all 0.4s var(--moving-in);
 }
 
 .menu-extended {
   display: grid;
-  grid-template-columns: 1fr 7fr 1fr;
-  padding: 5rem 0;
+  grid-template-columns: var(--view-main);
+  padding: 3rem 0;
 }
 
 .item-extended {
@@ -142,7 +177,10 @@ export default {
   color: hsla(0, 0%, 0%, 100);
   font-size: var(--2base);
   font-weight: bold;
-  margin-bottom: var(--1base);
+  margin-bottom: var(--2base);
   justify-self: end;
+}
+.item-extended .router-link-exact-active span {
+  color: hsla(0, 0%, 50%, 100);
 }
 </style>

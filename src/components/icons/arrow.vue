@@ -15,7 +15,7 @@
 
 <style scoped>
 .svg-icon {
-  width: var(--2base);
+  width: var(--3base);
   height: auto;
 }
 </style>

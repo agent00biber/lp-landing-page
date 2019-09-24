@@ -52,28 +52,73 @@ export default {
 
   /*colors*/
   /*greys*/
-  --grey-100: #f7fafc;
-  --grey-200: #edf2f7;
-  --grey-300: #e2e8f0;
-  --grey-400: #cbd5e0;
-  --grey-500: #a0aec0;
-  --grey-600: #718096;
-  --grey-700: #4a5568;
-  --grey-800: #2d3748;
-  --grey-900: #1a202c;
+  --grey-400: hsla(0, 0%, 28%, 1);
+  --grey-500: hsla(0, 0%, 20%, 1);
+  --grey-600: hsla(0, 0%, 13%, 1);
+  --grey-700: hsla(0, 0%, 8%, 1);
+  --grey-800: hsla(0, 0%, 3%, 1);
+  --grey-900: hsla(0, 0%, 1%, 1);
+
+  --background-primary: var(--grey-700);
+  --background-secondary: var(--grey-800);
+  --background-tertiary: var(--grey-900);
+  --background-gradient: linear-gradient(
+    180deg,
+    var(--grey-800) 0%,
+    var(--grey-900) 100%
+  );
+
+  --white: hsla(0, 0%, 90%, 1);
 
   /*signaling*/
   --red-700: #c53030;
   --green-700: #2f855a;
 
+  /*sections*/
+
+  --development-gradient: linear-gradient(135deg, #3a6186 0%, #89253e 100%);
+  --development-color: hsla(210, 39%, 38%, 1);
+
+  --design-gradient: linear-gradient(
+    135deg,
+    #d08aff 0%,
+    #ff6767 51%,
+    #ffce89 100%
+  );
+  --design-color: hsla(360, 100%, 70%, 1);
+
+  --marketing-gradient: linear-gradient(135deg, #e96443 0%, #904e95 100%);
+  --marketing-color: hsla(305, 31%, 45%, 1);
+
+  --science-gradient: linear-gradient(135deg, #2b5876 0%, #4e4376 100%);
+  --science-color: hsla(204, 68%, 21%, 1);
+
+  --teamwork-gradient: linear-gradient(135deg, #f1719c 0%, #f49472 100%);
+  --teamwork-color: hsla(15, 85%, 71%, 1);
+
+  --learning-gradient: linear-gradient(135deg, #3a6186 0%, #2c8925 100%);
+  --learning-color: hsla(116, 56%, 34%, 1);
+
+  --intro-gradient: linear-gradient(135deg, #3a6186 0%, #2c8925 100%);
+  --intro-color: hsla(116, 56%, 34%, 1);
+
+  --outro-gradient: linear-gradient(135deg, #3a6186 0%, #2c8925 100%);
+  --outro-color: hsla(116, 56%, 34%, 1);
+
   /*spacing*/
   /*padding*/
   --padding-top: var(--7base);
-  --padding-main: var(--1base);
-  --padding-rows: var(--5base);
+  --row-gap: var(--2base);
 
   /*views*/
-  --view-main: 1fr;
+  --view-main: 1fr 8fr 1fr;
+  --view-sections: var(--1base) 1fr var(--1base);
+
+  /*easings*/
+  --moving-out: cubic-bezier(0.4, 0, 1, 1);
+  --moving-in: cubic-bezier(0, 0, 0.2, 1);
+  --timing-out: 0.2s;
+  --timing-in: 0.4s;
 }
 
 /* Positioning */
@@ -87,6 +132,8 @@ export default {
 /* Misc */
 
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,700&display=swap");
+
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap");
 
 /*Borderbox*/
 *,
@@ -122,7 +169,7 @@ html,
   -moz-osx-font-smoothing: grayscale;
 
   /* Visual */
-  background-color: hsla(0, 0%, 28%, 100);
+  background-color: var(--grey-400);
 
   /* Misc */
 }
@@ -136,7 +183,7 @@ h1 {
   line-height: 150%;
   font-size: var(--4base);
   /* Visual */
-  color: white;
+  color: var(--white);
 
   /* Misc */
 }
@@ -149,7 +196,7 @@ h2 {
   /* Typography */
   font-size: var(--3base);
   /* Visual */
-  color: white;
+  color: var(--white);
   /* Misc */
 }
 
@@ -161,7 +208,7 @@ h3 {
   /* Typography */
   font-size: var(--2base);
   /* Visual */
-  color: white;
+  color: var(--white);
   /* Misc */
 }
 
@@ -179,7 +226,7 @@ select {
   font-size: var(--1base);
   line-height: 150%;
   /* Visual */
-  color: white;
+  color: var(--white);
   /* Misc */
 }
 
@@ -206,32 +253,4 @@ ul {
   /* Misc */
   list-style: none;
 }
-/*
-body * {
-  background-color: rgba(255, 0, 0, 0.2);
-}
-body * * {
-  background-color: rgba(0, 255, 0, 0.2);
-}
-body * * * {
-  background-color: rgba(0, 0, 255, 0.2);
-}
-body * * * * {
-  background-color: rgba(255, 0, 255, 0.2);
-}
-body * * * * * {
-  background-color: rgba(0, 255, 255, 0.2);
-}
-body * * * * * * {
-  background-color: rgba(255, 255, 0, 0.2);
-}
-body * * * * * * * {
-  background-color: rgba(255, 0, 0, 0.2);
-}
-body * * * * * * * * {
-  background-color: rgba(0, 255, 0, 0.2);
-}
-body * * * * * * * * * {
-  background-color: rgba(0, 0, 255, 0.2);
-}*/
 </style>
