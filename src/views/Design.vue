@@ -7,7 +7,7 @@
         <div class="main-content-container">
           <header class="headline-wrapper">
             <div class="line line-horizontal line3 hidden"></div>
-            <h1 class="main--headline phase0 ">
+            <h1 class="main--headline phase0 headline-color">
               Systematic UX-Design
             </h1>
             <h1 class="main--headline phase2 hidden">
@@ -17,9 +17,10 @@
             <h1 class="main--headline phase3 hidden">
               Big Headline - max 2 lines
             </h1>
-            <h1 class="main--headline phase5 hidden">
+            <h1 class="main--headline phase5 hidden headline-color">
               Systematic UX-Design
             </h1>
+            <p class="headline-label label hidden phase3">h1</p>
             <div class="line line-horizontal line4 hidden"></div>
           </header>
 
@@ -27,6 +28,7 @@
             <aside class="content-background phase1 hidden"></aside>
             <div class="line line-horizontal line5 hidden"></div>
             <div class="line line-horizontal line6 hidden"></div>
+            <p class="small-headline-label label hidden phase3">h2</p>
             <h2 class="headline phase2 hidden">
               <div class="headline__skeleton"></div>
               <div class="headline__skeleton"></div>
@@ -34,11 +36,12 @@
             <h2 class="headline phase3 hidden">
               Subheadline: 1-3 lines, depending on breaks
             </h2>
-            <h2 class="headline phase5 hidden">
+            <h2 class="headline phase5 hidden headline-color">
               Why do I understand the UX-department?
             </h2>
             <div class="line line-horizontal line7 hidden"></div>
             <div class="line line-horizontal line8 hidden"></div>
+            <p class="text-label label hidden phase3">p</p>
             <div class="text-wrapper">
               <div class="text skeleton-wrapper hidden phase2">
                 <div class="text__skeleton"></div>
@@ -68,6 +71,7 @@
             <aside class="content-background phase1 hidden"></aside>
             <div class="line line-horizontal line5 hidden"></div>
             <div class="line line-horizontal line6 hidden"></div>
+            <p class="small-headline-label label hidden phase3">h2</p>
             <h2 class="headline phase2 hidden">
               <div class="headline__skeleton"></div>
               <div class="headline__skeleton"></div>
@@ -76,11 +80,12 @@
             <h2 class="headline phase3 hidden">
               Subheadline: 1-3 lines, depending on word breaks
             </h2>
-            <h2 class="headline phase5 hidden">
+            <h2 class="headline phase5 hidden headline-color">
               Designing for the real world, not a design platform
             </h2>
             <div class="line line-horizontal line7 hidden"></div>
             <div class="line line-horizontal line8 hidden"></div>
+            <p class="text-label label hidden phase3">p</p>
             <div class="text-wrapper">
               <div class="text skeleton-wrapper hidden phase2">
                 <div class="text__skeleton"></div>
@@ -110,17 +115,19 @@
             <aside class="content-background phase1 hidden"></aside>
             <div class="line line-horizontal line5 hidden"></div>
             <div class="line line-horizontal line6 hidden"></div>
+            <p class="small-headline-label label hidden phase3">h2</p>
             <h2 class="headline phase2 hidden">
               <div class="headline__skeleton"></div>
             </h2>
             <h2 class="headline phase3 hidden">
               Subheadline: 1-3 lines
             </h2>
-            <h2 class="headline phase5 hidden">
+            <h2 class="headline phase5 hidden headline-color">
               For an indepth perspective
             </h2>
             <div class="line line-horizontal line7 hidden"></div>
             <div class="line line-horizontal line8 hidden"></div>
+            <p class="text-label label hidden phase3">p</p>
             <div class="text-wrapper">
               <div class="text skeleton-wrapper hidden phase2">
                 <div class="text__skeleton"></div>
@@ -168,16 +175,30 @@ export default {
   },
   methods: {
     scrollSilos() {
-      const lines = document.querySelectorAll(".line");
-      const phase0 = document.querySelectorAll(".phase0");
-      const phase1 = document.querySelectorAll(".phase1");
-      const phase2 = document.querySelectorAll(".phase2");
-      const phase3 = document.querySelectorAll(".phase3");
-
       let ratio = Math.max(window.scrollY) / window.innerHeight;
       console.log(ratio);
 
       //phase0
+      this.phase0(ratio);
+
+      //phase1
+      this.phase1(ratio);
+
+      //phase2
+      this.phase2(ratio);
+
+      //phase3
+      this.phase3(ratio);
+
+      //phase4
+      this.phase4(ratio);
+
+      //phase4
+      this.phase5(ratio);
+    },
+    phase0(ratio) {
+      const phase0 = document.querySelectorAll(".phase0");
+
       if (ratio > 0.1) {
         phase0.forEach(item => {
           item.classList.add("hidden");
@@ -187,9 +208,12 @@ export default {
           line.classList.remove("hidden");
         });
       }
+    },
+    phase1(ratio) {
+      const lines = document.querySelectorAll(".line");
+      const phase1 = document.querySelectorAll(".phase1");
 
-      //phase1
-      if (ratio > 0.2) {
+      if (ratio > 0.5) {
         lines.forEach((line, index) => {
           line.style.transitionDelay = `${index / 20}s`;
           line.classList.remove("hidden");
@@ -206,11 +230,12 @@ export default {
           item.classList.add("hidden");
         });
       }
-
-      //phase2
-      if (ratio > 0.5) {
+    },
+    phase2(ratio) {
+      const phase2 = document.querySelectorAll(".phase2");
+      if (ratio > 1) {
         phase2.forEach((item, index) => {
-          item.style.transitionDelay = `${index / 20}s`;
+          item.style.transitionDelay = `${index / 10}s`;
           item.classList.remove("hidden");
         });
       } else {
@@ -218,16 +243,87 @@ export default {
           item.classList.add("hidden");
         });
       }
-
-      //phase3
-      if (ratio > 0.5) {
+    },
+    phase3(ratio) {
+      const phase2 = document.querySelectorAll(".phase2");
+      const phase3 = document.querySelectorAll(".phase3");
+      if (ratio > 2) {
+        phase2.forEach(item => {
+          item.classList.add("re-hidden");
+        });
         phase3.forEach((item, index) => {
           item.style.transitionDelay = `${index / 20}s`;
           item.classList.remove("hidden");
         });
       } else {
+        phase2.forEach(item => {
+          item.classList.remove("re-hidden");
+        });
         phase3.forEach(item => {
           item.classList.add("hidden");
+        });
+      }
+    },
+    phase4(ratio) {
+      const phase4 = document.querySelectorAll(".phase4");
+      const mainHeadlines = document.querySelectorAll(".main--headline");
+      const headlines = document.querySelectorAll(".headline");
+
+      if (ratio > 3) {
+        phase4.forEach((item, index) => {
+          item.style.transitionDelay = `${index / 20}s`;
+          item.classList.remove("hidden");
+        });
+
+        mainHeadlines.forEach((item, index) => {
+          item.style.transitionDelay = `${index / 20}s`;
+          item.classList.add("headline-color");
+        });
+
+        headlines.forEach((item, index) => {
+          item.style.transitionDelay = `${index / 20}s`;
+          item.classList.add("headline-color");
+        });
+      } else {
+        phase4.forEach(item => {
+          item.classList.add("hidden");
+        });
+
+        mainHeadlines.forEach(item => {
+          item.classList.remove("headline-color");
+        });
+
+        headlines.forEach(item => {
+          item.classList.remove("headline-color");
+        });
+      }
+    },
+    phase5(ratio) {
+      const phase3 = document.querySelectorAll(".phase3");
+      const phase5 = document.querySelectorAll(".phase5");
+      const lines = document.querySelectorAll(".line");
+      if (ratio > 4) {
+        phase3.forEach(item => {
+          item.classList.add("re-hidden");
+        });
+        phase5.forEach((item, index) => {
+          item.style.transitionDelay = `${index / 20}s`;
+          item.classList.remove("hidden");
+        });
+        lines.forEach((line, index) => {
+          line.style.transitionDelay = `${index / 20}s`;
+          line.classList.add("re-hidden");
+        });
+      } else {
+        phase3.forEach(item => {
+          item.classList.remove("re-hidden");
+        });
+        phase5.forEach(item => {
+          item.classList.add("hidden");
+        });
+        lines.forEach((line, index) => {
+          line.style.transitionDelay = `${index / 20}s`;
+          line.classList.remove("re-hidden");
         });
       }
     }
@@ -259,7 +355,7 @@ export default {
 }
 
 .sticky-wrapper {
-  height: 500vh;
+  height: 800vh;
 }
 
 .sticky-content {
@@ -321,6 +417,16 @@ export default {
   z-index: 3;
 }
 
+.label {
+  align-self: start;
+  justify-self: center;
+}
+
+.headline-label {
+  grid-column: 1/2;
+  padding-top: var(--fourthbase);
+}
+
 .headline-wrapper {
   display: grid;
   grid-template-columns: var(--view-main);
@@ -342,9 +448,13 @@ export default {
   grid-column: 2/3;
   font-size: var(--5base);
   line-height: 120%;
-  color: var(--design-color);
+  color: var(--white);
   text-shadow: 0px 0px 5px hsla(0, 0%, 0%, 0.1);
   position: relative;
+}
+
+.main--headline:first-of-type {
+  color: var(--design-color);
 }
 
 .main--headline__skeleton {
@@ -389,10 +499,16 @@ export default {
   grid-row: 2/3;
 }
 
+.small-headline-label {
+  grid-column: 1/2;
+  grid-row: 3/4;
+  padding-top: var(--thirdbase);
+}
+
 .headline {
   grid-column: 2/3;
   grid-row: 3/4;
-  color: var(--design-color);
+  color: var(--white);
 }
 
 .line7 {
@@ -404,6 +520,12 @@ export default {
 .line8 {
   grid-row: 5/6;
   grid-column: 1/4;
+}
+
+.text-label {
+  grid-column: 1/2;
+  grid-row: 6/7;
+  padding-top: var(--fourthbase);
 }
 
 .text-wrapper {
@@ -420,7 +542,7 @@ export default {
 
 .text__skeleton {
   background-color: var(--white);
-  height: var(--2base);
+  height: var(--3base);
   width: 100%;
   margin-bottom: var(--thirdbase);
   transition: opacity 0.2s var(--moving-out);
@@ -448,6 +570,15 @@ export default {
 .hidden {
   opacity: 0;
   transition: all 0.4s var(--moving-out);
+}
+
+.re-hidden {
+  opacity: 0;
+  transition: all 0.4s var(--moving-out);
+}
+
+.headline-color {
+  color: var(--design-color);
 }
 
 .main-content {
