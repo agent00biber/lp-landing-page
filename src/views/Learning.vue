@@ -3,23 +3,45 @@
     <section class="sticky-wrapper">
       <div class="sticky-content">
         <div class="progress-content" id="js-progress-content">
-          <aside class="progress-bar" id="js-progress-bar"></aside>
-          <div
-            class="progress-content--above-header progress-content--text before-progress"
-          >
-            <p>word</p>
-          </div>
-
-          <header class=" progress-content--header before-progress">
+          <header class=" progress-content--header">
             <h1 class="header--learning ">
               Always learning
             </h1>
           </header>
 
-          <div
-            class="progress-content--below-header progress-content--text before-progress"
-          >
-            <p>word2</p>
+          <div class="loading-bar" id="js-loadingbar-zoom">
+            <div class="loading-bar__progress" id="js-loadingbar-scale"></div>
+          </div>
+
+          <div class="loading-content">
+            <p
+              v-for="(word, index) in [
+                'HTML',
+                'CSS',
+                'Chemistry',
+                'Physiology',
+                'Gestalt theory',
+                'User intent',
+                'CSS layout',
+                'Scarcity',
+                'Styled components',
+                'Retrosynthesis',
+                'ES6',
+                'Higher order functions',
+                'Anchoring',
+                'Storytelling',
+                'Mind mapping',
+                'User flows',
+                'await/async',
+                'SEO',
+                'Usabillity heuristics',
+                'jobs to be done',
+                'design for delight'
+              ]"
+              :class="[ratioCounter > 2 + index ? '' : 'hidden']"
+            >
+              Loading {{ word }}
+            </p>
           </div>
         </div>
         <div class="conclusion-content">
@@ -70,21 +92,44 @@ export default {
   props: [],
   name: "learning",
   data() {
-    return {};
+    return {
+      ratioCounter: 0
+    };
   },
   methods: {
     scrollSilos() {
-      const progressBar = document.getElementById("js-progress-bar");
       const progressContent = document.getElementById("js-progress-content");
       const headlines = document.querySelectorAll(
         ".conclusion-content--headline"
       );
+      const loadingbarScale = document.getElementById("js-loadingbar-scale");
+      const loadingbarZoom = document.getElementById("js-loadingbar-zoom");
 
       //get the amount of downward scroll
       let ratio = Math.max(window.scrollY) / window.innerHeight;
 
-      progressBar.style.transform = `scaleY(${ratio / 2 < 1 ? ratio / 2 : 1})`;
-      if (ratio / 2 > 1.2) {
+      this.ratioCounter = Math.floor(ratio * 10);
+
+      loadingbarScale.style.transform = `scaleX(${
+        ratio / 2 < 1 ? ratio / 2 : 1
+      })`;
+
+      let scaleX = ratio;
+      let scaleY = Math.pow(ratio, 2) > 1 ? Math.pow(ratio, 2) : 1;
+
+      if (ratio / 2 > 2.5) {
+        loadingbarZoom.style.transform = `scale(5, 25)`;
+      } else if (ratio / 2 > 1) {
+        loadingbarZoom.style.transform = `scale(${scaleX}, ${scaleY})`;
+      } else {
+        loadingbarZoom.style.transform = `scale(1)`;
+      }
+
+      let fullscreen =
+        loadingbarZoom.getBoundingClientRect().height / 1.25 >=
+        window.innerHeight;
+
+      if (fullscreen && ratio) {
         progressContent.classList.add("hidden");
         headlines.forEach(headline => {
           headline.classList.remove("hidden");
@@ -124,7 +169,7 @@ export default {
 }
 
 .sticky-wrapper {
-  height: 400vh;
+  height: 700vh;
 }
 
 .sticky-content {
@@ -141,7 +186,9 @@ export default {
   grid-column: 1/2;
   grid-row: 1/2;
   display: grid;
-  grid-template-rows: 1fr min-content 1fr;
+  grid-template-rows: 20vh min-content min-content 1fr;
+  grid-template-columns: var(--view-main);
+  grid-row-gap: var(--row-gap);
   position: relative;
   z-index: 2;
   background-color: var(--background-primary);
@@ -150,48 +197,37 @@ export default {
   transition: all 0.4s var(--moving-out);
 }
 
-.progress-content--above-header {
-  grid-row: 1/2;
-  grid-column: 1/2;
-}
-
 .progress-content--header {
   grid-row: 2/3;
-  grid-column: 1/2;
-  display: grid;
-  grid-template-columns: var(--view-main);
+  grid-column: 2/3;
 }
 
 .header--learning {
   color: var(--learning-color);
   background-color: var(--background-primary);
-  grid-column: 2/3;
-  padding: var(--halfbase);
 }
 
-.progress-content--below-header {
+.loading-bar {
   grid-row: 3/4;
-  grid-column: 1/2;
+  grid-column: 2/3;
+  border: 1px solid var(--grey-600);
+  height: var(--6base);
+  transform-origin: center 33%;
 }
 
-.progress-content--text {
-  align-self: center;
-}
-
-.progress-content--text p {
-  color: var(--background-primary);
-}
-
-.progress-bar {
-  position: absolute;
-  width: 100%;
+.loading-bar__progress {
   height: 100%;
-  top: 0;
-  left: 0;
+  width: 100%;
   background: var(--learning-gradient);
-  transform-origin: bottom;
-  transform: scaleY(0);
-  z-index: 4;
+  box-shadow: 0 0 15px 0 var(--learning-color);
+  transform-origin: left;
+  transform: scaleX(0);
+}
+
+.loading-content {
+  grid-row: 4/5;
+  grid-column: 2/3;
+  overflow: hidden;
 }
 
 .before-progress {

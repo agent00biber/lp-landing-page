@@ -22,13 +22,14 @@ export default {
 
 <style scoped>
 .hamburger {
-  width: var(--3base);
-  height: var(--3base);
+  width: var(--7base);
+  height: var(--7base);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
   transition: transform 0.2s ease-out;
+  padding: var(--1base) var(--1base);
 }
 
 .hamburger.open {
@@ -36,10 +37,10 @@ export default {
 }
 
 .line {
-  background-color: hsla(0, 0%, 0%, 100);
-  border-radius: 0.3rem;
+  background-color: var(--white);
+  border-radius: 0.2rem;
   width: 100%;
-  height: 0.25rem;
+  height: 0.2rem;
 }
 
 .start {
@@ -49,7 +50,7 @@ export default {
 }
 
 .open .start {
-  transform: rotate(-90deg) translateX(0.17rem);
+  transform: rotate(-90deg) translateX(0.15rem);
 }
 
 .end {
@@ -60,6 +61,6 @@ export default {
 }
 
 .open .end {
-  transform: rotate(-90deg) translateX(-0.17rem);
+  transform: rotate(-90deg) translateX(-0.15rem);
 }
 </style>
