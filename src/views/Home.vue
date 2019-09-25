@@ -21,7 +21,6 @@
       </p>
       <router-link class="link--intro" :to="{ name: 'intro' }"
         ><p class="text--link">See conflitct examples</p>
-        <arrow-icon class="icon--link" />
       </router-link>
     </section>
 
@@ -161,7 +160,7 @@ export default {
         `${entry.target.id}-nav-extended`
       );
       navId.classList.remove("active");
-      navIdExtended.style.color = `var(--grey-400)`;
+      navIdExtended.style.color = `var(--white)`;
     }
   },
   mounted() {
@@ -289,20 +288,39 @@ img {
 }
 
 .headline-top {
-  font-size: 4rem;
+  font-size: var(--6base);
   line-height: 100%;
 }
 
 .headline-bottom {
-  font-size: 1.75rem;
+  font-size: var(--3base);
+  line-height: 120%;
+}
+
+@media (min-width: 22.5em) {
+  .headline-top {
+    font-size: var(--7base);
+    line-height: 100%;
+  }
+
+  .headline-bottom {
+    font-size: var(--4base);
+    line-height: 120%;
+  }
+}
+
+@media (min-width: 30em) {
+  .headline-top {
+    font-size: var(--8base);
+  }
 }
 
 .intro {
   display: grid;
   grid-template-columns: var(--view-main);
   grid-auto-rows: min-content;
-  padding: 5rem 0;
-  height: 50vh;
+  padding: var(--content-padding);
+  min-height: 50vh;
   grid-row-gap: var(--row-gap);
   margin-bottom: var(--1base);
 }
@@ -313,11 +331,15 @@ img {
   font-weight: bold;
 }
 
+@media (min-width: 30em) {
+  .text--intro {
+    font-size: var(--3base);
+  }
+}
+
 .link--intro {
   grid-column: 2/3;
   text-decoration: underline var(--white);
-  display: flex;
-  flex-direction: row;
 }
 
 .text--link {
@@ -332,22 +354,10 @@ img {
   grid-row-gap: var(--1base);
 }
 
-.icon {
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-.icon2 {
-  left: 1.5rem;
-}
-
-.icon3 {
-  left: 3rem;
-}
-
-.icon4 {
-  left: 4.5rem;
+@media (min-width: 30em) {
+  .main-content {
+    grid-row-gap: var(--row-gap);
+  }
 }
 
 .outro {

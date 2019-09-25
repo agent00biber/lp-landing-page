@@ -5,16 +5,17 @@ Wo ist wohl noch mehr content nötig:
 Eine Scroll-down Aufforderung
 - science, marketing, design, learning, teamwork, intro
 
-Developer
-- Jeder Editor brauch noch Inhalt, der beim Clicken/Hovern sichtbar wird.
-
 
 Beispiele/Intro
 - Eine zentrale Headline mit einer zweifelhaften Aussage in groß, darunter dann Erklärungsansätze
 - Als Animation/transition vllt einfach die Hintergrundfarbe, die sich rapide ändert, wenn man zu einer neuen Aussage kommt
 
 
+Home
+- Schöneren Pfeil, Email-Icon bei den componenten
+
 
 General
 - Transition zwischen den views noch überlegen
 - Toggle für Dark/lightmode
+- Farben nochmal

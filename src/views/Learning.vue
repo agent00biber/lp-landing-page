@@ -15,6 +15,7 @@
 
           <div class="loading-content">
             <p
+              class="loading-content--entries"
               v-for="(word, index) in [
                 'HTML',
                 'CSS',
@@ -97,7 +98,7 @@ export default {
     };
   },
   methods: {
-    scrollSilos() {
+    scrollProgress() {
       const progressContent = document.getElementById("js-progress-content");
       const headlines = document.querySelectorAll(
         ".conclusion-content--headline"
@@ -147,10 +148,10 @@ export default {
   //same check for route-view keep-alive
   activated() {},
   mounted() {
-    window.addEventListener("scroll", this.scrollSilos);
+    window.addEventListener("scroll", this.scrollProgress);
   },
   destroyed() {
-    window.removeEventListener("scroll", this.scrollSilos);
+    window.removeEventListener("scroll", this.scrollProgress);
   }
 };
 </script>
@@ -186,9 +187,8 @@ export default {
   grid-column: 1/2;
   grid-row: 1/2;
   display: grid;
-  grid-template-rows: 20vh min-content min-content 1fr;
+  grid-template-rows: var(--sticky-headline-padding) min-content min-content 1fr;
   grid-template-columns: var(--view-main);
-  grid-row-gap: var(--row-gap);
   position: relative;
   z-index: 2;
   background-color: var(--background-primary);
@@ -205,6 +205,7 @@ export default {
 .header--learning {
   color: var(--learning-color);
   background-color: var(--background-primary);
+  font-size: var(--headline);
 }
 
 .loading-bar {
@@ -225,9 +226,20 @@ export default {
 }
 
 .loading-content {
+  padding-top: var(--row-gap);
   grid-row: 4/5;
   grid-column: 2/3;
   overflow: hidden;
+}
+
+.loading-content--entries {
+  font-weight: bold;
+}
+
+@media (min-width: 30em) {
+  .loading-content--entries {
+    font-size: calc(var(--1base) * 1.15);
+  }
 }
 
 .before-progress {
@@ -261,7 +273,7 @@ export default {
 .conclusion-content .headline2 {
   grid-column: 2/3;
   grid-row: 3/4;
-  transition-delay: 3s;
+  transition-delay: 2s;
 }
 
 .hidden {
@@ -282,7 +294,7 @@ export default {
 
 .main--headline {
   grid-column: 2/3;
-  font-size: var(--5base);
+  font-size: var(--headline);
   line-height: 120%;
   color: var(--learning-color);
   text-shadow: 0px 0px 5px hsla(0, 0%, 0%, 0.1);
@@ -292,9 +304,8 @@ export default {
   display: grid;
   grid-template-columns: var(--view-main);
   grid-auto-rows: min-content;
-  padding: 4rem 0;
+  padding: var(--content-padding);
   grid-row-gap: var(--row-gap);
-  grid-gap: var(--1base);
   background-color: var(--background-secondary);
   min-height: 40vh;
 }
@@ -302,6 +313,7 @@ export default {
 .headline {
   grid-column: 2/3;
   color: var(--learning-color);
+  font-size: var(--subheadline);
 }
 
 .text {

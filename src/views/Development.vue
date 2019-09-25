@@ -174,14 +174,28 @@ export default {
 
 .editor-container {
   display: grid;
-  grid-template-columns: repeat(9, 7rem);
-  grid-template-rows: 10rem 8rem 2rem 20rem;
+  grid-template-columns: repeat(9, 5.5rem);
+  grid-template-rows: 7rem 6rem 1.5rem 14rem;
   grid-gap: var(--2base);
   grid-template-areas:
     "e1 e1 e2 e2 e2 e3 e3 e3 e3"
     "e4 e4 e4 e5 e6 e6 e6 e6 e6"
     "e4 e4 e4 . e6 e6 e6 e6 e6"
     "e4 e4 e4 em em em em e7 e7";
+}
+
+@media (min-width: 22.5em) {
+  .editor-container {
+    display: grid;
+    grid-template-columns: repeat(9, 7rem);
+    grid-template-rows: 10rem 8rem 2rem 20rem;
+    grid-gap: var(--2base);
+    grid-template-areas:
+      "e1 e1 e2 e2 e2 e3 e3 e3 e3"
+      "e4 e4 e4 e5 e6 e6 e6 e6 e6"
+      "e4 e4 e4 . e6 e6 e6 e6 e6"
+      "e4 e4 e4 em em em em e7 e7";
+  }
 }
 
 .editor-layout-main {
@@ -257,7 +271,7 @@ export default {
 
 .main--headline {
   grid-column: 2/3;
-  font-size: var(--5base);
+  font-size: var(--headline);
   line-height: 120%;
   color: var(--development-color);
   text-shadow: 0px 0px 5px hsla(0, 0%, 0%, 0.1);
@@ -267,9 +281,9 @@ export default {
   display: grid;
   grid-template-columns: var(--view-main);
   grid-auto-rows: min-content;
-  padding: 4rem 0;
+  padding: var(--content-padding);
   grid-row-gap: var(--row-gap);
-  grid-gap: var(--1base);
+
   background-color: var(--background-secondary);
   min-height: 40vh;
 }
@@ -277,6 +291,7 @@ export default {
 .headline {
   grid-column: 2/3;
   color: var(--development-color);
+  font-size: var(--subheadline);
 }
 
 .text {
@@ -295,6 +310,13 @@ export default {
   justify-content: center;
   align-items: flex-end;
   height: 10vh;
+}
+
+@media (min-width: 22.5em) {
+  .dot {
+    height: 1rem;
+    width: 1rem;
+  }
 }
 
 /* Positioning */

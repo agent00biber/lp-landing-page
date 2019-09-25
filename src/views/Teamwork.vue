@@ -162,22 +162,23 @@ export default {
   overflow: hidden;
   display: grid;
   grid-template-columns: var(--view-main);
-  grid-template-rows: 2fr 3fr;
+  grid-template-rows: var(--sticky-headline-padding) min-content 1fr;
 }
 
 .teamwork-container {
   grid-column: 2/3;
-  grid-row: 1/2;
+  grid-row: 2/3;
   align-self: end;
 }
 
 .teamwork--headline {
   color: var(--teamwork-color);
-  font-size: var(--6base);
+  font-size: var(--headline);
   line-height: 120%;
 }
 .teamwork--subline {
   font-size: var(--2base);
+  font-weight: bold;
 }
 
 .scroll-helper {
@@ -187,9 +188,18 @@ export default {
   height: 200vh;
 }
 
+@media (min-width: 30em) {
+  .scroll-helper {
+    margin-top: 300vh;
+    z-index: 6;
+    width: 100%;
+    height: 200vh;
+  }
+}
+
 .scroll-helper--link {
   position: sticky;
-  top: 50%;
+  top: 40%;
   display: grid;
   grid-template-columns: var(--view-main);
   grid-template-rows: 1fr 1fr;
@@ -200,6 +210,12 @@ export default {
   font-size: var(--2base);
   padding-bottom: var(--halfbase);
   font-weight: bold;
+}
+
+@media (min-width: 30em) {
+  .scroll-helper--link__text {
+    font-size: var(--3base);
+  }
 }
 
 .text1 {
@@ -221,7 +237,7 @@ export default {
 
 .main--headline {
   grid-column: 2/3;
-  font-size: var(--5base);
+  font-size: var(--headline);
   line-height: 120%;
   color: var(--teamwork-color);
   text-shadow: 0px 0px 5px hsla(0, 0%, 0%, 0.1);
@@ -231,9 +247,8 @@ export default {
   display: grid;
   grid-template-columns: var(--view-main);
   grid-auto-rows: min-content;
-  padding: 4rem 0;
+  padding: var(--content-padding);
   grid-row-gap: var(--row-gap);
-  grid-gap: var(--1base);
   background-color: var(--background-secondary);
   min-height: 40vh;
 }
@@ -241,6 +256,7 @@ export default {
 .headline {
   grid-column: 2/3;
   color: var(--teamwork-color);
+  font-size: var(--subheadline);
 }
 
 .text {

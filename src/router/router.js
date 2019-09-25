@@ -74,7 +74,7 @@ export default new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      redirect: { name: "home" }
+      redirect: { name: "home", hash: "#outro" }
     }
   ],
   scrollBehavior(to, from, savedPosition) {

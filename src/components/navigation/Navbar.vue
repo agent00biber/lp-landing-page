@@ -47,7 +47,9 @@
           v-for="entry in sectionEntries"
           :style="{
             color:
-              $route.name === `${entry.id}` ? `var(--${entry.id}-color)` : ''
+              $route.name === `${entry.id}`
+                ? `var(--${entry.id}-color)`
+                : 'var(--white)'
           }"
         >
           <span @click="toggleMenu()">{{ entry.text }}</span>
@@ -111,16 +113,23 @@ export default {
 .nav-content {
   height: var(--7base);
   display: grid;
-  grid-template-columns: 4rem 1fr 4rem;
-
+  grid-template-columns: min-content 1fr min-content;
   background-color: hsla(0, 0%, 3%, 0.75);
+}
+
+@media (min-width: 30em) {
+  .navbar {
+    height: var(--8base);
+  }
+
+  .nav-content {
+    height: var(--8base);
+  }
 }
 
 .initals-link {
   grid-column: 1/2;
-  align-self: center;
   text-decoration: none;
-  justify-self: center;
   height: var(--7base);
   width: var(--7base);
   display: flex;
@@ -133,6 +142,16 @@ export default {
 .initals {
   color: var(--white);
   padding: 0;
+}
+
+@media (min-width: 30em) {
+  .initals-link {
+    height: var(--8base);
+    width: var(--8base);
+  }
+  .initals {
+    font-size: var(--4base);
+  }
 }
 
 .menu-items {
@@ -155,6 +174,12 @@ export default {
   z-index: 10;
 }
 
+@media (min-width: 30em) {
+  .item {
+    font-size: var(--3base);
+  }
+}
+
 .active {
   opacity: 1;
   transition: opacity 0.2s var(--moving-in);
@@ -172,12 +197,18 @@ export default {
 .extended-navigation {
   position: absolute;
   background-color: var(--background-primary);
-  height: 60vh;
+  min-height: 60vh;
   width: 100%;
   z-index: 5;
   transform: translateY(calc(-100% - var(--7base)));
   transition: all 0.2s var(--moving-out);
   box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.25);
+}
+
+@media (min-width: 30em) {
+  .extended-navigation {
+    transform: translateY(calc(-100% - var(--8base)));
+  }
 }
 
 .active {
@@ -188,7 +219,7 @@ export default {
 .menu-extended {
   display: grid;
   grid-template-columns: var(--view-main);
-  padding: 3rem 0;
+  padding: var(--content-padding);
 }
 
 .item-extended {
@@ -199,7 +230,10 @@ export default {
   margin-bottom: var(--2base);
   justify-self: end;
 }
-.item-extended .router-link-exact-active span {
-  color: hsla(0, 0%, 50%, 100);
+
+@media (min-width: 30em) {
+  .item-extended {
+    font-size: var(--3base);
+  }
 }
 </style>

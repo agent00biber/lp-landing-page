@@ -174,7 +174,7 @@ export default {
     return {};
   },
   methods: {
-    scrollSilos() {
+    scrollWireframe() {
       let ratio = Math.max(window.scrollY) / window.innerHeight;
       console.log(ratio);
 
@@ -333,10 +333,10 @@ export default {
   //same check for route-view keep-alive
   activated() {},
   mounted() {
-    window.addEventListener("scroll", this.scrollSilos);
+    window.addEventListener("scroll", this.scrollWireframe);
   },
   destroyed() {
-    window.removeEventListener("scroll", this.scrollSilos);
+    window.removeEventListener("scroll", this.scrollWireframe);
   }
 };
 </script>
@@ -366,7 +366,7 @@ export default {
   overflow: hidden;
   background-color: var(--background-primary);
   display: grid;
-  grid-template-rows: 10vh 1fr;
+  grid-template-rows: var(--sticky-headline-padding) 1fr;
   grid-template-columns: var(--view-main);
 }
 
@@ -409,10 +409,8 @@ export default {
 .main-content-container {
   grid-row: 2/3;
   grid-column: 1/4;
-  padding: 10vh 0 5vh 0;
   display: grid;
   grid-row-gap: var(--1base);
-
   position: relative;
   z-index: 3;
 }
@@ -446,7 +444,7 @@ export default {
 .main--headline {
   grid-row: 2/3;
   grid-column: 2/3;
-  font-size: var(--5base);
+  font-size: var(--headline);
   line-height: 120%;
   color: var(--white);
   text-shadow: 0px 0px 5px hsla(0, 0%, 0%, 0.1);
@@ -459,7 +457,7 @@ export default {
 
 .main--headline__skeleton {
   background-color: var(--white);
-  height: var(--5base);
+  height: var(--headline);
   width: 100%;
   margin-bottom: var(--thirdbase);
   transition: opacity 0.2s var(--moving-out);
@@ -467,7 +465,7 @@ export default {
 
 .headline__skeleton {
   background-color: var(--white);
-  height: var(--4base);
+  height: var(--subheadline);
   width: 100%;
   margin-bottom: var(--thirdbase);
   transition: opacity 0.2s var(--moving-out);
@@ -491,7 +489,13 @@ export default {
 .line5 {
   grid-column: 1/4;
   grid-row: 1/2;
-  margin-bottom: var(--7base);
+  margin-bottom: var(--5base);
+}
+
+@media (min-width: 22.5em) {
+  .line5 {
+    margin-bottom: var(--7base);
+  }
 }
 
 .line6 {
@@ -509,6 +513,7 @@ export default {
   grid-column: 2/3;
   grid-row: 3/4;
   color: var(--white);
+  font-size: var(--subheadline);
 }
 
 .line7 {
@@ -562,9 +567,15 @@ export default {
 }
 
 .line10 {
-  margin-top: var(--7base);
+  margin-top: var(--5base);
   grid-column: 1/4;
   grid-row: 8/9;
+}
+
+@media (min-width: 22.5em) {
+  .line10 {
+    margin-top: var(--7base);
+  }
 }
 
 .hidden {

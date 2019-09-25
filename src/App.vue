@@ -111,7 +111,7 @@ export default {
   --row-gap: var(--2base);
 
   /*views*/
-  --view-main: 1fr 8fr 1fr;
+  --view-main: 0.5fr 5fr 0.5fr;
   --view-sections: var(--1base) 1fr var(--1base);
 
   /*easings*/
@@ -119,6 +119,31 @@ export default {
   --moving-in: cubic-bezier(0, 0, 0.2, 1);
   --timing-out: 0.2s;
   --timing-in: 0.4s;
+
+  /*sticky content*/
+  --sticky-headline-padding: 20vh;
+
+  /*main-content*/
+  --headline: var(--4base);
+  --subheadline: var(--2base);
+  --content-padding: var(--5base) 0;
+}
+
+@media (min-width: 22.5em) {
+  :root {
+    --view-main: 1fr 8fr 1fr;
+
+    --headline: var(--5base);
+    --subheadline: var(--3base);
+    --content-padding: var(--7base) 0;
+  }
+}
+
+@media (min-width: 37.5em) {
+  :root {
+    --1base: 1.1rem;
+    --sticky-headline-padding: 30vh;
+  }
 }
 
 /* Positioning */

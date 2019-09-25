@@ -135,7 +135,7 @@ export default {
 .teams-container {
   display: grid;
   grid-template-columns: var(--view-main);
-  grid-template-rows: 20vh min-content 1fr 2fr;
+  grid-template-rows: var(--sticky-headline-padding) min-content 1fr 2fr;
   grid-auto-rows: min-content;
   grid-row-gap: var(--row-gap);
   background-color: var(--background-primary);
@@ -218,7 +218,6 @@ export default {
   grid-auto-rows: min-content;
   padding: 4rem 0;
   grid-row-gap: var(--row-gap);
-  grid-gap: var(--1base);
   background-color: var(--grey-400);
   min-height: 40vh;
 }

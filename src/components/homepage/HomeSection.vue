@@ -8,10 +8,7 @@
     <aside class="overlay"></aside>
     <header class="header">
       <h2 class="headline" :style="{ color: `var(--${sectionID}-color)` }">
-        <span v-if="sectionID === 'development'" class="headline-background"
-          >WEB-DEVELOP-MENT</span
-        >
-        <span v-else class="headline-background">{{ headline }}</span>
+        <span class="headline-background">{{ customHeadline(headline) }}</span>
       </h2>
     </header>
 
@@ -43,6 +40,15 @@ export default {
       this.$router.push({
         name: locationName
       });
+    },
+    customHeadline(headline) {
+      if (headline !== "WEB-DEVELOPMENT") {
+        return headline;
+      }
+      if (window.innerWidth < 600) {
+        return "WEB-DEVELOP-MENT";
+      }
+      return "WEB-DEVELOPMENT";
     }
   },
   computed: {},
@@ -53,13 +59,19 @@ export default {
 
 <style scoped>
 .home-section {
-  height: 66vh;
+  height: 75vh;
   display: grid;
   grid-template-columns: var(--view-main);
   grid-template-rows: 1fr min-content 1fr 1fr;
   grid-row-gap: var(--row-gap);
   position: relative;
   cursor: pointer;
+}
+
+@media (min-width: 30em) {
+  .home-section {
+    height: 80vh;
+  }
 }
 
 .overlay {
@@ -92,9 +104,28 @@ export default {
 }
 
 .headline {
-  font-size: var(--6base);
-  line-height: 125%;
+  font-size: var(--5base);
+  line-height: 160%;
   padding-top: 0.2rem;
+}
+
+@media (min-width: 22.5em) {
+  .headline {
+    font-size: var(--6base);
+    line-height: 125%;
+  }
+}
+
+@media (min-width: 30em) {
+  .headline {
+    font-size: var(--7base);
+    line-height: 125%;
+  }
+}
+
+@media (min-width: 37.5em) {
+  .headline {
+  }
 }
 
 .headline-background {
@@ -104,8 +135,20 @@ export default {
 }
 
 .body {
-  font-size: var(--3base);
+  font-size: var(--2base);
   font-weight: bold;
+}
+
+@media (min-width: 22.5em) {
+  .body {
+    font-size: var(--3base);
+  }
+}
+
+@media (min-width: 30em) {
+  .body {
+    font-size: var(--4base);
+  }
 }
 
 .body-wrapper {

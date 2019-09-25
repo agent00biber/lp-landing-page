@@ -10,7 +10,14 @@
           class="post-erruption-container"
           id="js-post-erruption-container-zindex-change"
         >
-          <div class="atom-container ">
+          <div
+            class="atom-container"
+            :style="{
+              'grid-template-columns': `repeat(${Math.floor(
+                chemicalElements.length / 6
+              )}, min-content)`
+            }"
+          >
             <div
               class="atom js-atom"
               v-for="(element, index) in chemicalElements"
@@ -87,7 +94,7 @@ export default {
     };
   },
   methods: {
-    scrollSilos() {
+    scrollAtoms() {
       const stickyContainer = document.getElementById(
         "js-sticky-container-color-change"
       );
@@ -120,18 +127,30 @@ export default {
   },
   computed: {
     chemicalElements() {
-      let size = 30;
-      return elements.elements.slice(0, size);
+      if (window.innerWidth < 500) {
+        let size = 30;
+        return elements.elements.slice(0, size);
+      }
+
+      if (window.innerWidth < 1000) {
+        let size = 60;
+        return elements.elements.slice(0, size);
+      }
+
+      if (window.innerWidth >= 1000) {
+        let size = elements.elements.length;
+        return elements.elements.slice(0, size);
+      }
     }
   },
   created() {},
   //same check for route-view keep-alive
   activated() {},
   mounted() {
-    window.addEventListener("scroll", this.scrollSilos);
+    window.addEventListener("scroll", this.scrollAtoms);
   },
   destroyed() {
-    window.removeEventListener("scroll", this.scrollSilos);
+    window.removeEventListener("scroll", this.scrollAtoms);
   }
 };
 </script>
@@ -161,23 +180,20 @@ export default {
   z-index: 5;
   overflow: hidden;
   display: grid;
-  grid-template-columns: 1fr 8fr 1fr;
-  grid-template-rows: 2fr 3fr;
+  grid-template-columns: var(--view-main);
+  grid-template-rows: var(--sticky-headline-padding) min-content 1fr;
   background-color: var(--background-primary);
 }
 
 .sticky-content--headline {
   grid-column: 2/3;
-  grid-row: 1/2;
-  justify-self: center;
-  align-self: center;
+  grid-row: 2/3;
   position: relative;
   z-index: 8;
   color: var(--science-color);
   background-color: var(--background-primary);
   padding: var(--halfbase);
-  align-self: end;
-  font-size: var(--6base);
+  font-size: var(--headline);
   line-height: 120%;
 }
 
@@ -192,8 +208,7 @@ export default {
 .atom-container {
   height: 100vh;
   width: 200vw;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
 }
 
 .atom {
@@ -299,7 +314,7 @@ export default {
 
 .main--headline {
   grid-column: 2/3;
-  font-size: var(--5base);
+  font-size: var(--headline);
   line-height: 120%;
   color: var(--science-color);
   text-shadow: 0px 0px 5px hsla(0, 0%, 0%, 0.1);
@@ -309,9 +324,8 @@ export default {
   display: grid;
   grid-template-columns: var(--view-main);
   grid-auto-rows: min-content;
-  padding: 4rem 0;
+  padding: var(--content-padding);
   grid-row-gap: var(--row-gap);
-  grid-gap: var(--1base);
   background-color: var(--background-secondary);
   min-height: 40vh;
 }
@@ -319,6 +333,7 @@ export default {
 .headline {
   grid-column: 2/3;
   color: var(--science-color);
+  font-size: var(--subheadline);
 }
 
 .text {

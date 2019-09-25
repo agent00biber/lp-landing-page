@@ -15,7 +15,15 @@
             soon, fear of missing out, rewards, dopamine boost, points, badges,
             liked, giving back, reciprocity, get this ebook for free, newsletter
             signup, anchoring a price, only 2 items left, cross selling, bulk
-            ordering
+            ordering, Framing, Loss aversion, dont lose out on this deal,
+            commitment and consitstency, complete the task, foot-in-the-door,
+            wishlists, defaulting, friction costs, triggers, external/internal,
+            motivation, abillity, social proof, follower count, 64734 peopled
+            liked this page, 5 stars, already sold out, scarcity, deadline, free
+            trial ends soon, fear of missing out, rewards, dopamine boost,
+            points, badges, liked, giving back, reciprocity, get this ebook for
+            free, newsletter signup, anchoring a price, only 2 items left, cross
+            selling, bulk ordering
           </p>
         </div>
       </div>
@@ -116,26 +124,30 @@ export default {
   z-index: 5;
   overflow: hidden;
   display: grid;
-  grid-template-columns: 1fr 4fr 4fr 1fr;
-  grid-template-rows: 2fr 3fr;
+  grid-template-columns: 1fr 5fr 5fr 1fr;
+  grid-template-rows: var(--sticky-headline-padding) min-content 1fr;
   background-color: var(--background-tertiary);
+}
+
+@media (min-width: 22.5em) {
+  .sticky-content {
+    grid-template-columns: 1fr 4fr 4fr 1fr;
+  }
 }
 
 .sticky-headline {
   grid-column: 2/4;
-  grid-row: 1/2;
-  align-self: end;
+  grid-row: 2/3;
   color: var(--marketing-color);
   z-index: 7;
-
   background-color: var(--background-primary);
   padding: var(--halfbase);
-  font-size: var(--6base);
+  font-size: var(--headline);
   line-height: 120%;
 }
 
 .silo {
-  grid-row: 1/3;
+  grid-row: 1/4;
   background-color: var(--background-primary);
   transform-origin: center right;
 }
@@ -149,7 +161,7 @@ export default {
 
 .slang-container {
   grid-column: 1/5;
-  grid-row: 1/3;
+  grid-row: 1/4;
   overflow: hidden;
   text-transform: uppercase;
 }
@@ -176,7 +188,7 @@ export default {
 
 .main--headline {
   grid-column: 2/3;
-  font-size: var(--5base);
+  font-size: var(--headline);
   line-height: 120%;
   color: var(--marketing-color);
   text-shadow: 0px 0px 5px hsla(0, 0%, 0%, 0.1);
@@ -186,9 +198,8 @@ export default {
   display: grid;
   grid-template-columns: var(--view-main);
   grid-auto-rows: min-content;
-  padding: 4rem 0;
+  padding: var(--content-padding);
   grid-row-gap: var(--row-gap);
-  grid-gap: var(--1base);
   background-color: var(--background-secondary);
   min-height: 40vh;
 }
@@ -196,6 +207,7 @@ export default {
 .headline {
   grid-column: 2/3;
   color: var(--marketing-color);
+  font-size: var(--subheadline);
 }
 
 .text {

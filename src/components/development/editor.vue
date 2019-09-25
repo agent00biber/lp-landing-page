@@ -39,11 +39,18 @@
 }
 
 .dot {
-  height: 1rem;
-  width: 1rem;
+  height: 0.8rem;
+  width: 0.8rem;
   border-radius: 50%;
   margin-right: var(--halfbase);
   background-color: var(--grey-400);
+}
+
+@media (min-width: 22.5em) {
+  .dot {
+    height: 1rem;
+    width: 1rem;
+  }
 }
 
 .active .red {
