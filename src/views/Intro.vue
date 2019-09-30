@@ -22,23 +22,71 @@
       </div>
     </section>
     <section class="main-content">
-      <header class="headline-wrapper">
-        <h1 class="main--headline">Creative web development</h1>
-      </header>
-      <div class="content-wrapper">
-        <h2 class="headline">Where to go from here?</h2>
-
-        <p class="text">
-          Flutter
-        </p>
-      </div>
-      <div class="content-wrapper">
-        <h2 class="headline">Where to go from here?</h2>
-
-        <p class="text">
-          Flutter
-        </p>
-      </div>
+      <h1 class="main-content--headline">Creative web development</h1>
+      <content-summery
+        class="content-summery-layout js-content-observe"
+        headline="Understanding conflict in teams"
+        text="Everyone in a team is important and has their teams success in mind. But sometimes not know what the others do, creates conflict:"
+        sectionID="intro"
+        :summeryContent="[
+          {
+            headline: 'Just one more popup',
+            text:
+              'People abandon the shopping cart of hidden cost like shipping. Lets tell them immediately there are no shipping cost for first sign ups. This is the first information they should see, right?'
+          },
+          {
+            headline: 'Pixel-perfect',
+            text:
+              'I dont have time to align everything and do different kernings on all the headlines. The designer wont be mad, right? '
+          },
+          {
+            headline: 'Look at these dope animation',
+            text:
+              'This animation will capture the user  attention. This will run on all devices just fine, right?'
+          },
+          {
+            headline: 'Lets call it a day',
+            text:
+              'Here are the designs. This wont take long, right? Deadline is in a week.'
+          }
+        ]"
+      />
+      <content-section
+        class="content-section-layout js-content-observe"
+        headline="Just one more pop-up"
+        text="Pop ups are the bane of every user’s experience and will reduce their delight & enjoyment of your app. This could make users abandon it and will decrease conversions. Markting still has to deliver results. Fortunatly there are other ways of deliving a message, like free shipping, without spooking the customers with just another pop up"
+        sectionID="intro"
+        alignExtraContent="right"
+      >
+        <div class="extra-content-container"></div>
+      </content-section>
+      <content-section
+        class="content-section-layout js-content-observe"
+        headline="Pixel-Perfect"
+        text="The difference between a good design and a great design are often the details. These need to be implemented like everything else. But developers often face immense time pressure and are trying to get the business-relevant implementations done first. Early communication between both departments helps prioritising design decisions "
+        sectionID="intro"
+        alignExtraContent="left"
+      >
+        <div class="extra-content-container"></div>
+      </content-section>
+      <content-section
+        class="content-section-layout js-content-observe"
+        headline="These dope Animations"
+        text="Sure, they look great but will look janky on older devices and deminish the intendet delight and user experience. Consultating developers early about what is feasabile and what isn’t will avoid removing these dope animations and stop wasting creative moments."
+        sectionID="intro"
+        alignExtraContent="right"
+      >
+        <div class="extra-content-container"></div>
+      </content-section>
+      <content-section
+        class="content-section-layout js-content-observe"
+        headline="Lets call it a day"
+        text="xxxxx xxxxx xxxxx xxx xxx xxxxxxxxxxxx. xxxxx xxxxx xxxxx xxx xxx xxxxxxxxxxxx.xxxxx xxxxx xxxxx xxx xxx xxxxxxxxxxxx.xxxxx xxxxx xxxxx xxx xxx xxxxxxxxxxxx.xxxxx xxxxx xxxxx xxx xxx xxxxxxxxxxxx.xxxxx xxxxx xxxxx xxx xxx xxxxxxxxxxxx."
+        sectionID="intro"
+        alignExtraContent="left"
+      >
+        <div class="extra-content-container"></div>
+      </content-section>
       <footer class="footer">
         <router-link :to="{ name: 'home' }">Back home</router-link>
       </footer>
@@ -47,9 +95,15 @@
 </template>
 
 <script>
+import contentSummery from "@/components/buildingBlocks/contentSummery.vue";
+import contentSection from "@/components/buildingBlocks/contentSection.vue";
+
 export default {
-  components: {},
-  //if the basics are being edited, this array contains existing basic information
+  components: {
+    contentSummery,
+    contentSection
+  },
+
   props: [],
   name: "intro",
   data() {
@@ -192,57 +246,50 @@ export default {
   opacity: 0;
   transition: all 0.4s var(--moving-out);
 }
+/*----------------------------------------------------*/
 
 .main-content {
   padding: 10vh 0 5vh 0;
   display: grid;
-  grid-row-gap: var(--1base);
-}
-
-.headline-wrapper {
-  display: grid;
-  grid-template-columns: var(--view-main);
-}
-
-.main--headline {
-  grid-column: 2/3;
-  font-size: var(--5base);
-  line-height: 120%;
-  color: var(--development-color);
-  text-shadow: 0px 0px 5px hsla(0, 0%, 0%, 0.1);
-}
-
-.content-wrapper {
-  display: grid;
-  grid-template-columns: var(--view-main);
   grid-auto-rows: min-content;
-  padding: 4rem 0;
-  grid-row-gap: var(--row-gap);
-  background-color: var(--grey-400);
-  min-height: 40vh;
 }
 
-.headline {
-  grid-column: 2/3;
-  color: var(--development-color);
+@media (min-width: 30em) {
+  .main-content {
+    padding: 15vh 0 5vh 0;
+  }
 }
 
-.text {
-  grid-column: 2/3;
-  font-size: var(--2base);
+.main-content--headline {
+  font-size: var(--headline);
+  color: var(--intro-color);
+  text-shadow: 0px 0px 5px hsla(0, 0%, 0%, 0.1);
+  padding-left: 5vw;
+  margin: 5vh 0;
 }
 
-.text-box--small {
-  background-color: var(--background-primary);
-  border-radius: var(--fourthbase);
-  padding: var(--2base);
-  grid-column: 2/3;
+@media (min-width: 70em) {
+  .main-content--headline {
+    padding-left: 15vw;
+  }
 }
+
+.content-section-layout:last-of-type {
+  border-bottom: 1px solid var(--grey-600);
+}
+
+/*----------------------------------------------------*/
 
 .footer {
   display: flex;
   justify-content: center;
   align-items: flex-end;
   height: 10vh;
+}
+
+@media (min-width: 45em) {
+  .footer {
+    grid-column: 1/7;
+  }
 }
 </style>

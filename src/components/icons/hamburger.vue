@@ -45,7 +45,7 @@ export default {
 }
 
 .line {
-  background-color: var(--white);
+  background-color: white;
   border-radius: 0.2rem;
   width: 100%;
   height: 0.2rem;

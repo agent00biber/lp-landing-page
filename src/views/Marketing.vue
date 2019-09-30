@@ -2,53 +2,48 @@
   <article class="marketing">
     <section class="sticky-wrapper">
       <div class="sticky-content">
-        <h1 class="sticky-headline">Persuasive Marketing</h1>
+        <header class="sticky-header">
+          <h1 class="sticky-headline">Persuasive Marketing</h1>
+        </header>
+
         <aside class="silo silo1 js-silo"></aside>
         <aside class="silo silo2 js-silo"></aside>
+        <aside class="silo silo3 js-silo"></aside>
+        <aside class="silo silo4 js-silo"></aside>
+        <aside class="silo silo5 js-silo"></aside>
+        <aside class="silo silo6 js-silo"></aside>
         <div class="slang-container">
           <p class="slang">
-            Framing, Loss aversion, dont lose out on this deal, commitment and
-            consitstency, complete the task, foot-in-the-door, wishlists,
-            defaulting, friction costs, triggers, external/internal, motivation,
-            abillity, social proof, follower count, 64734 peopled liked this
-            page, 5 stars, already sold out, scarcity, deadline, free trial ends
-            soon, fear of missing out, rewards, dopamine boost, points, badges,
-            liked, giving back, reciprocity, get this ebook for free, newsletter
-            signup, anchoring a price, only 2 items left, cross selling, bulk
-            ordering, Framing, Loss aversion, dont lose out on this deal,
-            commitment and consitstency, complete the task, foot-in-the-door,
-            wishlists, defaulting, friction costs, triggers, external/internal,
-            motivation, abillity, social proof, follower count, 64734 peopled
-            liked this page, 5 stars, already sold out, scarcity, deadline, free
-            trial ends soon, fear of missing out, rewards, dopamine boost,
-            points, badges, liked, giving back, reciprocity, get this ebook for
-            free, newsletter signup, anchoring a price, only 2 items left, cross
-            selling, bulk ordering
+            {{ slangContent }}
           </p>
         </div>
       </div>
     </section>
+
     <section class="main-content">
-      <header class="headline-wrapper">
-        <h1 class="main--headline">Persuasive Marketing</h1>
-      </header>
-
-      <div class="content-wrapper">
-        <h2 class="headline">Why do I understand the marketing department?</h2>
-
-        <p class="text">
-          Because I worked in a marketing agency for over a year and experienced
-          the importance of KPIs, social media performance and persuasive design
-        </p>
-      </div>
-      <div class="content-wrapper">
-        <h2 class="headline">digital psychology and behavioral sciences</h2>
-
-        <p class="text">
-          I try to empower the user and paint him as the hero of his own story,
-          so I can guide and help him with a certain type of product or service.
-        </p>
-      </div>
+      <h1 class="main-content--headline">Persuasive Marketing</h1>
+      <content-summery
+        class="content-summery-layout js-content-observe"
+        headline="Understanding Marketing"
+        text="I worked in a marketing agency for over a year and experienced the importance of KPIs, social media performance and persuasive design."
+        sectionID="marketing"
+        :summeryContent="[
+          {
+            headline: 'Persuasive marketing psychology',
+            text:
+              'I enjoy digital psychology and behavioral sciences. I try to empower the user and paint him as the hero of his own story, so I can guide and help him with a certain type of product or service.'
+          }
+        ]"
+      />
+      <content-section
+        class="content-section-layout js-content-observe"
+        headline="Persuasive marketing psychology "
+        text="xxxxx xxxxx xxxxx xxx xxx xxxxxxxxxxxx. xxxxx xxxxx xxxxx xxx xxx xxxxxxxxxxxx.xxxxx xxxxx xxxxx xxx xxx xxxxxxxxxxxx.xxxxx xxxxx xxxxx xxx xxx xxxxxxxxxxxx.xxxxx xxxxx xxxxx xxx xxx xxxxxxxxxxxx.xxxxx xxxxx xxxxx xxx xxx xxxxxxxxxxxx."
+        sectionID="marketing"
+        alignExtraContent="right"
+      >
+        <div class="extra-content-container"></div>
+      </content-section>
 
       <footer class="footer">
         <router-link :to="{ name: 'home' }">Back home</router-link>
@@ -58,9 +53,14 @@
 </template>
 
 <script>
+import contentSummery from "@/components/buildingBlocks/contentSummery.vue";
+import contentSection from "@/components/buildingBlocks/contentSection.vue";
+
 export default {
-  components: {},
-  //if the basics are being edited, this array contains existing basic information
+  components: {
+    contentSummery,
+    contentSection
+  },
   props: [],
   name: "marketing",
   data() {
@@ -85,7 +85,17 @@ export default {
       */
     }
   },
-  computed: {},
+  computed: {
+    slangContent() {
+      let marketingSlang =
+        "Framing, Loss aversion, dont lose out on this deal, commitment and consitstency, complete the task, foot-in-the-door, wishlists, defaulting, friction costs, triggers, external/internal, motivation, abillity, social proof, follower count, 64734 peopled liked this page, 5 stars, already sold out, scarcity, deadline, free trial ends soon, fear of missing out, rewards, dopamine boost, points, badges, liked, giving back, reciprocity, get this ebook for free, newsletter signup, anchoring a price, only 2 items left, cross selling, bulk ordering,";
+
+      let widthMultiplier = Math.floor(window.innerWidth / 400);
+      let heightMultiplier = Math.floor(window.innerHeight / 200);
+
+      return marketingSlang.repeat(widthMultiplier + heightMultiplier);
+    }
+  },
   mounted() {
     window.addEventListener("scroll", this.scrollSilos);
     const silos = document.querySelectorAll(".js-silo");
@@ -135,14 +145,45 @@ export default {
   }
 }
 
-.sticky-headline {
-  grid-column: 2/4;
+@media (min-width: 37.5em) {
+  .sticky-content {
+    grid-template-columns: 1fr repeat(4, 1fr) 1fr;
+  }
+}
+
+@media (min-width: 45em) {
+  .sticky-content {
+    grid-template-columns: 1fr repeat(6, 1fr) 1fr;
+  }
+}
+
+@media (min-width: 56em) {
+  .sticky-content {
+    grid-template-columns: 1fr repeat(8, 1fr) 1fr;
+  }
+}
+
+@media (min-width: 70em) {
+  .sticky-content {
+    grid-template-columns: 1fr repeat(10, 1fr) 1fr;
+  }
+}
+
+.sticky-header {
+  grid-column: 1/5;
   grid-row: 2/3;
-  color: var(--marketing-color);
   z-index: 7;
+
+  display: grid;
+  grid-template-columns: var(--view-main);
+}
+
+.sticky-headline {
+  grid-column: 2/3;
+  color: var(--marketing-color);
   background-color: var(--background-primary);
-  padding: var(--halfbase);
   font-size: var(--headline);
+  padding: var(--halfbase);
   line-height: 120%;
 }
 
@@ -158,6 +199,18 @@ export default {
 .silo2 {
   grid-column: 3/5;
 }
+.silo3 {
+  display: none;
+}
+.silo4 {
+  display: none;
+}
+.silo5 {
+  display: none;
+}
+.silo6 {
+  display: none;
+}
 
 .slang-container {
   grid-column: 1/5;
@@ -167,7 +220,7 @@ export default {
 }
 
 .slang {
-  font-size: var(--4base);
+  font-size: var(--subheadline);
   font-weight: bold;
   width: 150vw;
   background: var(--marketing-gradient);
@@ -175,57 +228,137 @@ export default {
   -webkit-text-fill-color: transparent;
 }
 
+@media (min-width: 37.5em) {
+  .silo1 {
+    grid-column: 1/3;
+  }
+  .silo2 {
+    grid-column: 3/5;
+  }
+  .silo3 {
+    display: block;
+    grid-column: 5/7;
+  }
+  .sticky-header,
+  .slang-container {
+    grid-column: 1/7;
+  }
+}
+
+@media (min-width: 45em) {
+  .silo1 {
+    grid-column: 1/3;
+  }
+  .silo2 {
+    grid-column: 3/5;
+  }
+  .silo3 {
+    grid-column: 5/7;
+  }
+  .silo4 {
+    display: block;
+    grid-column: 7/9;
+  }
+  .sticky-header,
+  .slang-container {
+    grid-column: 1/9;
+  }
+}
+
+@media (min-width: 56em) {
+  .silo1 {
+    grid-column: 1/3;
+  }
+  .silo2 {
+    grid-column: 3/5;
+  }
+  .silo3 {
+    grid-column: 5/7;
+  }
+  .silo4 {
+    grid-column: 7/9;
+  }
+  .silo5 {
+    display: block;
+    grid-column: 9/11;
+  }
+  .sticky-header,
+  .slang-container {
+    grid-column: 1/11;
+  }
+}
+
+@media (min-width: 70em) {
+  .silo1 {
+    grid-column: 1/3;
+  }
+  .silo2 {
+    grid-column: 3/5;
+  }
+  .silo3 {
+    grid-column: 5/7;
+  }
+  .silo4 {
+    grid-column: 7/9;
+  }
+  .silo5 {
+    display: block;
+    grid-column: 9/11;
+  }
+  .silo6 {
+    display: block;
+    grid-column: 11/13;
+  }
+  .sticky-header,
+  .slang-container {
+    grid-column: 1/13;
+  }
+}
+
+/*----------------------------------------------------*/
+
 .main-content {
   padding: 10vh 0 5vh 0;
   display: grid;
-  grid-row-gap: var(--1base);
+  grid-auto-rows: min-content;
 }
 
-.headline-wrapper {
-  display: grid;
-  grid-template-columns: var(--view-main);
+@media (min-width: 30em) {
+  .main-content {
+    padding: 15vh 0 5vh 0;
+  }
 }
 
-.main--headline {
-  grid-column: 2/3;
+.main-content--headline {
   font-size: var(--headline);
-  line-height: 120%;
   color: var(--marketing-color);
   text-shadow: 0px 0px 5px hsla(0, 0%, 0%, 0.1);
+  padding-left: 5vw;
+  margin: 5vh 0;
 }
 
-.content-wrapper {
-  display: grid;
-  grid-template-columns: var(--view-main);
-  grid-auto-rows: min-content;
-  padding: var(--content-padding);
-  grid-row-gap: var(--row-gap);
-  background-color: var(--background-secondary);
-  min-height: 40vh;
+@media (min-width: 70em) {
+  .main-content--headline {
+    padding-left: 15vw;
+  }
 }
 
-.headline {
-  grid-column: 2/3;
-  color: var(--marketing-color);
-  font-size: var(--subheadline);
+.content-section-layout:last-of-type {
+  border-bottom: 1px solid var(--grey-600);
 }
 
-.text {
-  grid-column: 2/3;
-  font-size: var(--2base);
-}
-
-.text-box--small {
-  background-color: var(--background-primary);
-  border-radius: var(--fourthbase);
-  padding: var(--2base);
-  grid-column: 2/3;
-}
+/*----------------------------------------------------*/
 
 .footer {
   display: flex;
   justify-content: center;
   align-items: flex-end;
   height: 10vh;
+}
+
+@media (min-width: 45em) {
+  .footer {
+    grid-column: 1/7;
+  }
 }
 </style>

@@ -66,5 +66,7 @@
 .editor--text-wrapper {
   padding: var(--2base);
   display: grid;
+  grid-auto-rows: min-content;
+  grid-row-gap: var(--row-gap);
 }
 </style>

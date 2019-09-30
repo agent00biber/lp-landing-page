@@ -157,6 +157,44 @@
       </div>
     </section>
     <section class="main-content">
+      <content-summery
+        class="content-summery-layout js-content-observe"
+        headline="Understanding UX design"
+        text="Because before coding, I need to research, concept and wireframe the product to know how everything fits together. Where and when the user needs guidance. But also how to create beauty, delight and how to foster a sense of excitement, so the user wants to discover every feature."
+        sectionID="design"
+        :summeryContent="[
+          {
+            headline: 'Lovable Survey Creator',
+            text:
+              'A simple survey generator to create beautiful and engaging questionairs. '
+          },
+          {
+            headline: 'T-shirt eCommerce store',
+            text:
+              'A mockup store for brilliant t-shirts in every color there is'
+          }
+        ]"
+      />
+      <content-section
+        class="content-section-layout js-content-observe"
+        headline="Lovable Survey Creator"
+        text="A simple survey generator to create beautiful and engaging questionairs. Visit my casestudy website for an indepth persepective."
+        sectionID="design"
+        alignExtraContent="right"
+        buttonText="read the casestudy"
+      >
+        <div class="extra-content-container"></div>
+      </content-section>
+      <content-section
+        class="content-section-layout js-content-observe"
+        headline="T-shirt eCommerce store"
+        text="Still in progress. A mockup store to order colorfull tshirts. Features around the idea of an SVG Overlay over an image with a CSS mixed-blend-mode (inspiration by u/overcloseness). This also combines marketing and UX aspects."
+        sectionID="design"
+        alignExtraContent="left"
+        buttonText="read the casestudy"
+      >
+        <div class="extra-content-container"></div>
+      </content-section>
       <footer class="footer">
         <router-link :to="{ name: 'home' }">Back home</router-link>
       </footer>
@@ -165,9 +203,14 @@
 </template>
 
 <script>
+import contentSummery from "@/components/buildingBlocks/contentSummery.vue";
+import contentSection from "@/components/buildingBlocks/contentSection.vue";
+
 export default {
-  components: {},
-  //if the basics are being edited, this array contains existing basic information
+  components: {
+    contentSummery,
+    contentSection
+  },
   props: [],
   name: "design",
   data() {
@@ -592,16 +635,37 @@ export default {
   color: var(--design-color);
 }
 
+/*----------------------------------------------------*/
+
 .main-content {
+  padding: 10vh 0 5vh 0;
   display: grid;
-  grid-row-gap: var(--1base);
+  grid-auto-rows: min-content;
 }
 
-.footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 10vh;
-  padding-bottom: 5vh;
+@media (min-width: 30em) {
+  .main-content {
+    padding: 15vh 0 5vh 0;
+  }
 }
+
+.main-content--headline {
+  font-size: var(--headline);
+  color: var(--frontend-color);
+  text-shadow: 0px 0px 5px hsla(0, 0%, 0%, 0.1);
+  padding-left: 5vw;
+  margin: 5vh 0;
+}
+
+@media (min-width: 70em) {
+  .main-content--headline {
+    padding-left: 15vw;
+  }
+}
+
+.content-section-layout:last-of-type {
+  border-bottom: 1px solid var(--grey-600);
+}
+
+/*----------------------------------------------------*/
 </style>

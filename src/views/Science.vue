@@ -34,42 +34,53 @@
             </div>
           </div>
           <aside
-            class="backgroud-transition"
+            class="background-transition"
             id="js-atom-container-background-appear"
           ></aside>
         </div>
       </div>
     </section>
+
     <section class="main-content">
-      <header class="headline-wrapper">
-        <h1 class="main--headline">Creative web development</h1>
-      </header>
+      <h1 class="main-content--headline">Astounding Science</h1>
 
-      <div class="content-wrapper">
-        <h2 class="headline">Bringing your Ideas to live</h2>
-
-        <p class="text">
-          Dont waste a beautiful designed idea as a file on your screen.
-        </p>
-      </div>
-      <div class="content-wrapper">
-        <h2 class="headline">See some examples</h2>
-
-        <p class="text">
-          Link to github
-        </p>
-
-        <div class="text-box--small">
-          <a class="link" href="#">Feedback Creator</a>
-        </div>
-      </div>
-      <div class="content-wrapper">
-        <h2 class="headline">Where to go from here?</h2>
-
-        <p class="text">
-          Flutter
-        </p>
-      </div>
+      <content-summery
+        class="content-summery-layout js-content-observe"
+        headline="Understanding Science"
+        text="How does science fit into the greater picture? It creates content. I have a masters in pharmaceutical sciences and can deep dive into most medical fields in a short amount of time."
+        sectionID="science"
+        :summeryContent="[
+          {
+            headline: 'Digital <3 pharma',
+            text:
+              'I am really interessted in  bringing pharmaceutical sciences and digital services together. Eventually I want to build a digital therapeutic to help people in their life.'
+          },
+          {
+            headline: 'Retrosynthesis',
+            text:
+              'Science prepared me for a lifetime of learning, an analytical approach to problems and a different, product-focused perspective: retrosynthesis. You start from the product you want to have and break it down into manageable parts and actions.'
+          }
+        ]"
+      />
+      <content-section
+        class="content-section-layout js-content-observe"
+        headline="Digital <3 pharma"
+        text="There are many ways to enhance the patient journey with digital solutions, like providing accessible information,  preordering medications,  using apps to document adverse reaction or to remember medication intake times. I would love to help envisioning and developing these together with you."
+        sectionID="science"
+        alignExtraContent="right"
+        buttonText="lets get in contact"
+      >
+        <div class="extra-content-container"></div>
+      </content-section>
+      <content-section
+        class="content-section-layout js-content-observe"
+        headline="Retrosynthesis"
+        text="Still in progress. A mockup store to order colorfull tshirts.  Uses several techniques to increase conversion like framing, loss-aversion."
+        sectionID="science"
+        alignExtraContent="left"
+      >
+        <div class="extra-content-container"></div>
+      </content-section>
       <footer class="footer">
         <router-link :to="{ name: 'home' }">Back home</router-link>
       </footer>
@@ -79,10 +90,14 @@
 
 <script>
 import elements from "@/assets/chemicalElements.js";
+import contentSummery from "@/components/buildingBlocks/contentSummery.vue";
+import contentSection from "@/components/buildingBlocks/contentSection.vue";
 
 export default {
-  components: {},
-  //if the basics are being edited, this array contains existing basic information
+  components: {
+    contentSummery,
+    contentSection
+  },
   props: [],
   name: "science",
   data() {
@@ -207,7 +222,7 @@ export default {
 
 .atom-container {
   height: 100vh;
-  width: 200vw;
+  width: 150vw;
   display: grid;
 }
 
@@ -223,6 +238,13 @@ export default {
   background: var(--science-gradient);
   opacity: 0;
   transition: all 0.4s var(--moving-out);
+}
+
+@media (min-width: 70em) {
+  .atom {
+    padding: var(--1base);
+    width: 8rem;
+  }
 }
 
 .atom--background {
@@ -280,7 +302,7 @@ export default {
   position: relative;
 }
 
-.backgroud-transition {
+.background-transition {
   position: relative;
   height: 30vh;
   width: 100%;
@@ -300,58 +322,49 @@ export default {
   opacity: 1;
   transition: all 0.4s var(--moving-out);
 }
+/*----------------------------------------------------*/
 
 .main-content {
   padding: 10vh 0 5vh 0;
   display: grid;
-  grid-row-gap: var(--1base);
+  grid-auto-rows: min-content;
 }
 
-.headline-wrapper {
-  display: grid;
-  grid-template-columns: var(--view-main);
+@media (min-width: 30em) {
+  .main-content {
+    padding: 15vh 0 5vh 0;
+  }
 }
 
-.main--headline {
-  grid-column: 2/3;
+.main-content--headline {
   font-size: var(--headline);
-  line-height: 120%;
   color: var(--science-color);
   text-shadow: 0px 0px 5px hsla(0, 0%, 0%, 0.1);
+  padding-left: 5vw;
+  margin: 5vh 0;
 }
 
-.content-wrapper {
-  display: grid;
-  grid-template-columns: var(--view-main);
-  grid-auto-rows: min-content;
-  padding: var(--content-padding);
-  grid-row-gap: var(--row-gap);
-  background-color: var(--background-secondary);
-  min-height: 40vh;
+@media (min-width: 70em) {
+  .main-content--headline {
+    padding-left: 15vw;
+  }
 }
 
-.headline {
-  grid-column: 2/3;
-  color: var(--science-color);
-  font-size: var(--subheadline);
+.content-section-layout:last-of-type {
+  border-bottom: 1px solid var(--grey-600);
 }
 
-.text {
-  grid-column: 2/3;
-  font-size: var(--2base);
-}
-
-.text-box--small {
-  background-color: var(--background-primary);
-  border-radius: var(--fourthbase);
-  padding: var(--2base);
-  grid-column: 2/3;
-}
-
+/*----------------------------------------------------*/
 .footer {
   display: flex;
   justify-content: center;
   align-items: flex-end;
   height: 10vh;
+}
+
+@media (min-width: 45em) {
+  .footer {
+    grid-column: 1/7;
+  }
 }
 </style>

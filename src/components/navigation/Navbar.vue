@@ -2,7 +2,7 @@
   <nav class="navbar" id="nav">
     <section class="nav-content">
       <router-link class="initals-link" :to="{ name: 'home' }">
-        <h2 class="initals" @click="closeMenu()">LP</h2></router-link
+        <h3 class="initals" @click="closeMenu()">LP</h3></router-link
       >
 
       <ul class="menu-items">
@@ -23,7 +23,7 @@
     </section>
 
     <aside class="extended-navigation" id="nav-extended">
-      <ul class="menu-extended" v-if="$route.name === 'home'">
+      <ul class="menu-extended" v-if="navbarState">
         <a
           v-scroll-to="{
             el: `#${entry.id}`,
@@ -72,7 +72,7 @@ export default {
       activeHambuerMenu: false,
       sectionEntries: [
         { id: "intro", text: "Intro" },
-        { id: "development", text: "Web development" },
+        { id: "frontend", text: "Frontend" },
         { id: "design", text: "UX design" },
         { id: "marketing", text: "Marketing" },
         { id: "science", text: "Science" },
@@ -94,6 +94,17 @@ export default {
       this.activeHambuerMenu = false;
       let nav = document.getElementById("nav-extended");
       nav.classList.remove("active");
+    }
+  },
+  computed: {
+    navbarState() {
+      let widthCondition = window.innerWidth < 600;
+      let routeCondition = this.$route.name === "home";
+
+      if (widthCondition && routeCondition) {
+        return true;
+      }
+      return false;
     }
   }
 };
@@ -140,7 +151,7 @@ export default {
 }
 
 .initals {
-  color: var(--white);
+  color: white;
   padding: 0;
 }
 
@@ -162,7 +173,7 @@ export default {
 }
 
 .item {
-  color: var(--white);
+  color: white;
   font-size: var(--2base);
   font-weight: bold;
   opacity: 0;
@@ -224,7 +235,7 @@ export default {
 
 .item-extended {
   grid-column: 2/3;
-  color: var(--white);
+  color: white;
   font-size: var(--2base);
   font-weight: bold;
   margin-bottom: var(--2base);

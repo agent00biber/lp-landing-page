@@ -83,28 +83,30 @@
     </section>
 
     <section class="main-content" id="teamwork--main-content">
-      <header class="headline-wrapper">
-        <h1 class="main--headline">Empowering Teamwork</h1>
-      </header>
+      <h1 class="main-content--headline">Empowering Teamwork</h1>
 
-      <div class="content-wrapper">
-        <h2 class="headline">Why do I understand teams?</h2>
-
-        <p class="text">
-          I worked my whole life in teams but are (as of now) a team of one. I
-          know where the bottlenecks are and how to ask for and give help.
-        </p>
-      </div>
-      <div class="content-wrapper">
-        <h2 class="headline">Advancing Ideas together</h2>
-
-        <p class="text">
-          I am always looking for like-minded people to test and challenge my
-          ideas and my perspective. Together we can find questions and solutions
-          a single mind was unable to think of.
-        </p>
-      </div>
-
+      <content-summery
+        class="content-summery-layout js-content-observe"
+        headline="Understanding Teamwork"
+        text="I am always looking for like-minded people to test and challenge my ideas and my perspective. Together we can find questions and solutions a single mind was unable to think of."
+        sectionID="teamwork"
+        :summeryContent="[
+          {
+            headline: 'Ideas for like-minded people to explore',
+            text:
+              'Im always looking for nice poeple to work with. If you have an idea for a healthcare app or want to work on some of my ideas, get in contact.'
+          }
+        ]"
+      />
+      <content-section
+        class="content-section-layout js-content-observe"
+        headline="Ideas for likeminded people to explore"
+        text="Here is a small list of ideas we could do together, if you dont have any right now. I can focus on either design or development whatever suits you best."
+        sectionID="teamwork"
+        alignExtraContent="right"
+      >
+        <div class="extra-content-container"></div>
+      </content-section>
       <footer class="footer">
         <router-link :to="{ name: 'home' }">Back home</router-link>
       </footer>
@@ -113,9 +115,14 @@
 </template>
 
 <script>
+import contentSummery from "@/components/buildingBlocks/contentSummery.vue";
+import contentSection from "@/components/buildingBlocks/contentSection.vue";
+
 export default {
-  components: {},
-  //if the basics are being edited, this array contains existing basic information
+  components: {
+    contentSummery,
+    contentSection
+  },
   props: [],
   name: "teamwork",
   data() {
@@ -223,58 +230,50 @@ export default {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+/*----------------------------------------------------*/
 
 .main-content {
   padding: 10vh 0 5vh 0;
   display: grid;
-  grid-row-gap: var(--1base);
+  grid-auto-rows: min-content;
 }
 
-.headline-wrapper {
-  display: grid;
-  grid-template-columns: var(--view-main);
+@media (min-width: 30em) {
+  .main-content {
+    padding: 15vh 0 5vh 0;
+  }
 }
 
-.main--headline {
-  grid-column: 2/3;
+.main-content--headline {
   font-size: var(--headline);
-  line-height: 120%;
   color: var(--teamwork-color);
   text-shadow: 0px 0px 5px hsla(0, 0%, 0%, 0.1);
+  padding-left: 5vw;
+  margin: 5vh 0;
 }
 
-.content-wrapper {
-  display: grid;
-  grid-template-columns: var(--view-main);
-  grid-auto-rows: min-content;
-  padding: var(--content-padding);
-  grid-row-gap: var(--row-gap);
-  background-color: var(--background-secondary);
-  min-height: 40vh;
+@media (min-width: 70em) {
+  .main-content--headline {
+    padding-left: 15vw;
+  }
 }
 
-.headline {
-  grid-column: 2/3;
-  color: var(--teamwork-color);
-  font-size: var(--subheadline);
+.content-section-layout:last-of-type {
+  border-bottom: 1px solid var(--grey-600);
 }
 
-.text {
-  grid-column: 2/3;
-  font-size: var(--2base);
-}
-
-.text-box--small {
-  background-color: var(--background-primary);
-  border-radius: var(--fourthbase);
-  padding: var(--2base);
-  grid-column: 2/3;
-}
+/*----------------------------------------------------*/
 
 .footer {
   display: flex;
   justify-content: center;
   align-items: flex-end;
   height: 10vh;
+}
+
+@media (min-width: 45em) {
+  .footer {
+    grid-column: 1/7;
+  }
 }
 </style>

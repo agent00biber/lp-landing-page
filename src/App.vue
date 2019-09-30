@@ -65,7 +65,7 @@ export default {
   --background-gradient: linear-gradient(
     180deg,
     var(--grey-800) 0%,
-    var(--grey-900) 100%
+    var(--grey-900) 60%
   );
 
   --white: hsla(0, 0%, 90%, 1);
@@ -76,12 +76,12 @@ export default {
 
   /*sections*/
 
-  --development-gradient: linear-gradient(135deg, #3a6186 0%, #2c8925 100%);
-  --development-color: hsla(133, 45%, 34%, 1);
+  --frontend-gradient: linear-gradient(135deg, #3a6186 0%, #2c8925 100%);
+  --frontend-color: hsla(133, 45%, 34%, 1);
 
   --design-gradient: linear-gradient(
     135deg,
-    #dd3e54 0%,
+    #dd3e54 30%,
     #7abcb6 70%,
     #6be585 100%
   );
@@ -108,7 +108,7 @@ export default {
   /*spacing*/
   /*padding*/
   --padding-top: var(--7base);
-  --row-gap: var(--2base);
+  --row-gap: var(--3base);
 
   /*views*/
   --view-main: 0.5fr 5fr 0.5fr;
@@ -124,25 +124,54 @@ export default {
   --sticky-headline-padding: 20vh;
 
   /*main-content*/
-  --headline: var(--4base);
-  --subheadline: var(--2base);
-  --content-padding: var(--5base) 0;
+  --headline: 10vw;
+  --subheadline: 6.5vw;
+  --content-padding: 8vh 0;
 }
 
 @media (min-width: 22.5em) {
   :root {
     --view-main: 1fr 8fr 1fr;
-
-    --headline: var(--5base);
-    --subheadline: var(--3base);
-    --content-padding: var(--7base) 0;
   }
 }
 
 @media (min-width: 37.5em) {
   :root {
-    --1base: 1.1rem;
+    --view-main: 1fr 4fr 1fr;
     --sticky-headline-padding: 30vh;
+    --headline: 7vw;
+    --subheadline: 5vw;
+    --content-padding: 10vh 0;
+  }
+}
+
+@media (min-width: 45em) {
+  :root {
+    --headline: 5.5vw;
+    --content-padding: 5vh 0;
+    --subheadline: 4vw;
+  }
+}
+
+@media (min-width: 56em) {
+  :root {
+    --view-main: 1fr 3fr 1fr;
+    --subheadline: 3vw;
+  }
+}
+
+@media (min-width: 70em) {
+  :root {
+    --view-main: 1fr 2fr 1fr;
+    --headline: 5vw;
+    --subheadline: 2vw;
+    --content-padding: 10vh 0;
+  }
+}
+
+@media (min-width: 80em) {
+  :root {
+    --headline: 4vw;
   }
 }
 
@@ -205,8 +234,8 @@ h1 {
   /* Box-model */
   padding-bottom: var(--1base);
   /* Typography */
-  line-height: 150%;
-  font-size: var(--4base);
+  line-height: 100%;
+  font-size: 15vw;
   /* Visual */
   color: var(--white);
 
@@ -219,7 +248,8 @@ h2 {
   /* Box-model */
   padding-bottom: var(--halfbase);
   /* Typography */
-  font-size: var(--3base);
+  font-size: 12.5vw;
+  line-height: 130%;
   /* Visual */
   color: var(--white);
   /* Misc */
@@ -229,12 +259,98 @@ h3 {
   /* Positioning */
 
   /* Box-model */
-
+  padding-bottom: var(--fourthbase);
   /* Typography */
-  font-size: var(--2base);
+  line-height: 120%;
+  font-size: 7.5vw;
   /* Visual */
   color: var(--white);
   /* Misc */
+}
+
+h4 {
+  /* Positioning */
+
+  /* Box-model */
+
+  /* Typography */
+  line-height: 130%;
+  font-size: 5vw;
+  /* Visual */
+  color: var(--white);
+  /* Misc */
+}
+
+@media (min-width: 37.5em) {
+  h1 {
+    font-size: 13vw;
+  }
+
+  h2 {
+    font-size: 7vw;
+  }
+
+  h3 {
+    font-size: 5vw;
+  }
+
+  h4 {
+    font-size: 3vw;
+  }
+}
+
+@media (min-width: 56em) {
+  h1 {
+    font-size: 11vw;
+  }
+
+  h2 {
+    font-size: 6vw;
+  }
+
+  h3 {
+    font-size: 4vw;
+  }
+
+  h4 {
+    font-size: 3vw;
+  }
+}
+
+@media (min-width: 70em) {
+  h1 {
+    font-size: 6.5vw;
+  }
+
+  h2 {
+    font-size: 4vw;
+  }
+
+  h3 {
+    font-size: 3vw;
+  }
+
+  h4 {
+    font-size: 2vw;
+  }
+}
+
+@media (min-width: 80em) {
+  h1 {
+    font-size: 5.5vw;
+  }
+
+  h2 {
+    font-size: 3vw;
+  }
+
+  h3 {
+    font-size: 2vw;
+  }
+
+  h4 {
+    font-size: 1.8vw;
+  }
 }
 
 p,

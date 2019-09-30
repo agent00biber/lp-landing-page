@@ -56,27 +56,32 @@
       </div>
     </section>
     <section class="main-content">
-      <header class="headline-wrapper">
-        <h1 class="main--headline">Working knowledge</h1>
-      </header>
+      <h1 class="main-content--headline">Working knowledge</h1>
 
-      <div class="content-wrapper">
-        <h2 class="headline">Just one more puzzle</h2>
+        <content-summery
+          class="content-summery-layout js-content-observe"
+          headline="Live long learning"
+          text="I am fueled by puzzles and the unknown. I want to learn and understand everything and am easily amazed by simple solutions to difficult problems."
+          sectionID="learning"
+          :summeryContent="[
+            {
+              headline: 'What comes next',
+              text:
+                'For now, I want to advance my javascript and frontend knowledge before I break into the world of mobile development and getting started with flutter.'
+            }
+          ]"
+        />
+        <content-section
+          class="content-section-layout js-content-observe"
+          headline="What comes next"
+          text="There are still serveral topics to tackle before movign to another language."
+          sectionID="learning"
+          alignExtraContent="right"
 
-        <p class="text">
-          I am Fueled by puzzles and the unknown. I want to learn and understand
-          everything and am easily amazed by simple solutions to difficult
-          problems.
-        </p>
-      </div>
-      <div class="content-wrapper">
-        <h2 class="headline">What comes next</h2>
-
-        <p class="text">
-          For now, I want to advance my javascript and frontend knowledge before
-          I break into the world of mobile development and getting started with
-          flutter.
-        </p>
+        >
+          <div class="extra-content-container"></div>
+        </content-section>
+        </div>
       </div>
 
       <footer class="footer">
@@ -87,9 +92,15 @@
 </template>
 
 <script>
+import contentSummery from "@/components/buildingBlocks/contentSummery.vue";
+import contentSection from "@/components/buildingBlocks/contentSection.vue";
+
 export default {
-  components: {},
-  //if the basics are being edited, this array contains existing basic information
+  components: {
+    contentSummery,
+    contentSection
+  },
+
   props: [],
   name: "learning",
   data() {
@@ -262,6 +273,18 @@ export default {
 .conclusion-content--headline {
   opacity: 1;
   transition: all 0.4s var(--moving-out);
+  font-size: var(--headline);
+}
+
+@media (min-width: 56em) {
+  .conclusion-content {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .conclusion-content--headline {
+    font-size: var(--subheadline);
+    margin-bottom: var(--row-gap);
+  }
 }
 
 .conclusion-content .headline1 {
@@ -280,58 +303,50 @@ export default {
   opacity: 0;
   transition: all 0.4s var(--moving-out);
 }
+/*----------------------------------------------------*/
 
 .main-content {
   padding: 10vh 0 5vh 0;
   display: grid;
-  grid-row-gap: var(--1base);
+  grid-auto-rows: min-content;
 }
 
-.headline-wrapper {
-  display: grid;
-  grid-template-columns: var(--view-main);
+@media (min-width: 30em) {
+  .main-content {
+    padding: 15vh 0 5vh 0;
+  }
 }
 
-.main--headline {
-  grid-column: 2/3;
+.main-content--headline {
   font-size: var(--headline);
-  line-height: 120%;
   color: var(--learning-color);
   text-shadow: 0px 0px 5px hsla(0, 0%, 0%, 0.1);
+  padding-left: 5vw;
+  margin: 5vh 0;
 }
 
-.content-wrapper {
-  display: grid;
-  grid-template-columns: var(--view-main);
-  grid-auto-rows: min-content;
-  padding: var(--content-padding);
-  grid-row-gap: var(--row-gap);
-  background-color: var(--background-secondary);
-  min-height: 40vh;
+@media (min-width: 70em) {
+  .main-content--headline {
+    padding-left: 15vw;
+  }
 }
 
-.headline {
-  grid-column: 2/3;
-  color: var(--learning-color);
-  font-size: var(--subheadline);
+.content-section-layout:last-of-type {
+  border-bottom: 1px solid var(--grey-600);
 }
 
-.text {
-  grid-column: 2/3;
-  font-size: var(--2base);
-}
-
-.text-box--small {
-  background-color: var(--background-primary);
-  border-radius: var(--fourthbase);
-  padding: var(--2base);
-  grid-column: 2/3;
-}
+/*----------------------------------------------------*/
 
 .footer {
   display: flex;
   justify-content: center;
   align-items: flex-end;
   height: 10vh;
+}
+
+@media (min-width: 45em) {
+  .footer {
+    grid-column: 1/7;
+  }
 }
 </style>

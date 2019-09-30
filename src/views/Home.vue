@@ -2,7 +2,17 @@
   <article class="home" id="home">
     <section class="svg-cutout">
       <div id="svg-overlay" class="svg-overlay">
-        <img src="@/assets/into-name-lp.svg" alt="lucas paetow" />
+        <picture>
+          <source
+            media="(max-width: 40em)"
+            srcset="@/assets/intro-name-375.svg"
+          />
+          <source
+            media="(min-width: 40.1em)"
+            srcset="@/assets/intro-name-580.svg"
+          />
+          <img src="@/assets/intro-name-375.svg" alt="lucas paetow" />
+        </picture>
       </div>
     </section>
     <section class="sticky-wrapper">
@@ -15,21 +25,21 @@
       </div>
     </section>
     <section class="intro observe-section" id="intro">
-      <p class="text--intro">
+      <h3 class="text--intro">
         I can help to reduce conflict within your team, because I understand
         their pain points.
-      </p>
+      </h3>
       <router-link class="link--intro" :to="{ name: 'intro' }"
-        ><p class="text--link">See conflitct examples</p>
+        ><h4 class="text--link">See conflitct examples</h4>
       </router-link>
     </section>
 
     <section class="main-content">
       <home-section
         class="observe-section"
-        headline="WEB-DEVELOPMENT"
+        headline="FRONTEND"
         body="I build javascript web apps with vue"
-        sectionID="development"
+        sectionID="frontend"
       >
       </home-section>
 
@@ -67,7 +77,7 @@
 
       <home-section
         class="observe-section"
-        headline="LIVE LONG LEARNING"
+        headline="LEARNING"
         body="I embrace the puzzle and grind for the solution or a workaround"
         sectionID="learning"
       >
@@ -110,10 +120,6 @@ export default {
 
   methods: {
     scrollSVG() {
-      if (this.$route.name !== "home") {
-        return;
-      }
-
       const heroContent = document.getElementById("hero-content");
       const svgContainer = document.getElementById("svg-overlay");
       const navBar = document.querySelector("#nav");
@@ -182,9 +188,11 @@ export default {
       });
     }, options);
 
-    observeSections.forEach(section => {
-      observer.observe(section);
-    });
+    if (window.innerWidth < 600) {
+      observeSections.forEach(section => {
+        observer.observe(section);
+      });
+    }
   },
   destroyed() {
     window.removeEventListener("scroll", this.scrollSVG);
@@ -228,7 +236,6 @@ export default {
 
 img {
   width: 100%;
-  max-width: 80vh;
   margin: 0 auto;
   outline: 50vh solid var(--background-tertiary);
   outline-offset: -2px;
@@ -288,75 +295,60 @@ img {
 }
 
 .headline-top {
-  font-size: var(--6base);
   line-height: 100%;
 }
 
 .headline-bottom {
-  font-size: var(--3base);
   line-height: 120%;
-}
-
-@media (min-width: 22.5em) {
-  .headline-top {
-    font-size: var(--7base);
-    line-height: 100%;
-  }
-
-  .headline-bottom {
-    font-size: var(--4base);
-    line-height: 120%;
-  }
-}
-
-@media (min-width: 30em) {
-  .headline-top {
-    font-size: var(--8base);
-  }
 }
 
 .intro {
   display: grid;
   grid-template-columns: var(--view-main);
-  grid-auto-rows: min-content;
+  grid-template-rows: 1fr min-content min-content 1fr;
   padding: var(--content-padding);
   min-height: 50vh;
   grid-row-gap: var(--row-gap);
   margin-bottom: var(--1base);
 }
 
-.text--intro {
-  grid-column: 2/3;
-  font-size: var(--2base);
-  font-weight: bold;
+@media (min-width: 70em) {
+  .intro {
+    min-height: 70vh;
+  }
 }
 
-@media (min-width: 30em) {
-  .text--intro {
-    font-size: var(--3base);
-  }
+.text--intro {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  font-weight: bold;
 }
 
 .link--intro {
   grid-column: 2/3;
+  grid-row: 3/4;
   text-decoration: underline var(--white);
 }
 
 .text--link {
   color: var(--white);
   font-weight: bold;
-  font-size: var(--2base);
   padding-right: var(--halfbase);
 }
 
 .main-content {
   display: grid;
-  grid-row-gap: var(--1base);
 }
 
-@media (min-width: 30em) {
+@media (min-width: 37.5em) {
   .main-content {
-    grid-row-gap: var(--row-gap);
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 60em) {
+  .main-content {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 

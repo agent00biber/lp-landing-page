@@ -21,12 +21,12 @@ export default new Router({
       component: () => import("@/views/Intro.vue")
     },
     {
-      path: "/development",
-      name: "development",
+      path: "/frontend",
+      name: "frontend",
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import("@/views/Development.vue")
+      component: () => import("@/views/Frontend.vue")
     },
     {
       path: "/design",
