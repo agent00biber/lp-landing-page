@@ -43,8 +43,7 @@ export default {
 .content-summery {
   display: grid;
   grid-template-columns: 5vw 1fr 5vw;
-  grid-auto-rows: min-content;
-  padding: 15vh 0;
+  grid-template-rows: 15vh repeat(3, min-content) 15vh;
   grid-row-gap: var(--row-gap);
   background-color: var(--background-tertiary);
   border-top: 1px solid var(--grey-600);
@@ -53,28 +52,33 @@ export default {
 @media (min-width: 45em) {
   .content-summery {
     grid-template-columns: 5vw 1fr 1fr 5vw;
+    grid-template-rows: 7.5vh repeat(3, min-content) 7.5vh;
   }
 }
 
 @media (min-width: 70em) {
   .content-summery {
     grid-template-columns: 5vw 1fr 2fr 5vw;
-    grid-column-gap: var(--row-gap);
+    grid-template-rows: 15vh repeat(2, min-content) 15vh;
+    grid-column-gap: 5vw;
   }
 }
 
 .content-summery--headline {
   grid-column: 2/3;
+  grid-row: 2/3;
   font-size: var(--4base);
 }
 
 .content-summery--text {
   grid-column: 2/3;
+  grid-row: 3/4;
   font-size: var(--2base);
 }
 
 .content-summery-wrapper {
   grid-column: 2/3;
+  grid-row: 4/5;
 }
 
 .content-summery-wrapper--table-of-content {
@@ -86,6 +90,7 @@ export default {
   border: 1px solid var(--grey-600);
   padding: 5vw;
   display: grid;
+  grid-template-columns: 1fr;
   grid-row-gap: var(--5base);
 }
 
@@ -103,18 +108,18 @@ export default {
 @media (min-width: 70em) {
   .content-summery--headline {
     grid-column: 2/3;
-    grid-row: 1/2;
+    grid-row: 2/3;
     align-self: end;
   }
 
   .content-summery--text {
     grid-column: 2/3;
-    grid-row: 2/3;
+    grid-row: 3/4;
   }
 
   .content-summery-wrapper {
     grid-column: 3/4;
-    grid-row: 2/3;
+    grid-row: 3/4;
   }
 
   .content-summery-wrapper--table-of-content {
@@ -122,7 +127,8 @@ export default {
   }
   .content-summery--projects {
     border: 1px solid var(--background-tertiary);
-    padding: 0vw 5vw;
+    padding: 0vw;
+    grid-column-gap: 5vw;
   }
 }
 

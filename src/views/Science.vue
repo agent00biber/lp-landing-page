@@ -58,7 +58,7 @@
           {
             headline: 'Retrosynthesis',
             text:
-              'Science prepared me for a lifetime of learning, an analytical approach to problems and a different, product-focused perspective: retrosynthesis. You start from the product you want to have and break it down into manageable parts and actions.'
+              'Science prepared me for a lifetime of learning, an analytical approach to problems and a different, product-focused perspective: retrosynthesis.'
           }
         ]"
       />
@@ -75,7 +75,7 @@
       <content-section
         class="content-section-layout js-content-observe"
         headline="Retrosynthesis"
-        text="Still in progress. A mockup store to order colorfull tshirts.  Uses several techniques to increase conversion like framing, loss-aversion."
+        text="Science prepared me for a lifetime of learning, an analytical approach to problems and a different, product-focused perspective: retrosynthesis. You start from the product you want to have and break it down into manageable parts and actions."
         sectionID="science"
         alignExtraContent="left"
       >
@@ -360,11 +360,5 @@ export default {
   justify-content: center;
   align-items: flex-end;
   height: 10vh;
-}
-
-@media (min-width: 45em) {
-  .footer {
-    grid-column: 1/7;
-  }
 }
 </style>

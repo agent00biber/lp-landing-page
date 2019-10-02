@@ -2,224 +2,227 @@
   <article class="design">
     <section class="sticky-wrapper">
       <div class="sticky-content" id="js-sticky-content">
-        <div class="line line-vertical line1 hidden"></div>
-        <aside class="sticky-background phase4 hidden"></aside>
-        <div class="main-content-container">
-          <header class="headline-wrapper">
-            <div class="line line-horizontal line3 hidden"></div>
-            <h1 class="main--headline phase0 headline-color">
+        <div class="main-content">
+          <aside class="main-content--background hidden"></aside>
+          <div class="line line-vertical line1a hidden"></div>
+          <div class="line line-vertical line1b hidden"></div>
+          <div class="line line-horizontal line1c hidden"></div>
+          <header class="main-content--headline">
+            <div class="line line-vertical line2a hidden"></div>
+            <div class="line line-vertical line2b hidden"></div>
+            <div class="line line-horizontal line2c hidden"></div>
+            <div class="line line-horizontal line2d hidden"></div>
+            <h1 class="main--headline hidden">
               Systematic UX-Design
             </h1>
-            <h1 class="main--headline phase2 hidden">
-              <div class="main--headline__skeleton"></div>
-              <div class="main--headline__skeleton"></div>
-            </h1>
-            <h1 class="main--headline phase3 hidden">
-              Big Headline - max 2 lines
-            </h1>
-            <h1 class="main--headline phase5 hidden headline-color">
+            <h1 class="main--headline skeleton hidden">
               Systematic UX-Design
             </h1>
-            <p class="headline-label label hidden phase3">h1</p>
-            <div class="line line-horizontal line4 hidden"></div>
+            <h1 class="main--headline proto hidden">
+              [adjective] + [Section]
+            </h1>
+            <p class="prototype--headline prototypes">h1</p>
+            <h1 class="main--headline hidden">
+              [adjective] + [Section]
+            </h1>
+            <h1 class="main--headline">
+              Systematic UX-Design
+            </h1>
           </header>
 
-          <div class="content-wrapper content-wrapper1">
-            <aside class="content-background phase1 hidden"></aside>
-            <div class="line line-horizontal line5 hidden"></div>
-            <div class="line line-horizontal line6 hidden"></div>
-            <p class="small-headline-label label hidden phase3">h2</p>
-            <h2 class="headline phase2 hidden">
-              <div class="headline__skeleton"></div>
-              <div class="headline__skeleton"></div>
+          <section class="content-summery">
+            <p class="prototype--subheadline prototypes">h2</p>
+            <h2 class="content-summery--headline hidden">
+              Understanding UX design
             </h2>
-            <h2 class="headline phase3 hidden">
-              Subheadline: 1-3 lines, depending on breaks
+            <h2 class="content-summery--headline skeleton hidden">
+              Understanding UX design
             </h2>
-            <h2 class="headline phase5 hidden headline-color">
-              Why do I understand the UX-department?
+            <h2 class="content-summery--headline proto hidden">
+              'Understanding' + [Section]
             </h2>
-            <div class="line line-horizontal line7 hidden"></div>
-            <div class="line line-horizontal line8 hidden"></div>
-            <p class="text-label label hidden phase3">p</p>
-            <div class="text-wrapper">
-              <div class="text skeleton-wrapper hidden phase2">
-                <div class="text__skeleton"></div>
-                <div class="text__skeleton"></div>
-                <div class="text__skeleton"></div>
-                <div class="text__skeleton"></div>
-                <div class="text__skeleton"></div>
-                <div class="text__skeleton"></div>
-              </div>
+            <h2 class="content-summery--headline ">
+              Understanding UX design
+            </h2>
 
-              <p class="text phase3 hidden">
-                Prototext: text descriping why I understand different aspekts of
-                a ux design and how to design with the user in mind and not for
-                dribbble only. Can vary in length.
-              </p>
-              <p class="text phase5 hidden">
-                Before all coding starts, I need to research, concept and
-                wireframe the product to know how everything fits together.
-                Where and when the user needs guidance.
-              </p>
+            <p class="prototype--body prototypes">p</p>
+            <p class="content-summery--text hidden">
+              Because before coding, I need to research, concept and wireframe
+              the product to know how everything fits together. Where and when
+              the user needs guidance. But also how to create beauty, delight
+              and how to foster a sense of excitement, so the user wants to
+              discover every feature
+            </p>
+            <p class="content-summery--text skeleton hidden">
+              Because before coding, I need to research, concept and wireframe
+              the product to know how everything fits together. Where and when
+              the user needs guidance. But also how to create beauty, delight
+              and how to foster a sense of excitement, so the user wants to
+              discover every feature
+            </p>
+            <p class="content-summery--text proto hidden">
+              prototext about my abilites, what i can do in terms of ux design
+              and how I hope this could help a company or a startup. This should
+              also reflect an eye for design and interest in the user.
+            </p>
+            <p class="content-summery--text ">
+              Because before coding, I need to research, concept and wireframe
+              the product to know how everything fits together. Where and when
+              the user needs guidance. But also how to create beauty, delight
+              and how to foster a sense of excitement, so the user wants to
+              discover every feature
+            </p>
+
+            <div class="prototype-wrapper">
+              <p class="prototype--content">h4</p>
+              <p class="prototype--content-headline">h3</p>
+              <p class="prototype--content-text">p</p>
+            </div>
+            <div class="content-summery-wrapper">
+              <h4 class="content-summery-wrapper--table-of-content">
+                Content
+              </h4>
+              <ul class="content-summery--projects">
+                <li
+                  class="content-summery--projects__project content-summery--projects__project1"
+                >
+                  <h3 class="project--headline hidden">
+                    Lovable Survey Creator
+                  </h3>
+                  <h3 class="project--headline skeleton hidden">
+                    Lovable Survey Creator
+                  </h3>
+                  <h3 class="project--headline proto hidden">
+                    [Name of the project]
+                  </h3>
+                  <h3 class="project--headline">
+                    Lovable Survey Creator
+                  </h3>
+                  <p class="project--text hidden">
+                    A simple survey generator to create beautiful and engaging
+                    questionairs.
+                  </p>
+                  <p class="project--text skeleton hidden">
+                    A simple survey generator to create beautiful and engaging
+                    questionairs.
+                  </p>
+                  <p class="project--text proto hidden">
+                    A small description about this project without many details.
+                  </p>
+                  <p class="project--text">
+                    A simple survey generator to create beautiful and engaging
+                    questionairs.
+                  </p>
+                </li>
+                <li
+                  class="content-summery--projects__project content-summery--projects__project1"
+                >
+                  <h3 class="project--headline hidden">
+                    T-shirt eCommerce store
+                  </h3>
+                  <h3 class="project--headline skeleton hidden">
+                    T-shirt eCommerce store
+                  </h3>
+                  <h3 class="project--headline proto hidden">
+                    [Name of the project]
+                  </h3>
+                  <h3 class="project--headline">
+                    T-shirt eCommerce store
+                  </h3>
+                  <p class="project--text hidden">
+                    T-shirt store A mockup store for brilliant t-shirts in every
+                    color there is.
+                  </p>
+                  <p class="project--text skeleton hidden">
+                    T-shirt store A mockup store for brilliant t-shirts in every
+                    color there is.
+                  </p>
+                  <p class="project--text proto hidden">
+                    A small description about this project without many details.
+                  </p>
+                  <p class="project--text ">
+                    T-shirt store A mockup store for brilliant t-shirts in every
+                    color there is.
+                  </p>
+                </li>
+              </ul>
             </div>
 
-            <div class="line line-horizontal line9 hidden"></div>
-            <div class="line line-horizontal line10 hidden"></div>
-          </div>
-          <div class="content-wrapper content-wrapper2">
-            <aside class="content-background phase1 hidden"></aside>
-            <div class="line line-horizontal line5 hidden"></div>
-            <div class="line line-horizontal line6 hidden"></div>
-            <p class="small-headline-label label hidden phase3">h2</p>
-            <h2 class="headline phase2 hidden">
-              <div class="headline__skeleton"></div>
-              <div class="headline__skeleton"></div>
-              <div class="headline__skeleton"></div>
-            </h2>
-            <h2 class="headline phase3 hidden">
-              Subheadline: 1-3 lines, depending on word breaks
-            </h2>
-            <h2 class="headline phase5 hidden headline-color">
-              Designing for the real world, not a design platform
-            </h2>
-            <div class="line line-horizontal line7 hidden"></div>
-            <div class="line line-horizontal line8 hidden"></div>
-            <p class="text-label label hidden phase3">p</p>
-            <div class="text-wrapper">
-              <div class="text skeleton-wrapper hidden phase2">
-                <div class="text__skeleton"></div>
-                <div class="text__skeleton"></div>
-                <div class="text__skeleton"></div>
-                <div class="text__skeleton"></div>
-                <div class="text__skeleton"></div>
-                <div class="text__skeleton"></div>
-              </div>
-              <p class="text phase3 hidden">
-                Prototext: text descriping why I understand different aspekts of
-                a ux design and how to design with the user in mind and not for
-                dribbble only. Can vary in length.
-              </p>
-              <p class="text phase5 hidden">
-                I also know how to create beauty, delight and how to foster a
-                sense of excitement, so the user wants to discover every
-                feature. But always with the user in mind and not the dribbble
-                front page.
-              </p>
-            </div>
+            <div class="line line-vertical line3a hidden"></div>
+            <div class="line line-vertical line3b hidden"></div>
+            <div class="line line-vertical line3c hidden"></div>
+            <div class="line line-vertical line3d hidden"></div>
+            <div class="line line-vertical line3e hidden"></div>
+            <div class="line line-vertical line3f hidden"></div>
+            <div class="line line-horizontal line3g hidden"></div>
+            <div class="line line-horizontal line3h hidden"></div>
+            <div class="line line-horizontal line3i hidden"></div>
+            <div class="line line-horizontal line3j hidden"></div>
+          </section>
 
-            <div class="line line-horizontal line9 hidden"></div>
-            <div class="line line-horizontal line10 hidden"></div>
-          </div>
-          <div class="content-wrapper content-wrapper3">
-            <aside class="content-background phase1 hidden"></aside>
-            <div class="line line-horizontal line5 hidden"></div>
-            <div class="line line-horizontal line6 hidden"></div>
-            <p class="small-headline-label label hidden phase3">h2</p>
-            <h2 class="headline phase2 hidden">
-              <div class="headline__skeleton"></div>
-            </h2>
-            <h2 class="headline phase3 hidden">
-              Subheadline: 1-3 lines
-            </h2>
-            <h2 class="headline phase5 hidden headline-color">
-              For an indepth perspective
-            </h2>
-            <div class="line line-horizontal line7 hidden"></div>
-            <div class="line line-horizontal line8 hidden"></div>
-            <p class="text-label label hidden phase3">p</p>
-            <div class="text-wrapper">
-              <div class="text skeleton-wrapper hidden phase2">
-                <div class="text__skeleton"></div>
-                <div class="text__skeleton"></div>
-                <div class="text__skeleton"></div>
-                <div class="text__skeleton"></div>
-                <div class="text__skeleton"></div>
-                <div class="text__skeleton"></div>
-              </div>
-              <p class="text phase3 hidden">
-                Prototext: linking to my other portfolio page with more details
-                and less flashy animations
-              </p>
-              <p class="text phase5 hidden">
-                Go to my portfolio page and read about my process
-              </p>
-              <div class="text-box--small phase5 hidden">
-                <a class="link" href="#">Portfolio</a>
+          <section class="content-extra-right content-section">
+            <div class="content-section--content-body">
+              <h2 class="content-body--headline">
+                Lovable Survey Creator
+              </h2>
+
+              <div class="content-body--text-wrapper">
+                <p class="content-body--text">
+                  A simple survey generator to create beautiful and engaging
+                  questionairs. Visit my casestudy website for an indepth
+                  persepective.
+                </p>
+                <button class="content-body--button">
+                  Read the casestudy
+                </button>
               </div>
             </div>
 
-            <div class="line line-horizontal line9 hidden"></div>
-            <div class="line line-horizontal line10 hidden"></div>
-          </div>
+            <div class="content-section--content-extra">
+              <div class="extra-content-container"></div>
+            </div>
+          </section>
+
+          <section class="content-extra-left content-section">
+            <div class="content-section--content-body">
+              <h2 class="content-body--headline">
+                T-shirt store
+              </h2>
+
+              <div class="content-body--text-wrapper">
+                <p class="content-body--text">
+                  Still in progress. A mockup store to order colorfull tshirts.
+                  Features around the idea of an SVG Overlay over an image with
+                  a CSS mixed-blend-mode (inspiration by u/overcloseness). This
+                  also combines marketing and UX aspects.
+                </p>
+                <button class="content-body--button">
+                  Read the casestudy
+                </button>
+              </div>
+            </div>
+
+            <div class="content-section--content-extra">
+              <div class="extra-content-container"></div>
+            </div>
+          </section>
         </div>
-        <div class="line line-vertical line2 hidden"></div>
       </div>
-    </section>
-    <section class="main-content">
-      <content-summery
-        class="content-summery-layout js-content-observe"
-        headline="Understanding UX design"
-        text="Because before coding, I need to research, concept and wireframe the product to know how everything fits together. Where and when the user needs guidance. But also how to create beauty, delight and how to foster a sense of excitement, so the user wants to discover every feature."
-        sectionID="design"
-        :summeryContent="[
-          {
-            headline: 'Lovable Survey Creator',
-            text:
-              'A simple survey generator to create beautiful and engaging questionairs. '
-          },
-          {
-            headline: 'T-shirt eCommerce store',
-            text:
-              'A mockup store for brilliant t-shirts in every color there is'
-          }
-        ]"
-      />
-      <content-section
-        class="content-section-layout js-content-observe"
-        headline="Lovable Survey Creator"
-        text="A simple survey generator to create beautiful and engaging questionairs. Visit my casestudy website for an indepth persepective."
-        sectionID="design"
-        alignExtraContent="right"
-        buttonText="read the casestudy"
-      >
-        <div class="extra-content-container"></div>
-      </content-section>
-      <content-section
-        class="content-section-layout js-content-observe"
-        headline="T-shirt eCommerce store"
-        text="Still in progress. A mockup store to order colorfull tshirts. Features around the idea of an SVG Overlay over an image with a CSS mixed-blend-mode (inspiration by u/overcloseness). This also combines marketing and UX aspects."
-        sectionID="design"
-        alignExtraContent="left"
-        buttonText="read the casestudy"
-      >
-        <div class="extra-content-container"></div>
-      </content-section>
-      <footer class="footer">
-        <router-link :to="{ name: 'home' }">Back home</router-link>
-      </footer>
     </section>
   </article>
 </template>
 
 <script>
-import contentSummery from "@/components/buildingBlocks/contentSummery.vue";
-import contentSection from "@/components/buildingBlocks/contentSection.vue";
-
 export default {
-  components: {
-    contentSummery,
-    contentSection
-  },
+  components: {},
   props: [],
   name: "design",
   data() {
     return {};
   },
-  methods: {
+  /*methods: {
     scrollWireframe() {
       let ratio = Math.max(window.scrollY) / window.innerHeight;
-      console.log(ratio);
 
       //phase0
       this.phase0(ratio);
@@ -370,7 +373,7 @@ export default {
         });
       }
     }
-  },
+},*/
   computed: {},
   created() {},
   //same check for route-view keep-alive
@@ -398,7 +401,7 @@ export default {
 }
 
 .sticky-wrapper {
-  height: 800vh;
+  height: 200vh;
 }
 
 .sticky-content {
@@ -407,10 +410,7 @@ export default {
   top: 0;
   z-index: 5;
   overflow: hidden;
-  background-color: var(--background-primary);
-  display: grid;
-  grid-template-rows: var(--sticky-headline-padding) 1fr;
-  grid-template-columns: var(--view-main);
+  background-color: var(--background-tertiary);
 }
 
 .sticky-background {
@@ -429,7 +429,6 @@ export default {
 }
 
 .line-vertical {
-  grid-row: 1/3;
   width: 1px;
   height: 100%;
 }
@@ -437,188 +436,6 @@ export default {
 .line-horizontal {
   height: 1px;
   width: 100%;
-}
-
-.line1 {
-  grid-column: 1/2;
-  justify-self: end;
-}
-
-.line2 {
-  grid-column: 3/4;
-  justify-self: start;
-}
-
-.main-content-container {
-  grid-row: 2/3;
-  grid-column: 1/4;
-  display: grid;
-  grid-row-gap: var(--1base);
-  position: relative;
-  z-index: 3;
-}
-
-.label {
-  align-self: start;
-  justify-self: center;
-}
-
-.headline-label {
-  grid-column: 1/2;
-  padding-top: var(--fourthbase);
-}
-
-.headline-wrapper {
-  display: grid;
-  grid-template-columns: var(--view-main);
-  grid-auto-rows: min-content;
-}
-
-.line3 {
-  grid-row: 1/2;
-  grid-column: 1/4;
-}
-
-.line4 {
-  grid-row: 3/4;
-  grid-column: 1/4;
-}
-
-.main--headline {
-  grid-row: 2/3;
-  grid-column: 2/3;
-  font-size: var(--headline);
-  line-height: 120%;
-  color: var(--white);
-  text-shadow: 0px 0px 5px hsla(0, 0%, 0%, 0.1);
-  position: relative;
-}
-
-.main--headline:first-of-type {
-  color: var(--design-color);
-}
-
-.main--headline__skeleton {
-  background-color: var(--white);
-  height: var(--headline);
-  width: 100%;
-  margin-bottom: var(--thirdbase);
-  transition: opacity 0.2s var(--moving-out);
-}
-
-.headline__skeleton {
-  background-color: var(--white);
-  height: var(--subheadline);
-  width: 100%;
-  margin-bottom: var(--thirdbase);
-  transition: opacity 0.2s var(--moving-out);
-}
-
-.content-wrapper {
-  display: grid;
-  grid-template-columns: var(--view-main);
-  grid-auto-rows: min-content;
-  background-color: var(--background-primary);
-  min-height: 40vh;
-}
-
-.content-background {
-  grid-column: 1/4;
-  grid-row: 1/9;
-  background-color: var(--background-secondary);
-  transition: opacity 0.2s var(--moving-out);
-}
-
-.line5 {
-  grid-column: 1/4;
-  grid-row: 1/2;
-  margin-bottom: var(--5base);
-}
-
-@media (min-width: 22.5em) {
-  .line5 {
-    margin-bottom: var(--7base);
-  }
-}
-
-.line6 {
-  grid-column: 1/4;
-  grid-row: 2/3;
-}
-
-.small-headline-label {
-  grid-column: 1/2;
-  grid-row: 3/4;
-  padding-top: var(--thirdbase);
-}
-
-.headline {
-  grid-column: 2/3;
-  grid-row: 3/4;
-  color: var(--white);
-  font-size: var(--subheadline);
-}
-
-.line7 {
-  grid-column: 1/4;
-  grid-row: 4/5;
-  margin-bottom: var(--row-gap);
-}
-
-.line8 {
-  grid-row: 5/6;
-  grid-column: 1/4;
-}
-
-.text-label {
-  grid-column: 1/2;
-  grid-row: 6/7;
-  padding-top: var(--fourthbase);
-}
-
-.text-wrapper {
-  grid-column: 2/3;
-  grid-row: 6/7;
-  display: grid;
-}
-
-.text {
-  font-size: var(--2base);
-  grid-column: 1/2;
-  grid-row: 1/2;
-}
-
-.text__skeleton {
-  background-color: var(--white);
-  height: var(--3base);
-  width: 100%;
-  margin-bottom: var(--thirdbase);
-  transition: opacity 0.2s var(--moving-out);
-}
-
-.text-box--small {
-  margin-top: var(--row-gap);
-  padding: var(--1base);
-  border-radius: var(--fourthbase);
-  background-color: var(--background-primary);
-  width: 100%;
-}
-
-.line9 {
-  grid-column: 1/4;
-  grid-row: 7/8;
-}
-
-.line10 {
-  margin-top: var(--5base);
-  grid-column: 1/4;
-  grid-row: 8/9;
-}
-
-@media (min-width: 22.5em) {
-  .line10 {
-    margin-top: var(--7base);
-  }
 }
 
 .hidden {
@@ -631,40 +448,476 @@ export default {
   transition: all 0.4s var(--moving-out);
 }
 
-.headline-color {
-  color: var(--design-color);
-}
-
 /*----------------------------------------------------*/
 
 .main-content {
-  padding: 10vh 0 5vh 0;
+  padding: 0 0 5vh 0;
   display: grid;
   grid-auto-rows: min-content;
+  grid-template-rows: calc(var(--7base) + 10vh);
+  grid-template-columns: 5vw 1fr 5vw;
 }
 
 @media (min-width: 30em) {
   .main-content {
-    padding: 15vh 0 5vh 0;
+    grid-template-rows: calc(var(--7base) + 15vh);
   }
 }
 
+.main-content--background {
+  background-color: var(--background-primary);
+  grid-row: 1/7;
+  grid-column: 1/4;
+  position: relative;
+  z-index: 3;
+}
+
 .main-content--headline {
-  font-size: var(--headline);
-  color: var(--frontend-color);
-  text-shadow: 0px 0px 5px hsla(0, 0%, 0%, 0.1);
-  padding-left: 5vw;
-  margin: 5vh 0;
+  grid-row: 2/3;
+  grid-column: 1/4;
+  display: grid;
+  grid-template-columns: 5vw 1fr 5vw;
+  grid-template-rows: 5vh 1fr 5vh;
+  grid-auto-rows: min-content;
+  position: relative;
+  z-index: 4;
+}
+
+@media (min-width: 45em) {
+  .main-content--headline {
+    grid-template-columns: 10vw 1fr 10vw;
+  }
 }
 
 @media (min-width: 70em) {
   .main-content--headline {
-    padding-left: 15vw;
+    grid-template-columns: 15vw 1fr 15vw;
   }
+}
+
+.prototype--headline {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+.main--headline {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  font-size: var(--headline);
+  color: var(--design-color);
 }
 
 .content-section-layout:last-of-type {
   border-bottom: 1px solid var(--grey-600);
+}
+
+.content-summery {
+  grid-row: 3/4;
+  grid-column: 1/4;
+}
+
+.content-extra-right {
+  grid-row: 4/5;
+  grid-column: 1/4;
+}
+
+.content-extra-left {
+  grid-row: 5/6;
+  grid-column: 1/4;
+}
+
+/*----------------------------------------------------*/
+.content-summery {
+  display: grid;
+  grid-template-columns: 5vw 1fr 5vw;
+  grid-template-rows: 15vh repeat(3, min-content) 15vh;
+  grid-row-gap: var(--row-gap);
+  background-color: var(--background-tertiary);
+  border-top: 1px solid var(--grey-600);
+}
+
+@media (min-width: 45em) {
+  .content-summery {
+    grid-template-rows: 7.5vh repeat(3, min-content) 7.5vh;
+    grid-template-columns: 5vw 1fr 1fr 5vw;
+  }
+}
+
+@media (min-width: 70em) {
+  .content-summery {
+    grid-template-columns: 5vw 1fr 0.97fr 0.97fr 5vw;
+    grid-template-rows: 15vh repeat(2, min-content) 15vh;
+    grid-column-gap: 5vw;
+  }
+}
+
+.content-summery--headline {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  font-size: var(--4base);
+}
+
+.prototype--subheadline {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+.content-summery--text {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  font-size: var(--2base);
+}
+.prototype--body {
+  grid-column: 1/2;
+  grid-row: 3/4;
+}
+
+.content-summery-wrapper {
+  grid-column: 2/3;
+  grid-row: 4/5;
+}
+
+.prototype-wrapper {
+  display: none;
+}
+
+@media (max-width: 69.9em) and (min-width: 37.5em) {
+  .prototype-wrapper {
+    grid-column: 1/2;
+    grid-row: 4/5;
+    display: grid;
+    grid-template-rows: 9vh 4vh min-content;
+    padding-left: 1vw;
+  }
+}
+
+.content-summery-wrapper--table-of-content {
+  margin-bottom: var(--thirdbase);
+  font-size: var(--1base);
+}
+
+.content-summery--projects {
+  background-color: var(--background-tertiary);
+  border: 1px solid var(--grey-600);
+  padding: 5vh 5vw;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: var(--5base);
+}
+
+@media (min-width: 45em) {
+  .content-summery-wrapper {
+    grid-column: 2/4;
+  }
+  .content-summery--projects {
+    padding: 3vh 3vw;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: var(--5base);
+  }
+}
+
+@media (min-width: 70em) {
+  .content-summery--headline {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    align-self: end;
+  }
+
+  .content-summery--text {
+    grid-column: 2/3;
+    grid-row: 3/4;
+  }
+
+  .content-summery-wrapper {
+    grid-column: 3/5;
+    grid-row: 3/4;
+  }
+
+  .content-summery-wrapper--table-of-content {
+    display: none;
+  }
+  .content-summery--projects {
+    border: 1px solid var(--background-tertiary);
+    padding: 0vw;
+    grid-column-gap: 5vw;
+  }
+}
+
+.content-summery--projects__project {
+  text-decoration: none;
+  display: grid;
+}
+
+.project--headline {
+  font-size: var(--3base);
+  grid-row: 1/2;
+  grid-column: 1/2;
+}
+
+.project--text {
+  font-size: var(--2base);
+  grid-row: 2/3;
+  grid-column: 1/2;
+}
+
+@media (min-width: 70em) {
+  .project--headline {
+    font-size: var(--2base);
+  }
+
+  .project--text {
+    font-size: var(--2base);
+  }
+}
+
+/*----------------------------------------------------*/
+
+.content-section {
+  display: grid;
+  grid-template-columns: 5vw 1fr 5vw;
+  grid-auto-rows: min-content;
+  padding: 15vh 0;
+  grid-row-gap: var(--row-gap);
+  background-color: var(--background-tertiary);
+  border-top: 1px solid var(--grey-600);
+}
+
+@media (min-width: 45em) {
+  .content-section {
+    grid-template-columns: 5vw 1fr 1fr 5vw;
+    grid-column-gap: var(--row-gap);
+  }
+}
+
+@media (min-width: 70em) {
+  .content-section {
+    grid-template-columns: 5vw 1fr 1fr 1fr 5vw;
+    grid-column-gap: var(--row-gap);
+  }
+}
+
+.content-section--content-body {
+  grid-column: 2/3;
+  align-self: end;
+  display: grid;
+  grid-row-gap: var(--row-gap);
+}
+
+.content-body--headline {
+  font-size: var(--4base);
+  padding: 0;
+}
+
+.content-body--text-wrapper {
+  display: grid;
+  grid-row-gap: var(--halfbase);
+}
+
+.content-body--text {
+  font-size: var(--2base);
+}
+
+.content-body--button {
+  font-size: var(--2base);
+  padding-bottom: var(--halfbase);
+  background-color: var(--background-tertiary);
+  color: var(--design-color);
+  padding: var(--1base);
+  border: 1px solid var(--grey-600);
+  max-width: 50%;
+  min-width: 8rem;
+}
+
+.content-section--content-extra {
+  margin-top: var(--1base);
+  grid-column: 2/3;
+  min-height: 30vh;
+  border: 1px solid var(--grey-600);
+}
+
+@media (min-width: 45em) {
+  .content-extra-right .content-section--content-body {
+    grid-column: 2/3;
+  }
+  .content-extra-right .content-section--content-extra {
+    grid-column: 3/4;
+  }
+  .content-extra-left .content-section--content-body {
+    grid-column: 3/4;
+    grid-row: 1/2;
+  }
+  .content-extra-left .content-section--content-extra {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+}
+
+@media (min-width: 70em) {
+  .content-extra-right .content-section--content-body {
+    grid-column: 2/3;
+  }
+  .content-extra-right .content-section--content-extra {
+    grid-column: 3/5;
+    height: 70vh;
+  }
+  .content-extra-left .content-section--content-body {
+    grid-column: 4/5;
+    grid-row: 1/2;
+  }
+  .content-extra-left .content-section--content-extra {
+    grid-column: 2/4;
+    height: 70vh;
+    grid-row: 1/2;
+  }
+}
+
+/*----------------------------------------------------*/
+
+.line1a {
+  grid-column: 1/2;
+  grid-row: 1/6;
+  justify-self: end;
+}
+.line1b {
+  grid-column: 3/4;
+  grid-row: 1/6;
+  justify-self: start;
+}
+
+.line1c {
+  grid-column: 1/4;
+  grid-row: 2/3;
+  justify-self: start;
+}
+
+.line2a {
+  grid-column: 1/2;
+  grid-row: 1/4;
+  justify-self: end;
+  transform: scaleY(5);
+  transform-origin: bottom;
+}
+.line2b {
+  grid-column: 3/4;
+  grid-row: 1/4;
+  justify-self: start;
+  transform: scaleY(5);
+  transform-origin: bottom;
+}
+.line2c {
+  grid-column: 1/4;
+  grid-row: 2/3;
+  transform: scaleX(5);
+}
+.line2d {
+  grid-column: 1/4;
+  grid-row: 2/3;
+  transform: scaleX(5);
+  align-self: end;
+}
+
+.line3a,
+.line3b,
+.line3c,
+.line3d,
+.line3e,
+.line3f {
+  display: none;
+}
+
+@media (min-width: 45em) {
+  .line3b {
+    display: block;
+    grid-column: 2/3;
+    grid-row: 1/6;
+    justify-self: end;
+  }
+}
+
+@media (min-width: 70em) {
+  .line3a {
+    display: block;
+    grid-column: 2/3;
+    grid-row: 1/5;
+  }
+  .line3b {
+    display: block;
+    grid-column: 2/3;
+    grid-row: 1/5;
+    justify-self: end;
+  }
+  .line3c {
+    display: block;
+    grid-column: 3/4;
+    grid-row: 1/5;
+  }
+  .line3d {
+    display: block;
+    grid-column: 3/4;
+    grid-row: 1/5;
+    justify-self: end;
+  }
+  .line3e {
+    display: block;
+    grid-column: 4/5;
+    grid-row: 1/5;
+  }
+  .line3f {
+    display: block;
+    grid-column: 4/5;
+    grid-row: 1/5;
+    justify-self: end;
+  }
+}
+
+.line3g {
+  grid-column: 1/4;
+  grid-row: 2/3;
+}
+.line3h {
+  grid-column: 1/4;
+  grid-row: 2/3;
+  align-self: end;
+}
+.line3i {
+  grid-column: 1/4;
+  grid-row: 3/4;
+}
+.line3j {
+  grid-column: 1/4;
+  grid-row: 3/4;
+  align-self: end;
+}
+
+@media (min-width: 70em) {
+  .line3g,
+  .line3h,
+  .line3i,
+  .line3j {
+    grid-column: 1/6;
+  }
+}
+
+.skeleton {
+  background-color: var(--background-primary);
+  color: var(--background-primary);
+}
+
+.proto {
+  color: var(--white);
+}
+
+.prototypes {
+  display: none;
+}
+
+@media (min-width: 37.5em) {
+  .prototypes {
+    display: block;
+    font-size: var(--1base);
+    align-self: start;
+    padding: 1vh 0 0 1vw;
+  }
 }
 
 /*----------------------------------------------------*/

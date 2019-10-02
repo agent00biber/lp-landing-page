@@ -344,9 +344,4 @@ export default {
   height: 10vh;
 }
 
-@media (min-width: 45em) {
-  .footer {
-    grid-column: 1/7;
-  }
-}
 </style>
