@@ -38,11 +38,27 @@
       <content-section
         class="content-section-layout js-content-observe"
         headline="Persuasive marketing psychology "
-        text="xxxxx xxxxx xxxxx xxx xxx xxxxxxxxxxxx. xxxxx xxxxx xxxxx xxx xxx xxxxxxxxxxxx.xxxxx xxxxx xxxxx xxx xxx xxxxxxxxxxxx.xxxxx xxxxx xxxxx xxx xxx xxxxxxxxxxxx.xxxxx xxxxx xxxxx xxx xxx xxxxxxxxxxxx.xxxxx xxxxx xxxxx xxx xxx xxxxxxxxxxxx."
+        text="Still in progress. A mockup store to order colorfull tshirts.  Uses several techniques to increase conversion like framing, loss-aversion and a very daring copy. You can read more about it on my casestudy website."
         sectionID="marketing"
         alignExtraContent="right"
+        buttonText="Read the casestudy"
       >
-        <div class="extra-content-container"></div>
+        <div class="extra-content-container">
+          <picture>
+            <source
+              media="(max-width: 69.9em)"
+              srcset="@/assets/tshirt-store--mobile.png"
+            />
+            <source
+              media="(min-width: 70em)"
+              srcset="@/assets/tshirt-store--desktop.png"
+            />
+            <img
+              class="content-image content-image--tshirt js-image-parallax"
+              src="@/assets/tshirt-store--mobile.png"
+            />
+          </picture>
+        </div>
       </content-section>
 
       <footer class="footer">
@@ -76,13 +92,21 @@ export default {
       silos.forEach(silo => {
         silo.style.transform = `scaleX(${1 - ratio > 0 ? 1 - ratio : 0})`;
       });
-      //shrink the editor in to visible field
-      /*let shrinkEditor = this.scaleValue - ratio * 3;
-      editor.style.transform = `scale( ${
-        shrinkEditor > 1 ? shrinkEditor : 1
-      } )`;
+      this.parallaxImages();
+    },
+    parallaxImages() {
+      const images = document.querySelectorAll(".js-image-parallax");
 
-      */
+      images.forEach(image => {
+        let inView = image.getBoundingClientRect().top < window.innerHeight;
+        let viewAmount =
+          (image.getBoundingClientRect().top / window.innerHeight) * 10;
+
+        if (!inView) {
+          return;
+        }
+        image.style.transform = `translateY( ${viewAmount - 2}rem )`;
+      });
     }
   },
   computed: {
@@ -345,6 +369,31 @@ export default {
 
 .content-section-layout:last-of-type {
   border-bottom: 1px solid var(--grey-600);
+}
+
+/*----------------------------------------------------*/
+
+.extra-content-container {
+  padding: var(--fourthbase);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+picture {
+}
+
+.content-image {
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+
+@media (min-width: 90em) {
+  picture {
+    width: 80%;
+    height: auto;
+  }
 }
 
 /*----------------------------------------------------*/

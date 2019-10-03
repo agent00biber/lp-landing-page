@@ -70,7 +70,20 @@
         alignExtraContent="right"
         buttonText="lets get in contact"
       >
-        <div class="extra-content-container"></div>
+        <div class="extra-content-container extra-content-container1">
+          <notification
+            class="notification--layout js-notification-translate"
+          />
+          <notification
+            class="notification--layout js-notification-translate"
+          />
+          <notification
+            class="notification--layout js-notification-translate"
+          />
+          <notification
+            class="notification--layout js-notification-translate"
+          />
+        </div>
       </content-section>
       <content-section
         class="content-section-layout js-content-observe"
@@ -79,7 +92,28 @@
         sectionID="science"
         alignExtraContent="left"
       >
-        <div class="extra-content-container"></div>
+        <div class="extra-content-container extra-content-container2">
+          <div class="container--row container--row1">
+            <aside class="row--background"></aside>
+            <p class="row--product row--content">Health-care App</p>
+            <p class="row--arrow row--content">=></p>
+            <p class="row--educt row--content">
+              Designing the App + Building the app
+            </p>
+          </div>
+          <div class="container--row container--row2">
+            <aside class="row--background"></aside>
+            <p class="row--product row--content">Building the app</p>
+            <p class="row--arrow row--content">=></p>
+            <p class="row--educt row--content">Frontend + Backend</p>
+          </div>
+          <div class="container--row container--row3">
+            <aside class="row--background"></aside>
+            <p class="row--product row--content">Designing the App</p>
+            <p class="row--arrow row--content">=></p>
+            <p class="row--educt row--content">Content + Usabillity & Design</p>
+          </div>
+        </div>
       </content-section>
       <footer class="footer">
         <router-link :to="{ name: 'home' }">Back home</router-link>
@@ -92,11 +126,13 @@
 import elements from "@/assets/chemicalElements.js";
 import contentSummery from "@/components/buildingBlocks/contentSummery.vue";
 import contentSection from "@/components/buildingBlocks/contentSection.vue";
+import notification from "@/components/science/notifications.vue";
 
 export default {
   components: {
     contentSummery,
-    contentSection
+    contentSection,
+    notification
   },
   props: [],
   name: "science",
@@ -113,14 +149,12 @@ export default {
       const stickyContainer = document.getElementById(
         "js-sticky-container-color-change"
       );
-
       const atomContainerBackground = document.getElementById(
         "js-atom-container-background-appear"
       );
       const stickyHeadline = document.getElementById(
         "js-sticky-headline-background"
       );
-
       const atoms = document.querySelectorAll(".js-atom");
 
       let ratio = Math.max(window.scrollY) / window.innerHeight;
@@ -138,6 +172,33 @@ export default {
         });
         atomContainerBackground.classList.remove("appear");
       }
+      this.parallaxImages();
+    },
+    parallaxImages() {
+      const notifications = document.querySelectorAll(
+        ".js-notification-translate"
+      );
+
+      notifications.forEach((notification, index) => {
+        let inView =
+          notification.getBoundingClientRect().top < window.innerHeight;
+        let viewAmount =
+          notification.getBoundingClientRect().top / window.innerHeight;
+
+        if (!inView) {
+          return;
+        }
+
+        let translateAmount = viewAmount * 100 - 50;
+
+        if (index === 0) {
+          console.log(Math.floor(translateAmount));
+        }
+
+        notification.style.transform = `translateY( ${
+          translateAmount >= 0 ? translateAmount : 0
+        }% )`;
+      });
     }
   },
   computed: {
@@ -352,6 +413,119 @@ export default {
 
 .content-section-layout:last-of-type {
   border-bottom: 1px solid var(--grey-600);
+}
+
+/*----------------------------------------------------*/
+
+.extra-content-container1 {
+  display: grid;
+  grid-template-columns: min-content 1fr min-content;
+  grid-row-gap: var(--1base);
+  max-height: 70vh;
+  padding: var(--2base);
+}
+@media (min-width: 70em) {
+  .extra-content-container1 {
+    grid-template-columns: 1fr 3fr 1fr;
+  }
+}
+
+.notification--layout {
+  grid-column: 2/3;
+}
+
+.extra-content-container2 {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  background: var(--science-gradient);
+}
+
+.container--row {
+  display: grid;
+  grid-template-columns: 6rem min-content 3fr;
+  min-height: 8rem;
+}
+
+.container--row:nth-of-type(2) {
+  border-top: 1px solid var(--grey-600);
+  border-bottom: 1px solid var(--grey-600);
+}
+
+.row--content {
+  font-weight: bold;
+  font-size: var(--2base);
+  padding: var(--2base) var(--1base);
+  align-self: center;
+}
+
+@media (min-width: 27em) {
+  .container--row {
+    grid-template-columns: 10rem min-content 3fr;
+    min-height: 8rem;
+  }
+  .row--content {
+    font-size: var(--2base);
+    padding: var(--4base) var(--1base);
+  }
+}
+
+@media (min-width: 45em) {
+  .container--row {
+    grid-template-columns: 6rem min-content 3fr;
+    min-height: 6rem;
+  }
+  .row--content {
+    font-size: var(--2base);
+    padding: var(--2base) var(--1base);
+  }
+}
+
+@media (min-width: 56em) {
+  .container--row {
+    grid-template-columns: 7rem min-content 3fr;
+  }
+  .row--content {
+    padding: var(--3base) var(--2base);
+  }
+}
+
+@media (min-width: 70em) {
+  .container--row {
+    grid-template-columns: 10rem min-content 3fr;
+    min-height: 10rem;
+  }
+  .row--content {
+    font-size: 2vw;
+    padding: var(--4base) var(--2base);
+  }
+}
+
+.row--product {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.row--arrow {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+.row--educt {
+  grid-column: 3/4;
+  grid-row: 1/2;
+}
+
+.row--background {
+  grid-column: 1/4;
+  grid-row: 1/2;
+  background-color: var(--background-tertiary);
+  opacity: 1;
+  transition: opacity 0.4s var(--moving-out);
+}
+
+.row--background:hover {
+  opacity: 0;
+  transition: opacity 0.2s var(--moving-in);
 }
 
 /*----------------------------------------------------*/

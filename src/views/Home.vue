@@ -97,11 +97,6 @@
 
 <script>
 import arrowIcon from "@/components/icons/arrow.vue";
-import cubeIcon from "@/components/icons/cube.vue";
-import circleIcon from "@/components/icons/circle.vue";
-import triangleIcon from "@/components/icons/triangle.vue";
-import hexagonIcon from "@/components/icons/hexagon.vue";
-import heartIcon from "@/components/icons/heart.vue";
 import emailIcon from "@/components/icons/email.vue";
 import homeSection from "@/components/homepage/HomeSection.vue";
 
@@ -109,11 +104,6 @@ export default {
   name: "home",
   components: {
     arrowIcon,
-    cubeIcon,
-    circleIcon,
-    triangleIcon,
-    hexagonIcon,
-    heartIcon,
     emailIcon,
     homeSection
   },

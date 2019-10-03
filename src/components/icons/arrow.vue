@@ -2,7 +2,7 @@
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 12" class="svg-icon">
     <g fill="none" fill-rule="evenodd">
       <path
-        stroke="#151515"
+        stroke="var(--white)"
         stroke-linecap="round"
         stroke-linejoin="round"
         stroke-width="2"

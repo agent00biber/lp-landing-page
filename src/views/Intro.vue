@@ -76,7 +76,18 @@
         sectionID="intro"
         alignExtraContent="right"
       >
-        <div class="extra-content-container"></div>
+        <div
+          class="extra-content-container extra-content-container3 js-container-animation"
+        >
+          <div
+            v-for="(cube, index) in 6"
+            :class="`cube cube${index + 1}`"
+            :style="{
+              borderRadius: index / 4 + 'rem',
+              animationDelay: `${index / 5}s`
+            }"
+          ></div>
+        </div>
       </content-section>
       <content-section
         class="content-section-layout js-content-observe"
@@ -144,6 +155,24 @@ export default {
       } else {
         background.style.transform = `scale(${ratio > 1 ? ratio : 1})`;
     } */
+      this.parallaxImages();
+    },
+    parallaxImages() {
+      const containers = document.querySelectorAll(".js-container-animation");
+
+      containers.forEach((container, index) => {
+        let inView =
+          container.getBoundingClientRect().top >= 0 &&
+          container.getBoundingClientRect().bottom <= window.innerHeight;
+        let viewAmount =
+          container.getBoundingClientRect().top / window.innerHeight;
+
+        if (!inView) {
+          return;
+        }
+        container.classList.add("active");
+        console.log("in view");
+      });
     }
   },
   computed: {},
@@ -173,7 +202,7 @@ export default {
 }
 
 .sticky-wrapper {
-  height: 1000vh;
+  height: 200vh;
 }
 
 .sticky-content {
@@ -276,6 +305,71 @@ export default {
 
 .content-section-layout:last-of-type {
   border-bottom: 1px solid var(--grey-600);
+}
+/*----------------------------------------------------*/
+
+@media (max-width: 69.9em) {
+  .extra-content-container3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 25rem;
+  }
+
+  .cube {
+    background-color: var(--background-primary);
+    height: var(--6base);
+    width: var(--6base);
+    opacity: 0;
+  }
+
+  .active .cube {
+    animation: square 0.5s ease-out forwards;
+  }
+
+  @keyframes square {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@media (min-width: 70em) {
+  .extra-content-container3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 25rem;
+  }
+
+  .cube {
+    background-color: var(--background-primary);
+    height: var(--7base);
+    width: var(--7base);
+    opacity: 0;
+  }
+
+  .active .cube {
+    animation: square 0.5s ease-out forwards;
+  }
+
+  @keyframes square {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 }
 
 /*----------------------------------------------------*/

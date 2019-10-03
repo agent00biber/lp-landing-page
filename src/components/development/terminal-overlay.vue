@@ -52,6 +52,8 @@ export default {
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap");
+
 .overlay {
   position: absolute;
   width: 100%;

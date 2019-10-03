@@ -14,11 +14,7 @@
 
       <div class="content-body--text-wrapper">
         <p class="content-body--text">{{ text }}</p>
-        <button
-          v-if="buttonText"
-          :style="{ color: `var(--${sectionID}-color)` }"
-          class="content-body--button"
-        >
+        <button v-if="buttonText" class="content-body--button">
           {{ buttonText }}
         </button>
       </div>
@@ -96,12 +92,15 @@ export default {
 }
 
 .content-body--button {
-  font-size: var(--2base);
+  font-size: var(--1base);
+  text-transform: uppercase;
+  font-weight: bold;
   padding-bottom: var(--halfbase);
   background-color: var(--background-tertiary);
-  padding: var(--1base);
+  color: var(--white);
+  padding: var(--2base);
   border: 1px solid var(--grey-600);
-  max-width: 50%;
+  max-width: 60%;
   min-width: 8rem;
 }
 
@@ -110,6 +109,7 @@ export default {
   grid-column: 2/3;
   min-height: 30vh;
   border: 1px solid var(--grey-600);
+  overflow: hidden;
 }
 
 @media (min-width: 45em) {
@@ -135,7 +135,7 @@ export default {
   }
   .content-extra-right .content-section--content-extra {
     grid-column: 3/5;
-    height: 70vh;
+    min-height: 50vh;
   }
   .content-extra-left .content-section--content-body {
     grid-column: 4/5;
@@ -143,7 +143,7 @@ export default {
   }
   .content-extra-left .content-section--content-extra {
     grid-column: 2/4;
-    height: 70vh;
+    min-height: 50vh;
     grid-row: 1/2;
   }
 }

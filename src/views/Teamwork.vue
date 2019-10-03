@@ -101,11 +101,54 @@
       <content-section
         class="content-section-layout js-content-observe"
         headline="Ideas for likeminded people to explore"
-        text="Here is a small list of ideas we could do together, if you dont have any right now. I can focus on either design or development whatever suits you best."
+        text="Here is a small list of ideas we could do together, if you dont have any right now. I can focus on either design or development - whatever works for you best."
         sectionID="teamwork"
         alignExtraContent="right"
       >
-        <div class="extra-content-container"></div>
+        <div class="extra-content-container">
+          <div
+            class="container--row container--row1"
+            @mouseover="hover(true, 0)"
+            @mouseleave="hover(false, 0)"
+          >
+            <aside class="row--background"></aside>
+            <a
+              href="mailto:career.lucas.paetow@gmail.com?subject=About%20your%20Idea%3A%20Illustrate%20Illnesses%20with%20smileys"
+              class="row--content"
+            >
+              Describe Illnesses with smileys to raise awarness in a playfull
+              way.
+            </a>
+          </div>
+          <div
+            class="container--row container--row2"
+            @mouseover="hover(true, 1)"
+            @mouseleave="hover(false, 1)"
+          >
+            <aside class="row--background"></aside>
+            <a
+              href="mailto:career.lucas.paetow@gmail.com?subject=About%20your%20Idea%3A%201000nd%20medical%20opinion"
+              class="row--content"
+            >
+              Validate patient cases in a tinder like fashion get a 2nd-1000nd
+              opinion fast.
+            </a>
+          </div>
+          <div
+            class="container--row container--row3"
+            @mouseover="hover(true, 2)"
+            @mouseleave="hover(false, 2)"
+          >
+            <aside class="row--background"></aside>
+            <a
+              href="mailto:career.lucas.paetow@gmail.com?subject=About%20your%20Idea%3A%20Illustrate%20Illnesses%20with%20smileys"
+              class="row--content"
+            >
+              Messenge a pharmacist for medication related questions instead of
+              asking someone else.
+            </a>
+          </div>
+        </div>
       </content-section>
       <footer class="footer">
         <router-link :to="{ name: 'home' }">Back home</router-link>
@@ -128,7 +171,21 @@ export default {
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    hover(boolean, rowNumber) {
+      if (window.innerWidth < 600) {
+        return;
+      }
+
+      let row = document.querySelectorAll(".container--row");
+
+      if (boolean) {
+        row[rowNumber].classList.add("active");
+        return;
+      }
+      row[rowNumber].classList.remove("active");
+    }
+  },
   computed: {},
   created() {},
   //same check for route-view keep-alive
@@ -260,6 +317,77 @@ export default {
 
 .content-section-layout:last-of-type {
   border-bottom: 1px solid var(--grey-600);
+}
+
+/*----------------------------------------------------*/
+.extra-content-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  background: var(--teamwork-gradient);
+}
+
+.container--row {
+  text-decoration: none;
+  display: grid;
+}
+
+.container--row:nth-of-type(2) {
+  border-top: 1px solid var(--grey-600);
+  border-bottom: 1px solid var(--grey-600);
+}
+
+.row--content {
+  font-weight: bold;
+  font-size: var(--2base);
+  padding: var(--2base) var(--1base);
+  align-self: center;
+  grid-row: 1/2;
+  grid-column: 1/2;
+  text-decoration: none;
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 27em) {
+  .row--content {
+    font-size: var(--2base);
+    padding: var(--4base) var(--1base);
+  }
+}
+
+@media (min-width: 45em) {
+  .row--content {
+    font-size: var(--2base);
+    padding: var(--2base) var(--1base);
+  }
+}
+
+@media (min-width: 56em) {
+  .row--content {
+    padding: var(--3base) var(--2base);
+  }
+}
+
+@media (min-width: 70em) {
+  .row--content {
+    font-size: 2vw;
+    padding: var(--4base) var(--2base);
+  }
+}
+
+.row--background {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  background-color: var(--background-tertiary);
+  opacity: 1;
+  transition: opacity 0.4s var(--moving-out);
+  position: relative;
+  z-index: 1;
+}
+
+.active .row--background {
+  opacity: 0;
+  transition: opacity 0.2s var(--moving-in);
 }
 
 /*----------------------------------------------------*/

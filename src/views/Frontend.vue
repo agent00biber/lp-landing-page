@@ -39,23 +39,49 @@
       <content-summery
         class="content-summery-layout js-content-observe"
         headline="Understanding development"
-        text=" I bring engaging web apps and prototypes from designs to live with vue and
-       javascript. I have to implement the given specs and need to consider
-       performance and security."
+        text=" I bring engaging and stunning web apps and prototypes to live with vue and javascript. I implement and advance given design-specs but also need to consider best practices, performance and browser-compatibility. I’m always looking out for new and simpler ways of archieving a desired solution."
         sectionID="frontend"
         :summeryContent="[
           {
-            headline: 'Lovable Survey Creator',
+            headline: 'T-shirt e-commerce store',
             text:
-              'A simple survey generator to create beautiful and engaging questionairs.'
+              'E-Commerce websites are a huge part of the web and provided another project to build with my steadily advancing frontend knowledge. I also wanted to get started with testing- and validation-frameworks.'
           },
           {
-            headline: 'T-shirt eCommerce store',
+            headline: 'Lovable Survey Creator',
             text:
-              'A mockup store for brilliant t-shirts in every color there is.'
+              'To get feedback for future projects in a nice and reliable ways, I build a survey-genrator. It was ment to be easy and uncomplicated to do -even from mobile and start into frontend-backend communication and user authentication with firebase.'
           }
         ]"
       />
+      <content-section
+        class="content-section-layout js-content-observe"
+        headline="T-shirt e-commerce store"
+        text="Still in progress. A mockup store to order colorfull tshirts. Features around the idea of an SVG Overlay over an image with a CSS mixed-blend-mode (inspiration by u/overcloseness). This also combines marketing and UX aspects. "
+        sectionID="frontend"
+        alignExtraContent="left"
+        buttonText="Github repo"
+      >
+        <div class="extra-content-container">
+          <editor class="active js-editor-parallax extra-content--editor">
+            <p class="editor__comment survey-content">
+              //Or click anywhere in here to get to the github repo
+            </p>
+
+            <ul class="survey-generator survey-content">
+              <li class="editor__headline">T-shirt e-commerce store:</li>
+              <li>- select a color from an imported list</li>
+              <li>- View t-shirts in your chosen cholor</li>
+              <li>--- Change the color if nessesary</li>
+              <li>
+                - “Order” them by going through the order process (there is not
+                a real product yet, so you cant order something real)
+              </li>
+              <li>- Sign in / log in / continue as guest</li>
+            </ul>
+          </editor>
+        </div>
+      </content-section>
       <content-section
         class="content-section-layout js-content-observe"
         headline="Lovable Survey Creator"
@@ -64,50 +90,31 @@
         authentication."
         sectionID="frontend"
         alignExtraContent="right"
+        buttonText="Github repo"
       >
-        <div class="extra-content-container">
-          <editor class="active">
-            <p class="comment">
-              //Click anywhere in here to get to the github repo
+        <div class="extra-content-container ">
+          <editor class="active js-editor-parallax extra-content--editor">
+            <p class="editor__comment survey-content">
+              //Or click anywhere in here to get to the github repo
             </p>
 
-            <ul class="survey-generator">
-              <li>Survey-Generator 1.0:</li>
-              <li>- Login/Signup</li>
-              <li>- Create surveys</li>
-              <li>—— Get a shareable link to send to your users</li>
-              <li>- View/Analyze surveys</li>
+            <ul class="survey-generator survey-content">
+              <li class="editor__headline">Survey-Generator 1.0:</li>
+              <li>- Create / delete surveys</li>
+              <li>--- Get a shareable link to send to your users</li>
+              <li>- View / analyze surveys</li>
+              <li>- Sign in / log in</li>
             </ul>
 
-            <ul class="survey-viewer">
-              <li>Survey-Viewer:</li>
+            <ul class="survey-viewer survey-content">
+              <li class="editor__headline">Survey-Viewer:</li>
               <li>- Fetch surveys from link address</li>
-              <li>- Record user comments and answers</li>
+              <li>- Record user comments and feedback answers</li>
             </ul>
           </editor>
         </div>
       </content-section>
-      <content-section
-        class="content-section-layout js-content-observe"
-        headline="T-shirt eCommerce store"
-        text="Still in progress. A mockup store to order colorfull tshirts. Features around the idea of an SVG Overlay over an image with a CSS mixed-blend-mode (inspiration by u/overcloseness). This also combines marketing and UX aspects. "
-        sectionID="frontend"
-        alignExtraContent="left"
-      >
-        <div class="extra-content-container">
-          <editor class="active">
-            <p class="comment">
-              //Click anywhere in here to get to the github repo
-            </p>
 
-            <ul class="survey-generator">
-              <li>T-shirt eCommerce store:</li>
-              <li>- select a color</li>
-              <li>- View t-shirt</li>
-            </ul>
-          </editor>
-        </div>
-      </content-section>
       <footer class="footer">
         <router-link :to="{ name: 'home' }">Back home</router-link>
       </footer>
@@ -166,7 +173,21 @@ export default {
         shrinkEditor > 1 ? shrinkEditor : 1
       } )`;
 
-      /**/
+      this.parallaxImages();
+    },
+    parallaxImages() {
+      const editors = document.querySelectorAll(".js-editor-parallax");
+
+      editors.forEach(editor => {
+        let inView = editor.getBoundingClientRect().top < window.innerHeight;
+        let viewAmount =
+          (editor.getBoundingClientRect().top / window.innerHeight) * 10;
+
+        if (!inView) {
+          return;
+        }
+        editor.style.transform = `translateY( ${viewAmount - 2}rem )`;
+      });
     }
   },
   computed: {},
@@ -378,6 +399,57 @@ export default {
 
 .content-section-layout:last-of-type {
   border-bottom: 1px solid var(--grey-600);
+}
+
+/*----------------------------------------------------*/
+.extra-content-container {
+  display: grid;
+  grid-template-columns: min-content 1fr min-content;
+  padding: var(--fourthbase);
+}
+
+.extra-content--editor {
+  grid-column: 2/3;
+}
+
+.survey-content,
+.survey-content li {
+  font-size: calc(var(--1base) * 0.85);
+  line-height: 120%;
+  padding-bottom: var(--halfbase);
+}
+
+@media (min-width: 30em) and (max-width: 44.9em) {
+  .extra-content-container {
+    padding: var(--1base);
+  }
+  .survey-content,
+  .survey-content li {
+    font-size: var(--1base);
+  }
+}
+
+@media (min-width: 70em) {
+  .extra-content-container {
+    grid-template-columns: 1fr 5fr 1fr;
+    padding: var(--4base) var(--2base);
+  }
+}
+
+@media (min-width: 70em) {
+  .extra-content-container {
+    grid-template-columns: 1fr 5fr 1fr;
+    padding: var(--4base) var(--2base);
+  }
+}
+
+.editor__comment {
+  color: var(--grey-400);
+}
+
+.editor__headline {
+  font-weight: bold;
+  color: var(--frontend-color);
 }
 
 /*----------------------------------------------------*/

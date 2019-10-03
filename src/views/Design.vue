@@ -3,7 +3,7 @@
     <section class="sticky-wrapper">
       <div class="sticky-content" id="js-sticky-content">
         <div class="main-content">
-          <aside class="main-content--background hidden"></aside>
+          <aside class="main-content--background phase0"></aside>
           <div class="line line-vertical line1a hidden"></div>
           <div class="line line-vertical line1b hidden"></div>
           <div class="line line-horizontal line1c hidden"></div>
@@ -12,60 +12,48 @@
             <div class="line line-vertical line2b hidden"></div>
             <div class="line line-horizontal line2c hidden"></div>
             <div class="line line-horizontal line2d hidden"></div>
-            <h1 class="main--headline hidden">
+            <h1 class="main--headline phase0 ">
               Systematic UX-Design
             </h1>
-            <h1 class="main--headline skeleton hidden">
+            <h1 class="main--headline skeleton phase1 hidden">
               Systematic UX-Design
             </h1>
-            <h1 class="main--headline proto hidden">
+            <h1 class="main--headline proto phase2 hidden">
               [adjective] + [Section]
             </h1>
-            <p class="prototype--headline prototypes">h1</p>
-            <h1 class="main--headline hidden">
-              [adjective] + [Section]
-            </h1>
-            <h1 class="main--headline">
+            <p class="prototype--headline prototypes phase2 hidden">h1</p>
+
+            <h1 class="main--headline phase3 hidden">
               Systematic UX-Design
             </h1>
           </header>
 
           <section class="content-summery">
-            <p class="prototype--subheadline prototypes">h2</p>
-            <h2 class="content-summery--headline hidden">
+            <p class="prototype--subheadline prototypes hidden">h2</p>
+            <h2 class="content-summery--headline skeleton phase1 hidden">
               Understanding UX design
             </h2>
-            <h2 class="content-summery--headline skeleton hidden">
-              Understanding UX design
-            </h2>
-            <h2 class="content-summery--headline proto hidden">
+            <h2 class="content-summery--headline proto phase2 hidden">
               'Understanding' + [Section]
             </h2>
-            <h2 class="content-summery--headline ">
+            <h2 class="content-summery--headline phase3 hidden">
               Understanding UX design
             </h2>
 
-            <p class="prototype--body prototypes">p</p>
-            <p class="content-summery--text hidden">
+            <p class="prototype--body prototypes phase2">p</p>
+            <p class="content-summery--text skeleton phase1 hidden">
               Because before coding, I need to research, concept and wireframe
               the product to know how everything fits together. Where and when
               the user needs guidance. But also how to create beauty, delight
               and how to foster a sense of excitement, so the user wants to
               discover every feature
             </p>
-            <p class="content-summery--text skeleton hidden">
-              Because before coding, I need to research, concept and wireframe
-              the product to know how everything fits together. Where and when
-              the user needs guidance. But also how to create beauty, delight
-              and how to foster a sense of excitement, so the user wants to
-              discover every feature
-            </p>
-            <p class="content-summery--text proto hidden">
+            <p class="content-summery--text proto phase2 hidden">
               prototext about my abilites, what i can do in terms of ux design
               and how I hope this could help a company or a startup. This should
               also reflect an eye for design and interest in the user.
             </p>
-            <p class="content-summery--text ">
+            <p class="content-summery--text phase3 hidden">
               Because before coding, I need to research, concept and wireframe
               the product to know how everything fits together. Where and when
               the user needs guidance. But also how to create beauty, delight
@@ -73,7 +61,7 @@
               discover every feature
             </p>
 
-            <div class="prototype-wrapper">
+            <div class="prototype-wrapper phase2 hidden">
               <p class="prototype--content">h4</p>
               <p class="prototype--content-headline">h3</p>
               <p class="prototype--content-text">p</p>
@@ -86,63 +74,66 @@
                 <li
                   class="content-summery--projects__project content-summery--projects__project1"
                 >
-                  <h3 class="project--headline hidden">
-                    Lovable Survey Creator
+                  <h3 class="project--headline skeleton phase1 hidden">
+                    T-shirt e-commerce store
                   </h3>
-                  <h3 class="project--headline skeleton hidden">
-                    Lovable Survey Creator
-                  </h3>
-                  <h3 class="project--headline proto hidden">
+                  <h3 class="project--headline proto phase2 hidden">
                     [Name of the project]
                   </h3>
-                  <h3 class="project--headline">
-                    Lovable Survey Creator
+                  <h3 class="project--headline phase3 hidden">
+                    T-shirt e-commerce store
                   </h3>
-                  <p class="project--text hidden">
-                    A simple survey generator to create beautiful and engaging
-                    questionairs.
+                  <p class="project--text skeleton phase1 hidden">
+                    E-Commerce websites are a huge part of the web and are home
+                    to a lot of good and “questionable” UX-patterns. To broaden
+                    my horizon and to learn about digital psychology I created a
+                    small mockup store for ordering t-shirts.
                   </p>
-                  <p class="project--text skeleton hidden">
-                    A simple survey generator to create beautiful and engaging
-                    questionairs.
+                  <p class="project--text proto phase2 hidden">
+                    E-Commerce websites are a huge part of the web and are home
+                    to a lot of good and “questionable” UX-patterns. To broaden
+                    my horizon and to learn about digital psychology I created a
+                    small mockup store for ordering t-shirts.
                   </p>
-                  <p class="project--text proto hidden">
-                    A small description about this project without many details.
-                  </p>
-                  <p class="project--text">
-                    A simple survey generator to create beautiful and engaging
-                    questionairs.
+                  <p class="project--text phase3 hidden">
+                    E-Commerce websites are a huge part of the web and are home
+                    to a lot of good and “questionable” UX-patterns. To broaden
+                    my horizon and to learn about digital psychology I created a
+                    small mockup store for ordering t-shirts.
                   </p>
                 </li>
                 <li
                   class="content-summery--projects__project content-summery--projects__project1"
                 >
-                  <h3 class="project--headline hidden">
-                    T-shirt eCommerce store
+                  <h3 class="project--headline skeleton phase1 hidden">
+                    Lovable Survey Creator
                   </h3>
-                  <h3 class="project--headline skeleton hidden">
-                    T-shirt eCommerce store
-                  </h3>
-                  <h3 class="project--headline proto hidden">
+                  <h3 class="project--headline proto phase2 hidden">
                     [Name of the project]
                   </h3>
-                  <h3 class="project--headline">
-                    T-shirt eCommerce store
+                  <h3 class="project--headline phase3 hidden">
+                    Lovable Survey Creator
                   </h3>
-                  <p class="project--text hidden">
-                    T-shirt store A mockup store for brilliant t-shirts in every
-                    color there is.
+                  <p class="project--text skeleton phase1 hidden">
+                    I started my journey into UX with a question of how to get
+                    feedback and how to enhance the current feedback experience
+                    for the user. As a starter project I created a simple survey
+                    generator to create beautiful and engaging questionairs the
+                    user might actually want to partake in.
                   </p>
-                  <p class="project--text skeleton hidden">
-                    T-shirt store A mockup store for brilliant t-shirts in every
-                    color there is.
+                  <p class="project--text proto phase2 hidden">
+                    I started my journey into UX with a question of how to get
+                    feedback and how to enhance the current feedback experience
+                    for the user. As a starter project I created a simple survey
+                    generator to create beautiful and engaging questionairs the
+                    user might actually want to partake in.
                   </p>
-                  <p class="project--text proto hidden">
-                    A small description about this project without many details.
-                  </p>
-                  <p class="project--text ">
-                    T-shirt store A mockup store for brilliant t-shirts in every
-                    color there is.
+                  <p class="project--text phase3 hidden">
+                    I started my journey into UX with a question of how to get
+                    feedback and how to enhance the current feedback experience
+                    for the user. As a starter project I created a simple survey
+                    generator to create beautiful and engaging questionairs the
+                    user might actually want to partake in.
                   </p>
                 </li>
               </ul>
@@ -163,14 +154,15 @@
           <section class="content-extra-right content-section">
             <div class="content-section--content-body">
               <h2 class="content-body--headline">
-                Lovable Survey Creator
+                T-shirt store
               </h2>
 
               <div class="content-body--text-wrapper">
                 <p class="content-body--text">
-                  A simple survey generator to create beautiful and engaging
-                  questionairs. Visit my casestudy website for an indepth
-                  persepective.
+                  <b>Still in progress</b> A mockup e-commerce store for the
+                  most-perfect tshirt in a color the user can choose for
+                  her-/himself. Relies heavily on daring copy text and engaging
+                  visuals. Read the full casestudy on my casestudy-website.
                 </p>
                 <button class="content-body--button">
                   Read the casestudy
@@ -179,22 +171,37 @@
             </div>
 
             <div class="content-section--content-extra">
-              <div class="extra-content-container"></div>
+              <div class="extra-content-container">
+                <picture>
+                  <source
+                    media="(max-width: 69.9em)"
+                    srcset="@/assets/tshirt-store--mobile.png"
+                  />
+                  <source
+                    media="(min-width: 70em)"
+                    srcset="@/assets/tshirt-store--desktop.png"
+                  />
+                  <img
+                    class="content-image content-image--tshirt js-image-parallax"
+                    src="@/assets/tshirt-store--mobile.png"
+                  />
+                </picture>
+              </div>
             </div>
           </section>
 
           <section class="content-extra-left content-section">
             <div class="content-section--content-body">
               <h2 class="content-body--headline">
-                T-shirt store
+                Lovable Survey Creator
               </h2>
 
               <div class="content-body--text-wrapper">
                 <p class="content-body--text">
-                  Still in progress. A mockup store to order colorfull tshirts.
-                  Features around the idea of an SVG Overlay over an image with
-                  a CSS mixed-blend-mode (inspiration by u/overcloseness). This
-                  also combines marketing and UX aspects.
+                  A simple survey generator to create, analyze and share
+                  beautiful and engaging questionairs. Visit my casestudy
+                  website for an indepth persepective or click the image to
+                  visit the website.
                 </p>
                 <button class="content-body--button">
                   Read the casestudy
@@ -203,9 +210,28 @@
             </div>
 
             <div class="content-section--content-extra">
-              <div class="extra-content-container"></div>
+              <div class="extra-content-container">
+                <picture>
+                  <source
+                    media="(max-width: 69.9em)"
+                    srcset="@/assets/feedback-app--mobile.png"
+                  />
+                  <source
+                    media="(min-width: 70em)"
+                    srcset="@/assets/feedback-app--desktop.png"
+                  />
+                  <img
+                    class="content-image content-image--feedback js-image-parallax"
+                    src="@/assets/feedback-app--mobile.png"
+                  />
+                </picture>
+              </div>
             </div>
           </section>
+
+          <footer class="footer">
+            <router-link :to="{ name: 'home' }">Back home</router-link>
+          </footer>
         </div>
       </div>
     </section>
@@ -220,7 +246,7 @@ export default {
   data() {
     return {};
   },
-  /*methods: {
+  methods: {
     scrollWireframe() {
       let ratio = Math.max(window.scrollY) / window.innerHeight;
 
@@ -239,8 +265,7 @@ export default {
       //phase4
       this.phase4(ratio);
 
-      //phase4
-      this.phase5(ratio);
+      this.parallaxImages();
     },
     phase0(ratio) {
       const phase0 = document.querySelectorAll(".phase0");
@@ -265,7 +290,7 @@ export default {
           line.classList.remove("hidden");
         });
         phase1.forEach((item, index) => {
-          item.style.transitionDelay = `${index + lines.length / 20}s`;
+          item.style.transitionDelay = `${lines.length / 20 + index / 20}s`;
           item.classList.remove("hidden");
         });
       } else {
@@ -278,13 +303,20 @@ export default {
       }
     },
     phase2(ratio) {
+      const phase1 = document.querySelectorAll(".phase1");
       const phase2 = document.querySelectorAll(".phase2");
       if (ratio > 1) {
+        phase1.forEach(item => {
+          item.classList.add("re-hidden");
+        });
         phase2.forEach((item, index) => {
-          item.style.transitionDelay = `${index / 10}s`;
+          item.style.transitionDelay = `${index / 20}s`;
           item.classList.remove("hidden");
         });
       } else {
+        phase1.forEach(item => {
+          item.classList.remove("re-hidden");
+        });
         phase2.forEach(item => {
           item.classList.add("hidden");
         });
@@ -311,69 +343,35 @@ export default {
       }
     },
     phase4(ratio) {
-      const phase4 = document.querySelectorAll(".phase4");
-      const mainHeadlines = document.querySelectorAll(".main--headline");
-      const headlines = document.querySelectorAll(".headline");
-
-      if (ratio > 3) {
-        phase4.forEach((item, index) => {
-          item.style.transitionDelay = `${index / 20}s`;
-          item.classList.remove("hidden");
-        });
-
-        mainHeadlines.forEach((item, index) => {
-          item.style.transitionDelay = `${index / 20}s`;
-          item.classList.add("headline-color");
-        });
-
-        headlines.forEach((item, index) => {
-          item.style.transitionDelay = `${index / 20}s`;
-          item.classList.add("headline-color");
-        });
-      } else {
-        phase4.forEach(item => {
-          item.classList.add("hidden");
-        });
-
-        mainHeadlines.forEach(item => {
-          item.classList.remove("headline-color");
-        });
-
-        headlines.forEach(item => {
-          item.classList.remove("headline-color");
-        });
-      }
-    },
-    phase5(ratio) {
       const phase3 = document.querySelectorAll(".phase3");
-      const phase5 = document.querySelectorAll(".phase5");
       const lines = document.querySelectorAll(".line");
-      if (ratio > 4) {
-        phase3.forEach(item => {
-          item.classList.add("re-hidden");
-        });
-        phase5.forEach((item, index) => {
-          item.style.transitionDelay = `${index / 20}s`;
-          item.classList.remove("hidden");
-        });
+      if (ratio > 3) {
         lines.forEach((line, index) => {
           line.style.transitionDelay = `${index / 20}s`;
           line.classList.add("re-hidden");
         });
       } else {
-        phase3.forEach(item => {
-          item.classList.remove("re-hidden");
-        });
-        phase5.forEach(item => {
-          item.classList.add("hidden");
-        });
         lines.forEach((line, index) => {
           line.style.transitionDelay = `${index / 20}s`;
           line.classList.remove("re-hidden");
         });
       }
+    },
+    parallaxImages() {
+      const images = document.querySelectorAll(".js-image-parallax");
+
+      images.forEach(image => {
+        let inView = image.getBoundingClientRect().top < window.innerHeight;
+        let viewAmount =
+          (image.getBoundingClientRect().top / window.innerHeight) * 10;
+
+        if (!inView) {
+          return;
+        }
+        image.style.transform = `translateY( ${viewAmount - 2}rem )`;
+      });
     }
-},*/
+  },
   computed: {},
   created() {},
   //same check for route-view keep-alive
@@ -401,7 +399,7 @@ export default {
 }
 
 .sticky-wrapper {
-  height: 200vh;
+  height: 900vh;
 }
 
 .sticky-content {
@@ -505,6 +503,7 @@ export default {
   grid-row: 2/3;
   font-size: var(--headline);
   color: var(--design-color);
+  line-height: 130%;
 }
 
 .content-section-layout:last-of-type {
@@ -523,6 +522,14 @@ export default {
 
 .content-extra-left {
   grid-row: 5/6;
+  grid-column: 1/4;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 10vh;
   grid-column: 1/4;
 }
 
@@ -581,12 +588,12 @@ export default {
   display: none;
 }
 
-@media (max-width: 69.9em) and (min-width: 37.5em) {
+@media (max-width: 69.9em) and (min-width: 45em) {
   .prototype-wrapper {
     grid-column: 1/2;
     grid-row: 4/5;
     display: grid;
-    grid-template-rows: 9vh 4vh min-content;
+    grid-template-rows: 6vh var(--4base) min-content;
     padding-left: 1vw;
   }
 }
@@ -646,6 +653,7 @@ export default {
 .content-summery--projects__project {
   text-decoration: none;
   display: grid;
+  align-self: start;
 }
 
 .project--headline {
@@ -718,13 +726,15 @@ export default {
 }
 
 .content-body--button {
-  font-size: var(--2base);
+  font-size: var(--1base);
+  text-transform: uppercase;
+  font-weight: bold;
   padding-bottom: var(--halfbase);
   background-color: var(--background-tertiary);
-  color: var(--design-color);
-  padding: var(--1base);
+  color: var(--white);
+  padding: var(--2base);
   border: 1px solid var(--grey-600);
-  max-width: 50%;
+  max-width: 60%;
   min-width: 8rem;
 }
 
@@ -758,7 +768,7 @@ export default {
   }
   .content-extra-right .content-section--content-extra {
     grid-column: 3/5;
-    height: 70vh;
+    min-height: 50vh;
   }
   .content-extra-left .content-section--content-body {
     grid-column: 4/5;
@@ -766,8 +776,35 @@ export default {
   }
   .content-extra-left .content-section--content-extra {
     grid-column: 2/4;
-    height: 70vh;
+    min-height: 50vh;
     grid-row: 1/2;
+  }
+}
+
+.content-section--content-extra {
+  overflow: hidden;
+}
+
+.extra-content-container {
+  padding: var(--fourthbase);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+picture {
+}
+
+.content-image {
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+
+@media (min-width: 90em) {
+  picture {
+    width: 80%;
+    height: auto;
   }
 }
 

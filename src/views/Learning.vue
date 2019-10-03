@@ -68,18 +68,49 @@
               headline: 'What comes next',
               text:
                 'For now, I want to advance my javascript and frontend knowledge before I break into the world of mobile development and getting started with flutter.'
+            },
+            {
+              headline: 'A framework to work with',
+              text:
+                'I need to to develop my own framework  for a faster development workflow. This is true especially for UI components as I often think I can do better and want to improve asthetics as well as the user journey.'
             }
           ]"
         />
         <content-section
           class="content-section-layout js-content-observe"
-          headline="What comes next"
-          text="There are still serveral topics to tackle before movign to another language."
+          headline="What comes next?"
+          text="Developing an App is still my long time goal, but for now I want to focus on the best practices, faster development times and better performance within the javascript ecosystem. "
           sectionID="learning"
           alignExtraContent="right"
 
         >
-          <div class="extra-content-container"></div>
+          <div class="extra-content-container extra-content-container1 ">
+              <aside class="background" id="js-background-color-change">
+
+              </aside>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 904 398" class="svg-graph">
+                  <g fill="none" fill-rule="evenodd">
+                      <path fill="var(--background-tertiary)" stroke="var(--grey-600)" d="M.5.5v397c284.613-.028 495.814-23.96 633.59-71.783C771.672 277.961 861.423 169.575 903.36.5H.5z"/>
+                  </g>
+              </svg>
+          </div>
+        </content-section>
+        <content-section
+          class="content-section-layout js-content-observe"
+          headline="A framework to work with"
+          text="As I start to work on a project, I begin with every aspect at the same time and often change design specs or functionality as a reaction to new information and learnings during the process. This back and fourth between design and development is time-consuming, which I want to speed up."
+          sectionID="learning"
+          alignExtraContent="left"
+
+        >
+          <div class="extra-content-container extra-content-container2">
+              <button class="button button1">button primary</button>
+              <button class="button button2">button primary</button>
+              <button class="button button3">button primary </button>
+              <button class="button button4">button primary
+                  <icon-arrow class="arrow-icon"/>
+              </button>
+          </div>
         </content-section>
         </div>
       </div>
@@ -94,11 +125,13 @@
 <script>
 import contentSummery from "@/components/buildingBlocks/contentSummery.vue";
 import contentSection from "@/components/buildingBlocks/contentSection.vue";
+import iconArrow from "@/components/icons/arrow.vue"
 
 export default {
   components: {
     contentSummery,
-    contentSection
+    contentSection,
+    iconArrow
   },
 
   props: [],
@@ -152,6 +185,20 @@ export default {
           headline.classList.add("hidden");
         });
       }
+      this.parallaxImages();
+    },
+    parallaxImages() {
+      const background = document.getElementById('js-background-color-change')
+
+        let inView =
+          background.getBoundingClientRect().top >= 0 && background.getBoundingClientRect().bottom <= window.innerHeight;
+          let viewAmount =
+            background.getBoundingClientRect().top / window.innerHeight;
+
+        if (!inView) {
+          return;
+        }
+        background.style.transform = `scaleX(${viewAmount-0.1})`;
     }
   },
   computed: {},
@@ -334,6 +381,159 @@ export default {
 .content-section-layout:last-of-type {
   border-bottom: 1px solid var(--grey-600);
 }
+/*----------------------------------------------------*/
+
+
+.extra-content-container1 {
+    display: grid;
+    background: var(--learning-gradient);
+    min-height: 30vh;
+
+}
+
+.svg-graph{
+    grid-row: 1/2;
+    grid-column: 1/2;
+}
+
+.background {
+    background-color: var(--background-tertiary);
+    grid-row: 1/2;
+    grid-column: 1/2;
+    transform-origin: right;
+}
+
+
+
+.extra-content-container2 {
+    display: grid;
+    grid-template-columns: 1fr 15rem 1fr;
+    grid-template-rows: 1fr repeat(4, min-content) 1fr;
+    grid-row-gap: var(--1base);
+    min-height: 50vh;
+
+}
+
+.button {
+    grid-column: 2/3;
+    border: 1px solid var(--grey-600);
+    min-height: var(--7base);
+    padding: var(--2base);
+    border: 1px solid var(--grey-600);
+    font-size: var(--2base);
+    background-color: var(--background-tertiary);
+    color: var(--white);
+}
+
+.button1 {
+    grid-row: 2/3;
+}
+
+.button2 {
+    grid-row: 3/4;
+    border-radius: var(--fourthbase);
+    color: var(--learning-color);
+}
+
+.button1:active,
+.button2:active {
+    transform: translateY(0.1rem);
+}
+
+.button3 {
+    grid-row: 4/5;
+    border-radius: var(--4base);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: var(--1base);
+    position: relative;
+    overflow: hidden;
+}
+
+.button3:after {
+  content: ' ';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: var(--learning-gradient);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+
+.button3:focus:not(:active)::after {
+  animation: ripple 0.5s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(30, 20);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(80, 40);
+  }
+}
+
+
+.button4 {
+    grid-row: 5/6;
+    border-radius: var(--fourthbase);
+    font-size: var(--1base);
+    text-transform: uppercase;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    overflow:hidden;
+}
+
+.arrow-icon {
+    height: 0.8rem;
+    color: var(--white);
+}
+
+.button4:focus:not(:active) .arrow-icon {
+    animation: arrow-moving 0.5s ease-out;
+}
+
+
+@keyframes arrow-moving {
+  0% {
+    transform: translateX(0);
+    opacity: 1
+  }
+  25% {
+    transform: translateX(1rem);
+    opacity: 0
+  }
+  50% {
+    transform: translateX(0);
+    opacity: 0
+  }
+  75% {
+    transform: translateX(-1rem);
+    opacity: 0
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1
+
+  }
+}
+.button:active, .button:focus {
+    outline: none;
+}
+
 
 /*----------------------------------------------------*/
 
