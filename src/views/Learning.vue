@@ -72,14 +72,14 @@
           {
             headline: 'A framework to work with',
             text:
-              'I need to to develop my own framework  for a faster development workflow. This is true especially for UI components as I often think I can do better and want to improve asthetics as well as the user journey.'
+              'I need to develop my own framework for a faster development workflow. This is true especially for UI components as I often think I can do better and want to improve aesthetics as well as the user journey.'
           }
         ]"
       />
       <content-section
         class="content-section-layout js-content-observe"
         headline="What comes next?"
-        text="Developing an App is still my long time goal, but for now I want to focus on the best practices, faster development times and better performance within the javascript ecosystem. "
+        text="Developing an App is still my long-time goal, but for now, I want to focus on the best practices, faster development times and better performance within the javascript ecosystem."
         sectionID="learning"
         alignExtraContent="right"
       >
@@ -103,7 +103,7 @@
       <content-section
         class="content-section-layout js-content-observe"
         headline="A framework to work with"
-        text="As I start to work on a project, I begin with every aspect at the same time and often change design specs or functionality as a reaction to new information and learnings during the process. This back and fourth between design and development is time-consuming, which I want to speed up."
+        text="As I start to work on a project, I begin with every aspect at the same time and often change design specs or functionality as a reaction to new information and learnings during the process. This back and forth between design and development is time-consuming, which I want to speed up."
         sectionID="learning"
         alignExtraContent="left"
       >

@@ -39,7 +39,7 @@
       <content-summery
         class="content-summery-layout js-content-observe"
         headline="Understanding development"
-        text=" I bring engaging and stunning web apps and prototypes to live with vue and javascript. I implement and advance given design-specs but also need to consider best practices, performance and browser-compatibility. I’m always looking out for new and simpler ways of archieving a desired solution."
+        text="I bring engaging and stunning web apps and prototypes to live with vue and javascript. I implement and advance given design-specs but also need to consider best practices, performance, and browser-compatibility. I’m always looking out for new and simpler ways of achieving the desired solution."
         sectionID="frontend"
         :summeryContent="[
           {
@@ -50,14 +50,14 @@
           {
             headline: 'Lovable Survey Creator',
             text:
-              'To get feedback for future projects in a nice and reliable ways, I build a survey-genrator. It was ment to be easy and uncomplicated to do -even from mobile and start into frontend-backend communication and user authentication with firebase.'
+              'To get feedback for future projects nicely and reliably, I build a survey-generator. It was meant to be easy and uncomplicated to do -even from mobile and start into frontend-backend communication and user authentication with firebase.'
           }
         ]"
       />
       <content-section
         class="content-section-layout js-content-observe"
         headline="T-shirt e-commerce store"
-        text="Still in progress. A mockup store to order colorfull tshirts. Features around the idea of an SVG Overlay over an image with a CSS mixed-blend-mode (inspiration by u/overcloseness). This also combines marketing and UX aspects. "
+        text="Still in progress. A mockup store to order colorful t-shirts. Features around the idea of an SVG Overlay over an image with a CSS mixed-blend-mode (inspiration by u/overcloseness). This also combines marketing and UX aspects. "
         sectionID="frontend"
         alignExtraContent="left"
         buttonText="Github repo"

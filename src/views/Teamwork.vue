@@ -93,15 +93,14 @@
         :summeryContent="[
           {
             headline: 'Ideas for like-minded people to explore',
-            text:
-              'Im always looking for nice poeple to work with. If you have an idea for a healthcare app or want to work on some of my ideas, get in contact.'
+            text: `I'm always looking for nice people to work with. If you have an idea for a healthcare app or want to work on some of my ideas, get in contact.`
           }
         ]"
       />
       <content-section
         class="content-section-layout js-content-observe"
         headline="Ideas for likeminded people to explore"
-        text="Here is a small list of ideas we could do together, if you dont have any right now. I can focus on either design or development - whatever works for you best."
+        text="Here is a small list of ideas we could do together if you don't have any right now. I can focus on either design or development - whatever works for you best."
         sectionID="teamwork"
         alignExtraContent="right"
       >
@@ -116,7 +115,7 @@
               href="mailto:career.lucas.paetow@gmail.com?subject=About%20your%20Idea%3A%20Illustrate%20Illnesses%20with%20smileys"
               class="row--content"
             >
-              Describe Illnesses with smileys to raise awarness in a playfull
+              Describe Illnesses with smileys to raise awareness in a playful
               way.
             </a>
           </div>
@@ -130,7 +129,7 @@
               href="mailto:career.lucas.paetow@gmail.com?subject=About%20your%20Idea%3A%201000nd%20medical%20opinion"
               class="row--content"
             >
-              Validate patient cases in a tinder like fashion get a 2nd-1000nd
+              Validate patient cases in a tinder-like fashion get a 2nd-1000nd
               opinion fast.
             </a>
           </div>
@@ -144,7 +143,7 @@
               href="mailto:career.lucas.paetow@gmail.com?subject=About%20your%20Idea%3A%20Illustrate%20Illnesses%20with%20smileys"
               class="row--content"
             >
-              Messenge a pharmacist for medication related questions instead of
+              Message a pharmacist for medication-related questions instead of
               asking someone else.
             </a>
           </div>
