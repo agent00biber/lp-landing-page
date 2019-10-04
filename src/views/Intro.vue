@@ -2,31 +2,41 @@
   <article class="intro">
     <section class="sticky-wrapper">
       <div class="sticky-content" id="js-sticky-content">
-        <header class="teams-container" id="js-team-seperation">
-          <h3 class="teams-container--topline">
-            Misscommunication can seperate even the best teams and leave a void
-          </h3>
-          <h1 class="teams-container--headline">
-            <b class="js-seperate">DEPART</b>
-            <aside class="background--headline" id="js-background-zoom"></aside>
-            <b class="js-seperate">MENT</b>
+        <section class="teams-forground" id="js-team-scale-down">
+          <h1 class="teams-forground--headline">
+            Conflict and miss&shy;communication
           </h1>
-          <!-- <h1 class="teams-container--headline">
-            <b class="js-seperate">T</b><b class="js-seperate">E</b
-            ><b class="js-seperate">A</b>
-            <aside class="background--headline" id="js-background-zoom"></aside>
-            <b class="js-seperate">M</b><b class="js-seperate">S</b>
-          </h1>
-          <aside class="background--headline" id="js-background-zoom"></aside> -->
-        </header>
+          <h2 class="teams-forground--subline">
+            can seperate even the best teams
+          </h2>
+        </section>
+        <section class="teams-background">
+          <div class="triangle triangle1">
+            <div class="triangle--line-wrapper">
+              <div class="line-vertical" v-for="line in 8"></div>
+            </div>
+          </div>
+          <div class="triangle triangle2">
+            <div class="triangle--line-wrapper triangle--line-wrapper2">
+              <div class="line-vertical" v-for="line in 8"></div>
+            </div>
+          </div>
+          <div class="triangle triangle3"></div>
+          <div class="triangle triangle4">
+            <h3 class="triangle--headline">
+              And <br />
+              keep pushing <br />away your releases
+            </h3>
+          </div>
+        </section>
       </div>
     </section>
     <section class="main-content">
-      <h1 class="main-content--headline">Creative web development</h1>
+      <h1 class="main-content--headline">Conflict examples</h1>
       <content-summery
         class="content-summery-layout js-content-observe"
         headline="Understanding conflict in teams"
-        text="Everyone in a team is important and has their teams success in mind. But sometimes not know what the others do, creates conflict:"
+        text="Everyone in a team is important and has their teams success in mind. But sometimes not knowing what the others do, not talking to them or only talking to them late in the process creates conflict:"
         sectionID="intro"
         :summeryContent="[
           {
@@ -58,16 +68,59 @@
         sectionID="intro"
         alignExtraContent="right"
       >
-        <div class="extra-content-container"></div>
+        <div class="extra-content-container extra-content-container1">
+          <transition name="fade" mode="out-in">
+            <popup
+              class="popup-layout popup1 active"
+              @popupevent="changePopup()"
+              v-if="activePopup"
+              key="popup1"
+            ></popup>
+            <popup
+              class="popup-layout popup2 passive"
+              @popupevent="changePopup()"
+              v-else
+              key="popup2"
+            ></popup>
+          </transition>
+        </div>
       </content-section>
       <content-section
         class="content-section-layout js-content-observe"
         headline="Pixel-Perfect"
-        text="The difference between a good design and a great design are often the details. These need to be implemented like everything else. But developers often face immense time pressure and are trying to get the business-relevant implementations done first. Early communication between both departments helps prioritising design decisions "
+        text="The difference between a good design and a great design are often the details. These need to be implemented like everything else.
+        But developers often face immense time pressure and are trying to get the business-relevant implementations done first. Early communication between both departments and creating design systems help prioritising design decisions."
         sectionID="intro"
         alignExtraContent="left"
       >
-        <div class="extra-content-container"></div>
+        <div class="extra-content-container extra-content-container2">
+          <p class="grid-type grid-type1 row1">h1</p>
+          <p class="grid-type grid-type2 row2">h2</p>
+          <p class="grid-type grid-type3 row3">h3</p>
+          <p class="grid-type grid-type4 row4">p</p>
+          <p class="grid-description grid-description1 row1">
+            font-size: 6x Base
+          </p>
+          <p class="grid-description grid-description2 row2">
+            font-size: 4x Base
+          </p>
+          <p class="grid-description grid-description3 row3">
+            font-size: 2x Base
+          </p>
+          <p class="grid-description grid-description4 row4">
+            font-size: 1x Base
+          </p>
+          <h1 class="grid-headline grid-headline1 row1">Main Headline</h1>
+          <h2 class="grid-headline grid-headline2 row2">Subheadline</h2>
+          <h3 class="grid-headline grid-headline3 row3">Article Headline</h3>
+          <p class="grid-headline grid-headline4 row4"><b>bold text</b></p>
+          <div class="line-vertical line1a"></div>
+          <div class="line-vertical line1b"></div>
+          <div class="line-horizontal line2a"></div>
+          <div class="line-horizontal line2b"></div>
+          <div class="line-horizontal line2c"></div>
+          <div class="line-horizontal line2d"></div>
+        </div>
       </content-section>
       <content-section
         class="content-section-layout js-content-observe"
@@ -92,11 +145,34 @@
       <content-section
         class="content-section-layout js-content-observe"
         headline="Lets call it a day"
-        text="xxxxx xxxxx xxxxx xxx xxx xxxxxxxxxxxx. xxxxx xxxxx xxxxx xxx xxx xxxxxxxxxxxx.xxxxx xxxxx xxxxx xxx xxx xxxxxxxxxxxx.xxxxx xxxxx xxxxx xxx xxx xxxxxxxxxxxx.xxxxx xxxxx xxxxx xxx xxx xxxxxxxxxxxx.xxxxx xxxxx xxxxx xxx xxx xxxxxxxxxxxx."
+        text="Well… This deadline is impossible to meet. Including developers early on can help to set realistic deadlines."
         sectionID="intro"
         alignExtraContent="left"
       >
-        <div class="extra-content-container"></div>
+        <div class="extra-content-container extra-content-container4">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 166 125"
+            class="extra-container--svg-placeholder"
+          >
+            <g fill="none" fill-rule="evenodd">
+              <rect
+                width="163"
+                height="122"
+                x="1.5"
+                y="1.5"
+                stroke="var(--grey-600)"
+                stroke-width="3"
+                rx="9"
+              />
+              <circle cx="42.5" cy="38.5" r="11.5" fill="var(--grey-600)" />
+              <path
+                fill="var(--grey-600)"
+                d="M26 97.314a6 6 0 01-4.3-10.184l21.79-22.396a6 6 0 018.601 0l12.525 12.874 30.336-31.753a6 6 0 018.677 0L143.1 87.17a6 6 0 01-4.338 10.144H26z"
+              />
+            </g>
+          </svg>
+        </div>
       </content-section>
       <footer class="footer">
         <router-link :to="{ name: 'home' }">Back home</router-link>
@@ -108,53 +184,41 @@
 <script>
 import contentSummery from "@/components/buildingBlocks/contentSummery.vue";
 import contentSection from "@/components/buildingBlocks/contentSection.vue";
+import popup from "@/components/intro/popUp.vue";
 
 export default {
   components: {
     contentSummery,
-    contentSection
+    contentSection,
+    popup
   },
 
   props: [],
   name: "intro",
   data() {
-    return {};
+    return {
+      activePopup: true
+    };
   },
   methods: {
     scrollSilos() {
-      const seperateLetters = document.querySelectorAll(".js-seperate");
-      const background = document.getElementById("js-background-zoom");
+      const forground = document.getElementById("js-team-scale-down");
 
       //get the amount of downward scroll
       let ratio = Math.max(window.scrollY) / window.innerHeight;
 
-      /*seperateLetters.forEach((letter, index) => {
-        if (index < 3) {
-          letter.style.transform = `translateX(${
-            ratio + 0.4 < 2.5 ? 1 + ratio * -2 : 2.5 * -2
-          }rem)`;
-        } else {
-          letter.style.transform = `translateX(${
-            ratio < 2.5 ? ratio * 2 : 2.5 * 2
-          }rem)`;
-        }
+      console.log(1 / (ratio * 4));
 
-        if (ratio > 2) {
-          letter.classList.add("hidden");
-        } else {
-          letter.classList.remove("hidden");
-        }
-    }); */
+      let scaleAmount = 1 / (ratio * 4);
 
-      let scaleX = ratio;
-      let scaleY = Math.pow(ratio, 2) > 1 ? Math.pow(ratio, 2) : 1;
-      /*
-      console.log(ratio);
-      if (ratio > 2.2) {
-        background.style.transform = `scale(${scaleX}, ${scaleY})`;
+      forground.style.transform = `scale(${scaleAmount > 1 ? 1 : scaleAmount})`;
+
+      if (scaleAmount < 0.045) {
+        forground.classList.add("hidden");
       } else {
-        background.style.transform = `scale(${ratio > 1 ? ratio : 1})`;
-    } */
+        forground.classList.remove("hidden");
+      }
+
       this.parallaxImages();
     },
     parallaxImages() {
@@ -169,10 +233,13 @@ export default {
 
         if (!inView) {
           return;
+          container.classList.remove("active");
         }
         container.classList.add("active");
-        console.log("in view");
       });
+    },
+    changePopup() {
+      this.activePopup = !this.activePopup;
     }
   },
   computed: {},
@@ -202,7 +269,7 @@ export default {
 }
 
 .sticky-wrapper {
-  height: 200vh;
+  height: 700vh;
 }
 
 .sticky-content {
@@ -212,10 +279,14 @@ export default {
   height: 100vh;
   z-index: 5;
   overflow: hidden;
-  background-color: var(--grey-500);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
 }
 
-.teams-container {
+.teams-forground {
+  grid-column: 1/2;
+  grid-row: 1/2;
   display: grid;
   grid-template-columns: var(--view-main);
   grid-template-rows: var(--sticky-headline-padding) min-content 1fr 2fr;
@@ -223,53 +294,100 @@ export default {
   grid-row-gap: var(--row-gap);
   background-color: var(--background-primary);
   height: 100vh;
-}
-
-.teams-container--topline {
-  grid-column: 2/3;
-  grid-row: 2/3;
   position: relative;
   z-index: 3;
+  transform-origin: center;
 }
 
-.teams-container--headline {
+.teams-forground--headline {
   grid-column: 2/3;
-  grid-row: 3/4;
+  grid-row: 2/3;
   position: relative;
   z-index: 4;
   justify-self: center;
   align-self: center;
-  font-size: var(--5base);
   display: flex;
   padding: 0;
+  text-align: center;
+  font-size: var(--headline);
+  background: var(--intro-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.js-seperate {
-  display: block;
-  color: var(--background-tertiary);
-}
-
-.background--headline {
-  width: var(--7base);
-  height: var(--5base);
-  background-color: var(--background-tertiary);
-  justify-self: center;
-  align-self: center;
-  position: relative;
-  z-index: 3;
-}
-
-/*.background--headline {
-  width: var(--7base);
-  height: var(--5base);
-  background-color: var(--background-tertiary);
+.teams-forground--subline {
   grid-column: 2/3;
   grid-row: 3/4;
-  position: relative;
-  z-index: 3;
+  font-size: var(--subheadline);
   justify-self: center;
   align-self: center;
-} */
+  text-align: center;
+}
+
+.teams-background {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+.triangle {
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-tertiary);
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.triangle1 {
+  clip-path: polygon(0 0, 0 100%, 50% 50%);
+}
+
+.triangle--line-wrapper {
+  width: 50%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 24fr 16fr 8fr 4fr 2fr 1fr 0.5fr 0.25fr;
+}
+
+.triangle2 {
+  clip-path: polygon(100% 100%, 100% 0, 50% 50%);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.triangle--line-wrapper2 {
+  width: 50%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 0.25fr 0.5fr 1fr 2fr 4fr 8fr 16fr 24fr;
+}
+
+.triangle3 {
+  clip-path: polygon(100% 0, 0 0, 50% 50%);
+}
+
+.triangle4 {
+  clip-path: polygon(0 100%, 100% 100%, 50% 50%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.triangle--headline {
+  width: 90%;
+  text-align: center;
+  margin-bottom: var(--1base);
+}
+
+@media (min-width: 22.5em) {
+  .triangle--headline {
+    margin-bottom: 7vh;
+  }
+}
 
 .hidden {
   opacity: 0;
@@ -306,6 +424,270 @@ export default {
 .content-section-layout:last-of-type {
   border-bottom: 1px solid var(--grey-600);
 }
+/*----------------------------------------------------*/
+
+.extra-content-container1 {
+  display: grid;
+  min-height: 40vh;
+  padding: var(--fourthbase);
+}
+
+@media (min-width: 45em) {
+  .extra-content-container1 {
+    min-height: 50vh;
+    padding: var(--halfbase);
+  }
+}
+
+@media (min-width: 45em) {
+  .extra-content-container1 {
+    min-height: 60vh;
+    padding: var(--1base);
+  }
+}
+
+.popup-layout {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  justify-self: center;
+  align-self: center;
+  position: relative;
+}
+
+.fade-enter-active {
+  transition: all 0.1s var(--moving-in);
+}
+
+.fade-leave-active {
+  transition: all 0.5s var(--moving-out);
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+  transform: scale(0.5) translateY(2rem);
+  transform-origin: bottom;
+}
+
+/*----------------------------------------------------*/
+
+.extra-content-container2 {
+  display: grid;
+  grid-template-columns: var(--2base) 1fr var(--2base);
+  grid-template-rows: var(--2base) repeat(12, min-content) var(--2base);
+}
+
+.line-vertical {
+  width: 1px;
+  height: 100%;
+  background-color: var(--grey-600);
+}
+
+.line-horizontal {
+  height: 1px;
+  width: 100%;
+  background-color: var(--grey-600);
+}
+
+.row1,
+.row2,
+.row3,
+.row4 {
+  grid-column: 2/3;
+}
+
+.grid-type {
+  padding: 0 0 var(--fourthbase) 0;
+}
+
+.grid-type1 {
+  grid-row: 4/5;
+}
+.grid-type2 {
+  grid-row: 7/8;
+}
+.grid-type3 {
+  grid-row: 10/11;
+}
+.grid-type4 {
+  grid-row: 13/14;
+}
+
+.grid-description1 {
+  grid-row: 3/4;
+}
+.grid-description2 {
+  grid-row: 6/7;
+}
+.grid-description3 {
+  grid-row: 9/10;
+}
+.grid-description4 {
+  grid-row: 12/13;
+}
+
+.grid-headline {
+  padding: var(--2base) 0 0 0;
+}
+.grid-headline1 {
+  grid-row: 2/3;
+  font-size: var(--6base);
+}
+.grid-headline2 {
+  grid-row: 5/6;
+  font-size: var(--4base);
+}
+.grid-headline3 {
+  grid-row: 8/9;
+  font-size: var(--2base);
+}
+.grid-headline4 {
+  grid-row: 11/12;
+}
+.line1a {
+  grid-column: 1/2;
+  grid-row: 1/15;
+  justify-self: end;
+  display: none;
+}
+.line1b {
+  grid-column: 3/4;
+  grid-row: 1/15;
+  justify-self: start;
+  display: none;
+}
+
+.line2a {
+  grid-column: 1/4;
+  grid-row: 4/5;
+  align-self: end;
+}
+.line2b {
+  grid-column: 1/4;
+  grid-row: 7/8;
+  align-self: end;
+}
+.line2c {
+  grid-column: 1/4;
+  grid-row: 10/11;
+  align-self: end;
+}
+.line2d {
+  grid-column: 1/4;
+  grid-row: 13/14;
+  align-self: end;
+  display: none;
+}
+
+@media (min-width: 70em) {
+  .extra-content-container2 {
+    grid-template-columns: var(--2base) 1fr 1fr 5fr var(--2base);
+    grid-template-rows: var(--2base) repeat(4, 1fr) var(--2base);
+    min-height: 50vh;
+  }
+
+  .row1 {
+    grid-row: 2/3;
+  }
+  .row2 {
+    grid-row: 3/4;
+  }
+  .row3 {
+    grid-row: 4/5;
+  }
+  .row4 {
+    grid-row: 5/6;
+  }
+
+  .grid-type {
+    align-self: end;
+  }
+
+  .grid-type1 {
+    grid-column: 2/3;
+  }
+  .grid-type2 {
+    grid-column: 2/3;
+  }
+  .grid-type3 {
+    grid-column: 2/3;
+  }
+  .grid-type4 {
+    grid-column: 2/3;
+  }
+
+  .grid-description {
+    align-self: end;
+  }
+
+  .grid-description1 {
+    grid-column: 3/4;
+  }
+  .grid-description2 {
+    grid-column: 3/4;
+  }
+  .grid-description3 {
+    grid-column: 3/4;
+  }
+  .grid-description4 {
+    grid-column: 3/4;
+  }
+
+  .grid-headline {
+    align-self: end;
+  }
+  .grid-headline1 {
+    grid-column: 4/5;
+    font-size: calc(var(--7base) * 1.1);
+  }
+  .grid-headline2 {
+    grid-column: 4/5;
+    font-size: var(--6base);
+  }
+  .grid-headline3 {
+    grid-column: 4/5;
+    font-size: var(--4base);
+  }
+  .grid-headline4 {
+    grid-column: 4/5;
+    font-size: var(--2base);
+  }
+  .line1a {
+    grid-column: 2/3;
+    grid-row: 1/7;
+    justify-self: end;
+    display: block;
+  }
+  .line1b {
+    grid-column: 3/4;
+    grid-row: 1/7;
+    justify-self: end;
+    display: block;
+  }
+
+  .line2a {
+    grid-column: 1/6;
+    grid-row: 2/3;
+    align-self: end;
+  }
+  .line2b {
+    grid-column: 1/6;
+    grid-row: 3/4;
+    align-self: end;
+  }
+  .line2c {
+    grid-column: 1/6;
+    grid-row: 4/5;
+    align-self: end;
+  }
+  .line2d {
+    grid-column: 1/6;
+    grid-row: 5/6;
+    align-self: end;
+    display: block;
+  }
+}
+
 /*----------------------------------------------------*/
 
 @media (max-width: 69.9em) {
@@ -370,6 +752,26 @@ export default {
       transform: translateX(0);
     }
   }
+}
+
+/*----------------------------------------------------*/
+
+.extra-content-container4 {
+  display: flex;
+  min-height: 40vh;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 70em) {
+  .extra-content-container4 {
+    min-height: 50vh;
+  }
+}
+
+.extra-container--svg-placeholder {
+  width: 20%;
+  height: auto;
 }
 
 /*----------------------------------------------------*/

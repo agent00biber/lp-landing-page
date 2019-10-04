@@ -88,7 +88,7 @@
       <p class="text--outro">
         Get to know me
       </p>
-      <a href="mailto:name@email.com">
+      <a href="mailto:career.lucas.paetow@gmail.com">
         <email-icon class="icon--link" />
       </a>
     </section>

@@ -30,7 +30,10 @@
       <h3 class="body">{{ body }}</h3>
     </div>
 
-    <arrow-icon class="link-icon" />
+    <div class="link-icon-wrapper">
+      <p class="icon-text">tap to enter</p>
+      <arrow-icon class="link-icon" />
+    </div>
   </section>
 </template>
 
@@ -219,10 +222,21 @@ export default {
   }
 }
 
-.link-icon {
+.link-icon-wrapper {
   align-self: center;
   grid-column: 2/3;
   grid-row: 3/4;
   align-self: end;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.icon-text {
+  font-weight: bold;
+}
+
+.link-icon {
+  height: var(--halfbase);
 }
 </style>

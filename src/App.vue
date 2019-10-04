@@ -2,16 +2,18 @@
   <main id="app">
     <navbar />
     <!--main view -->
-    <router-view />
+    <transitionWrapper><router-view /></transitionWrapper>
   </main>
 </template>
 
 <script>
 import navbar from "@/components/navigation/Navbar.vue";
+import transitionWrapper from "@/components/transitions/transition.vue";
 
 export default {
   components: {
-    navbar
+    navbar,
+    transitionWrapper
   },
   name: "app",
   computed: {},

@@ -1,32 +1,10 @@
-
-
-Beispiele/Intro
-- Intro-Animation
-- content
-- contentAnimation
-
-
-
-Wo ist wohl noch mehr content nötig:
-intro
-
-
-
-
-
 General
-- Transition zwischen den views noch überlegen
 - Farben nochmal korrigieren
-
-
-
-Home
-- Schöneren Pfeil, Email-Icon bei den componenten
+- Texte auf Fehler checken
 
 
 Eine Scroll-down Aufforderung
 - science, marketing, design, learning, teamwork, intro
-
 
 Content
 - Buttons brauchen einen hover-effect
