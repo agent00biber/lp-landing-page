@@ -29,7 +29,15 @@ export default {
   justify-content: space-between;
   cursor: pointer;
   transition: transform 0.2s ease-out;
-  padding: var(--1base) var(--1base);
+  padding: calc(var(--1base) * 1.15);
+}
+
+@media (min-width: 30em) {
+  .hamburger {
+    width: var(--8base);
+    height: var(--8base);
+    padding: var(--3base);
+  }
 }
 
 .hamburger.open {
@@ -37,7 +45,7 @@ export default {
 }
 
 .line {
-  background-color: var(--white);
+  background-color: white;
   border-radius: 0.2rem;
   width: 100%;
   height: 0.2rem;

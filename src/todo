@@ -1,20 +1,14 @@
+General
+- Farben nochmal korrigieren
+- Texte auf Fehler checken
 
-Wo ist wohl noch mehr content nötig:
-- science, marketing, design, development, learning, teamwork, intro
 
 Eine Scroll-down Aufforderung
 - science, marketing, design, learning, teamwork, intro
 
+Content
+- Buttons brauchen einen hover-effect
+- Content scrollt zu den sections
+
 Developer
 - Jeder Editor brauch noch Inhalt, der beim Clicken/Hovern sichtbar wird.
-
-
-Beispiele/Intro
-- Eine zentrale Headline mit einer zweifelhaften Aussage in groß, darunter dann Erklärungsansätze
-- Als Animation/transition vllt einfach die Hintergrundfarbe, die sich rapide ändert, wenn man zu einer neuen Aussage kommt
-
-
-
-General
-- Transition zwischen den views noch überlegen
-- Toggle für Dark/lightmode

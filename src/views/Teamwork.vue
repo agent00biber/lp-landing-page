@@ -83,28 +83,73 @@
     </section>
 
     <section class="main-content" id="teamwork--main-content">
-      <header class="headline-wrapper">
-        <h1 class="main--headline">Empowering Teamwork</h1>
-      </header>
+      <h1 class="main-content--headline">Empowering Teamwork</h1>
 
-      <div class="content-wrapper">
-        <h2 class="headline">Why do I understand teams?</h2>
-
-        <p class="text">
-          I worked my whole life in teams but are (as of now) a team of one. I
-          know where the bottlenecks are and how to ask for and give help.
-        </p>
-      </div>
-      <div class="content-wrapper">
-        <h2 class="headline">Advancing Ideas together</h2>
-
-        <p class="text">
-          I am always looking for like-minded people to test and challenge my
-          ideas and my perspective. Together we can find questions and solutions
-          a single mind was unable to think of.
-        </p>
-      </div>
-
+      <content-summery
+        class="content-summery-layout js-content-observe"
+        headline="Understanding Teamwork"
+        text="I am always looking for like-minded people to test and challenge my ideas and my perspective. Together we can find questions and solutions a single mind was unable to think of."
+        sectionID="teamwork"
+        :summeryContent="[
+          {
+            headline: 'Ideas for like-minded people to explore',
+            text:
+              'Im always looking for nice poeple to work with. If you have an idea for a healthcare app or want to work on some of my ideas, get in contact.'
+          }
+        ]"
+      />
+      <content-section
+        class="content-section-layout js-content-observe"
+        headline="Ideas for likeminded people to explore"
+        text="Here is a small list of ideas we could do together, if you dont have any right now. I can focus on either design or development - whatever works for you best."
+        sectionID="teamwork"
+        alignExtraContent="right"
+      >
+        <div class="extra-content-container">
+          <div
+            class="container--row container--row1"
+            @mouseover="hover(true, 0)"
+            @mouseleave="hover(false, 0)"
+          >
+            <aside class="row--background"></aside>
+            <a
+              href="mailto:career.lucas.paetow@gmail.com?subject=About%20your%20Idea%3A%20Illustrate%20Illnesses%20with%20smileys"
+              class="row--content"
+            >
+              Describe Illnesses with smileys to raise awarness in a playfull
+              way.
+            </a>
+          </div>
+          <div
+            class="container--row container--row2"
+            @mouseover="hover(true, 1)"
+            @mouseleave="hover(false, 1)"
+          >
+            <aside class="row--background"></aside>
+            <a
+              href="mailto:career.lucas.paetow@gmail.com?subject=About%20your%20Idea%3A%201000nd%20medical%20opinion"
+              class="row--content"
+            >
+              Validate patient cases in a tinder like fashion get a 2nd-1000nd
+              opinion fast.
+            </a>
+          </div>
+          <div
+            class="container--row container--row3"
+            @mouseover="hover(true, 2)"
+            @mouseleave="hover(false, 2)"
+          >
+            <aside class="row--background"></aside>
+            <a
+              href="mailto:career.lucas.paetow@gmail.com?subject=About%20your%20Idea%3A%20Illustrate%20Illnesses%20with%20smileys"
+              class="row--content"
+            >
+              Messenge a pharmacist for medication related questions instead of
+              asking someone else.
+            </a>
+          </div>
+        </div>
+      </content-section>
       <footer class="footer">
         <router-link :to="{ name: 'home' }">Back home</router-link>
       </footer>
@@ -113,15 +158,34 @@
 </template>
 
 <script>
+import contentSummery from "@/components/buildingBlocks/contentSummery.vue";
+import contentSection from "@/components/buildingBlocks/contentSection.vue";
+
 export default {
-  components: {},
-  //if the basics are being edited, this array contains existing basic information
+  components: {
+    contentSummery,
+    contentSection
+  },
   props: [],
   name: "teamwork",
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    hover(boolean, rowNumber) {
+      if (window.innerWidth < 600) {
+        return;
+      }
+
+      let row = document.querySelectorAll(".container--row");
+
+      if (boolean) {
+        row[rowNumber].classList.add("active");
+        return;
+      }
+      row[rowNumber].classList.remove("active");
+    }
+  },
   computed: {},
   created() {},
   //same check for route-view keep-alive
@@ -162,22 +226,23 @@ export default {
   overflow: hidden;
   display: grid;
   grid-template-columns: var(--view-main);
-  grid-template-rows: 2fr 3fr;
+  grid-template-rows: var(--sticky-headline-padding) min-content 1fr;
 }
 
 .teamwork-container {
   grid-column: 2/3;
-  grid-row: 1/2;
+  grid-row: 2/3;
   align-self: end;
 }
 
 .teamwork--headline {
   color: var(--teamwork-color);
-  font-size: var(--6base);
+  font-size: var(--headline);
   line-height: 120%;
 }
 .teamwork--subline {
   font-size: var(--2base);
+  font-weight: bold;
 }
 
 .scroll-helper {
@@ -187,9 +252,18 @@ export default {
   height: 200vh;
 }
 
+@media (min-width: 30em) {
+  .scroll-helper {
+    margin-top: 300vh;
+    z-index: 6;
+    width: 100%;
+    height: 200vh;
+  }
+}
+
 .scroll-helper--link {
   position: sticky;
-  top: 50%;
+  top: 40%;
   display: grid;
   grid-template-columns: var(--view-main);
   grid-template-rows: 1fr 1fr;
@@ -202,58 +276,121 @@ export default {
   font-weight: bold;
 }
 
+@media (min-width: 30em) {
+  .scroll-helper--link__text {
+    font-size: var(--3base);
+  }
+}
+
 .text1 {
   background: var(--teamwork-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+/*----------------------------------------------------*/
 
 .main-content {
   padding: 10vh 0 5vh 0;
   display: grid;
-  grid-row-gap: var(--1base);
+  grid-auto-rows: min-content;
 }
 
-.headline-wrapper {
-  display: grid;
-  grid-template-columns: var(--view-main);
+@media (min-width: 30em) {
+  .main-content {
+    padding: 15vh 0 5vh 0;
+  }
 }
 
-.main--headline {
-  grid-column: 2/3;
-  font-size: var(--5base);
-  line-height: 120%;
+.main-content--headline {
+  font-size: var(--headline);
   color: var(--teamwork-color);
   text-shadow: 0px 0px 5px hsla(0, 0%, 0%, 0.1);
+  padding-left: 5vw;
+  margin: 5vh 0;
 }
 
-.content-wrapper {
+@media (min-width: 70em) {
+  .main-content--headline {
+    padding-left: 15vw;
+  }
+}
+
+.content-section-layout:last-of-type {
+  border-bottom: 1px solid var(--grey-600);
+}
+
+/*----------------------------------------------------*/
+.extra-content-container {
   display: grid;
-  grid-template-columns: var(--view-main);
-  grid-auto-rows: min-content;
-  padding: 4rem 0;
-  grid-row-gap: var(--row-gap);
-  grid-gap: var(--1base);
-  background-color: var(--background-secondary);
-  min-height: 40vh;
+  grid-template-rows: 1fr 1fr 1fr;
+  background: var(--teamwork-gradient);
 }
 
-.headline {
-  grid-column: 2/3;
-  color: var(--teamwork-color);
+.container--row {
+  text-decoration: none;
+  display: grid;
 }
 
-.text {
-  grid-column: 2/3;
+.container--row:nth-of-type(2) {
+  border-top: 1px solid var(--grey-600);
+  border-bottom: 1px solid var(--grey-600);
+}
+
+.row--content {
+  font-weight: bold;
   font-size: var(--2base);
+  padding: var(--2base) var(--1base);
+  align-self: center;
+  grid-row: 1/2;
+  grid-column: 1/2;
+  text-decoration: none;
+  position: relative;
+  z-index: 2;
 }
 
-.text-box--small {
-  background-color: var(--background-primary);
-  border-radius: var(--fourthbase);
-  padding: var(--2base);
-  grid-column: 2/3;
+@media (min-width: 27em) {
+  .row--content {
+    font-size: var(--2base);
+    padding: var(--4base) var(--1base);
+  }
 }
+
+@media (min-width: 45em) {
+  .row--content {
+    font-size: var(--2base);
+    padding: var(--2base) var(--1base);
+  }
+}
+
+@media (min-width: 56em) {
+  .row--content {
+    padding: var(--3base) var(--2base);
+  }
+}
+
+@media (min-width: 70em) {
+  .row--content {
+    font-size: 2vw;
+    padding: var(--4base) var(--2base);
+  }
+}
+
+.row--background {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  background-color: var(--background-tertiary);
+  opacity: 1;
+  transition: opacity 0.4s var(--moving-out);
+  position: relative;
+  z-index: 1;
+}
+
+.active .row--background {
+  opacity: 0;
+  transition: opacity 0.2s var(--moving-in);
+}
+
+/*----------------------------------------------------*/
 
 .footer {
   display: flex;

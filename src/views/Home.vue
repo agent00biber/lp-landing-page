@@ -2,7 +2,17 @@
   <article class="home" id="home">
     <section class="svg-cutout">
       <div id="svg-overlay" class="svg-overlay">
-        <img src="@/assets/into-name-lp.svg" alt="lucas paetow" />
+        <picture>
+          <source
+            media="(max-width: 40em)"
+            srcset="@/assets/intro-name-375.svg"
+          />
+          <source
+            media="(min-width: 40.1em)"
+            srcset="@/assets/intro-name-580.svg"
+          />
+          <img src="@/assets/intro-name-375.svg" alt="lucas paetow" />
+        </picture>
       </div>
     </section>
     <section class="sticky-wrapper">
@@ -15,22 +25,21 @@
       </div>
     </section>
     <section class="intro observe-section" id="intro">
-      <p class="text--intro">
+      <h3 class="text--intro">
         I can help to reduce conflict within your team, because I understand
         their pain points.
-      </p>
+      </h3>
       <router-link class="link--intro" :to="{ name: 'intro' }"
-        ><p class="text--link">See conflitct examples</p>
-        <arrow-icon class="icon--link" />
+        ><h4 class="text--link">See conflitct examples</h4>
       </router-link>
     </section>
 
     <section class="main-content">
       <home-section
         class="observe-section"
-        headline="WEB-DEVELOPMENT"
+        headline="FRONTEND"
         body="I build javascript web apps with vue"
-        sectionID="development"
+        sectionID="frontend"
       >
       </home-section>
 
@@ -68,7 +77,7 @@
 
       <home-section
         class="observe-section"
-        headline="LIVE LONG LEARNING"
+        headline="LEARNING"
         body="I embrace the puzzle and grind for the solution or a workaround"
         sectionID="learning"
       >
@@ -79,7 +88,7 @@
       <p class="text--outro">
         Get to know me
       </p>
-      <a href="mailto:name@email.com">
+      <a href="mailto:career.lucas.paetow@gmail.com">
         <email-icon class="icon--link" />
       </a>
     </section>
@@ -88,11 +97,6 @@
 
 <script>
 import arrowIcon from "@/components/icons/arrow.vue";
-import cubeIcon from "@/components/icons/cube.vue";
-import circleIcon from "@/components/icons/circle.vue";
-import triangleIcon from "@/components/icons/triangle.vue";
-import hexagonIcon from "@/components/icons/hexagon.vue";
-import heartIcon from "@/components/icons/heart.vue";
 import emailIcon from "@/components/icons/email.vue";
 import homeSection from "@/components/homepage/HomeSection.vue";
 
@@ -100,21 +104,12 @@ export default {
   name: "home",
   components: {
     arrowIcon,
-    cubeIcon,
-    circleIcon,
-    triangleIcon,
-    hexagonIcon,
-    heartIcon,
     emailIcon,
     homeSection
   },
 
   methods: {
     scrollSVG() {
-      if (this.$route.name !== "home") {
-        return;
-      }
-
       const heroContent = document.getElementById("hero-content");
       const svgContainer = document.getElementById("svg-overlay");
       const navBar = document.querySelector("#nav");
@@ -161,7 +156,7 @@ export default {
         `${entry.target.id}-nav-extended`
       );
       navId.classList.remove("active");
-      navIdExtended.style.color = `var(--grey-400)`;
+      navIdExtended.style.color = `var(--white)`;
     }
   },
   mounted() {
@@ -183,9 +178,11 @@ export default {
       });
     }, options);
 
-    observeSections.forEach(section => {
-      observer.observe(section);
-    });
+    if (window.innerWidth < 600) {
+      observeSections.forEach(section => {
+        observer.observe(section);
+      });
+    }
   },
   destroyed() {
     window.removeEventListener("scroll", this.scrollSVG);
@@ -229,7 +226,6 @@ export default {
 
 img {
   width: 100%;
-  max-width: 80vh;
   margin: 0 auto;
   outline: 50vh solid var(--background-tertiary);
   outline-offset: -2px;
@@ -289,65 +285,61 @@ img {
 }
 
 .headline-top {
-  font-size: 4rem;
   line-height: 100%;
 }
 
 .headline-bottom {
-  font-size: 1.75rem;
+  line-height: 120%;
 }
 
 .intro {
   display: grid;
   grid-template-columns: var(--view-main);
-  grid-auto-rows: min-content;
-  padding: 5rem 0;
-  height: 50vh;
+  grid-template-rows: 1fr min-content min-content 1fr;
+  padding: var(--content-padding);
+  min-height: 50vh;
   grid-row-gap: var(--row-gap);
   margin-bottom: var(--1base);
 }
 
+@media (min-width: 70em) {
+  .intro {
+    min-height: 70vh;
+  }
+}
+
 .text--intro {
   grid-column: 2/3;
-  font-size: var(--2base);
+  grid-row: 2/3;
   font-weight: bold;
 }
 
 .link--intro {
   grid-column: 2/3;
+  grid-row: 3/4;
   text-decoration: underline var(--white);
-  display: flex;
-  flex-direction: row;
 }
 
 .text--link {
   color: var(--white);
   font-weight: bold;
-  font-size: var(--2base);
   padding-right: var(--halfbase);
 }
 
 .main-content {
   display: grid;
-  grid-row-gap: var(--1base);
 }
 
-.icon {
-  position: absolute;
-  left: 0;
-  top: 0;
+@media (min-width: 37.5em) {
+  .main-content {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
-.icon2 {
-  left: 1.5rem;
-}
-
-.icon3 {
-  left: 3rem;
-}
-
-.icon4 {
-  left: 4.5rem;
+@media (min-width: 60em) {
+  .main-content {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 .outro {

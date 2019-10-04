@@ -2,7 +2,7 @@
   <nav class="navbar" id="nav">
     <section class="nav-content">
       <router-link class="initals-link" :to="{ name: 'home' }">
-        <h2 class="initals" @click="closeMenu()">LP</h2></router-link
+        <h3 class="initals" @click="closeMenu()">LP</h3></router-link
       >
 
       <ul class="menu-items">
@@ -23,7 +23,7 @@
     </section>
 
     <aside class="extended-navigation" id="nav-extended">
-      <ul class="menu-extended" v-if="$route.name === 'home'">
+      <ul class="menu-extended" v-if="navbarState">
         <a
           v-scroll-to="{
             el: `#${entry.id}`,
@@ -47,7 +47,9 @@
           v-for="entry in sectionEntries"
           :style="{
             color:
-              $route.name === `${entry.id}` ? `var(--${entry.id}-color)` : ''
+              $route.name === `${entry.id}`
+                ? `var(--${entry.id}-color)`
+                : 'var(--white)'
           }"
         >
           <span @click="toggleMenu()">{{ entry.text }}</span>
@@ -70,7 +72,7 @@ export default {
       activeHambuerMenu: false,
       sectionEntries: [
         { id: "intro", text: "Intro" },
-        { id: "development", text: "Web development" },
+        { id: "frontend", text: "Frontend" },
         { id: "design", text: "UX design" },
         { id: "marketing", text: "Marketing" },
         { id: "science", text: "Science" },
@@ -93,6 +95,17 @@ export default {
       let nav = document.getElementById("nav-extended");
       nav.classList.remove("active");
     }
+  },
+  computed: {
+    navbarState() {
+      let widthCondition = window.innerWidth < 600;
+      let routeCondition = this.$route.name === "home";
+
+      if (widthCondition && routeCondition) {
+        return true;
+      }
+      return false;
+    }
   }
 };
 </script>
@@ -111,16 +124,23 @@ export default {
 .nav-content {
   height: var(--7base);
   display: grid;
-  grid-template-columns: 4rem 1fr 4rem;
-
+  grid-template-columns: min-content 1fr min-content;
   background-color: hsla(0, 0%, 3%, 0.75);
+}
+
+@media (min-width: 30em) {
+  .navbar {
+    height: var(--8base);
+  }
+
+  .nav-content {
+    height: var(--8base);
+  }
 }
 
 .initals-link {
   grid-column: 1/2;
-  align-self: center;
   text-decoration: none;
-  justify-self: center;
   height: var(--7base);
   width: var(--7base);
   display: flex;
@@ -131,8 +151,18 @@ export default {
 }
 
 .initals {
-  color: var(--white);
+  color: white;
   padding: 0;
+}
+
+@media (min-width: 30em) {
+  .initals-link {
+    height: var(--8base);
+    width: var(--8base);
+  }
+  .initals {
+    font-size: var(--4base);
+  }
 }
 
 .menu-items {
@@ -143,7 +173,7 @@ export default {
 }
 
 .item {
-  color: var(--white);
+  color: white;
   font-size: var(--2base);
   font-weight: bold;
   opacity: 0;
@@ -153,6 +183,12 @@ export default {
   justify-self: end;
   position: relative;
   z-index: 10;
+}
+
+@media (min-width: 30em) {
+  .item {
+    font-size: var(--3base);
+  }
 }
 
 .active {
@@ -172,12 +208,18 @@ export default {
 .extended-navigation {
   position: absolute;
   background-color: var(--background-primary);
-  height: 60vh;
+  min-height: 60vh;
   width: 100%;
   z-index: 5;
   transform: translateY(calc(-100% - var(--7base)));
   transition: all 0.2s var(--moving-out);
   box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.25);
+}
+
+@media (min-width: 30em) {
+  .extended-navigation {
+    transform: translateY(calc(-100% - var(--8base)));
+  }
 }
 
 .active {
@@ -188,18 +230,21 @@ export default {
 .menu-extended {
   display: grid;
   grid-template-columns: var(--view-main);
-  padding: 3rem 0;
+  padding: var(--content-padding);
 }
 
 .item-extended {
   grid-column: 2/3;
-  color: var(--white);
+  color: white;
   font-size: var(--2base);
   font-weight: bold;
   margin-bottom: var(--2base);
   justify-self: end;
 }
-.item-extended .router-link-exact-active span {
-  color: hsla(0, 0%, 50%, 100);
+
+@media (min-width: 30em) {
+  .item-extended {
+    font-size: var(--3base);
+  }
 }
 </style>

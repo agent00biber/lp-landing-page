@@ -14,6 +14,8 @@
 </template>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap");
+
 .editor {
   height: 100%;
   width: 100%;
@@ -22,6 +24,7 @@
   display: grid;
   grid-template-rows: 3rem 1fr;
   box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.25);
+  font-family: "Roboto Mono", monospace;
 }
 .editor--headline {
   border-top-left-radius: var(--fourthbase);
@@ -39,11 +42,18 @@
 }
 
 .dot {
-  height: 1rem;
-  width: 1rem;
+  height: 0.8rem;
+  width: 0.8rem;
   border-radius: 50%;
   margin-right: var(--halfbase);
   background-color: var(--grey-400);
+}
+
+@media (min-width: 22.5em) {
+  .dot {
+    height: 1rem;
+    width: 1rem;
+  }
 }
 
 .active .red {
@@ -57,7 +67,9 @@
 }
 
 .editor--text-wrapper {
-  padding: var(--2base);
+  padding: var(--1base);
   display: grid;
+  grid-auto-rows: min-content;
+  grid-row-gap: var(--row-gap);
 }
 </style>
