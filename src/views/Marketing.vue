@@ -38,7 +38,7 @@
       <content-section
         class="content-section-layout js-content-observe"
         headline="Persuasive marketing psychology "
-        text="Still in progress. A mockup store to order colorfull tshirts.  Uses several techniques to increase conversion like framing, loss-aversion and a very daring copy. You can read more about it on my casestudy website."
+        text="Still in progress. A mockup store to order colorful t-shirts.  Uses several techniques to increase conversions like framing, loss-aversion, and a very daring copy. You can read more about it on my case study website."
         sectionID="marketing"
         alignExtraContent="right"
         buttonText="Read the casestudy"

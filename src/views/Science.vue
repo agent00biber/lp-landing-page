@@ -47,13 +47,13 @@
       <content-summery
         class="content-summery-layout js-content-observe"
         headline="Understanding Science"
-        text="How does science fit into the greater picture? It creates content. I have a masters in pharmaceutical sciences and can deep dive into most medical fields in a short amount of time."
+        text="How does science fit into the greater picture? It creates content. I have a master's in pharmaceutical sciences and can deep dive into most medical fields in a short amount of time."
         sectionID="science"
         :summeryContent="[
           {
             headline: 'Digital <3 pharma',
             text:
-              'I am really interessted in  bringing pharmaceutical sciences and digital services together. Eventually I want to build a digital therapeutic to help people in their life.'
+              'I am really interested in bringing pharmaceutical sciences and digital services together. Eventually, I want to build a digital therapeutic to help people in their life.'
           },
           {
             headline: 'Retrosynthesis',
@@ -65,7 +65,7 @@
       <content-section
         class="content-section-layout js-content-observe"
         headline="Digital <3 pharma"
-        text="There are many ways to enhance the patient journey with digital solutions, like providing accessible information,  preordering medications,  using apps to document adverse reaction or to remember medication intake times. I would love to help envisioning and developing these together with you."
+        text="There are many ways to enhance the patient journey with digital solutions, like providing accessible information,  preordering medications,  using apps to document adverse reactions or to remember medication intake times. I would love to help to envision and to develop these together with you."
         sectionID="science"
         alignExtraContent="right"
         buttonText="lets get in contact"

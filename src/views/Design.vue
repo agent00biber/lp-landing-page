@@ -46,19 +46,19 @@
               the product to know how everything fits together. Where and when
               the user needs guidance. But also how to create beauty, delight
               and how to foster a sense of excitement, so the user wants to
-              discover every feature
+              discover every feature.
             </p>
             <p class="content-summery--text proto phase2 hidden">
-              prototext about my abilites, what i can do in terms of ux design
+              Prototext about my abilities, what I can do in terms of UX design
               and how I hope this could help a company or a startup. This should
-              also reflect an eye for design and interest in the user.
+              also, reflect an eye for design and interest in the user.
             </p>
             <p class="content-summery--text phase3 hidden">
               Because before coding, I need to research, concept and wireframe
               the product to know how everything fits together. Where and when
               the user needs guidance. But also how to create beauty, delight
               and how to foster a sense of excitement, so the user wants to
-              discover every feature
+              discover every feature.
             </p>
 
             <div class="prototype-wrapper phase2 hidden">
@@ -86,20 +86,20 @@
                   <p class="project--text skeleton phase1 hidden">
                     E-Commerce websites are a huge part of the web and are home
                     to a lot of good and “questionable” UX-patterns. To broaden
-                    my horizon and to learn about digital psychology I created a
-                    small mockup store for ordering t-shirts.
+                    my horizon and to learn about digital psychology, I created
+                    a small mockup store for ordering t-shirts.
                   </p>
                   <p class="project--text proto phase2 hidden">
                     E-Commerce websites are a huge part of the web and are home
                     to a lot of good and “questionable” UX-patterns. To broaden
-                    my horizon and to learn about digital psychology I created a
-                    small mockup store for ordering t-shirts.
+                    my horizon and to learn about digital psychology, I created
+                    a small mockup store for ordering t-shirts..
                   </p>
                   <p class="project--text phase3 hidden">
                     E-Commerce websites are a huge part of the web and are home
                     to a lot of good and “questionable” UX-patterns. To broaden
-                    my horizon and to learn about digital psychology I created a
-                    small mockup store for ordering t-shirts.
+                    my horizon and to learn about digital psychology, I created
+                    a small mockup store for ordering t-shirts.
                   </p>
                 </li>
                 <li
@@ -117,23 +117,23 @@
                   <p class="project--text skeleton phase1 hidden">
                     I started my journey into UX with a question of how to get
                     feedback and how to enhance the current feedback experience
-                    for the user. As a starter project I created a simple survey
-                    generator to create beautiful and engaging questionairs the
-                    user might actually want to partake in.
+                    for the user. As a starter project, I created a simple
+                    survey generator to create beautiful and engaging
+                    questionnaires the user might actually want to partake in.
                   </p>
                   <p class="project--text proto phase2 hidden">
                     I started my journey into UX with a question of how to get
                     feedback and how to enhance the current feedback experience
-                    for the user. As a starter project I created a simple survey
-                    generator to create beautiful and engaging questionairs the
-                    user might actually want to partake in.
+                    for the user. As a starter project, I created a simple
+                    survey generator to create beautiful and engaging
+                    questionnaires the user might actually want to partake in.
                   </p>
                   <p class="project--text phase3 hidden">
                     I started my journey into UX with a question of how to get
                     feedback and how to enhance the current feedback experience
-                    for the user. As a starter project I created a simple survey
-                    generator to create beautiful and engaging questionairs the
-                    user might actually want to partake in.
+                    for the user. As a starter project, I created a simple
+                    survey generator to create beautiful and engaging
+                    questionnaires the user might actually want to partake in.
                   </p>
                 </li>
               </ul>
@@ -160,9 +160,9 @@
               <div class="content-body--text-wrapper">
                 <p class="content-body--text">
                   <b>Still in progress</b> A mockup e-commerce store for the
-                  most-perfect tshirt in a color the user can choose for
+                  most-perfect t-shirt in a color the user can choose for
                   her-/himself. Relies heavily on daring copy text and engaging
-                  visuals. Read the full casestudy on my casestudy-website.
+                  visuals. Read the full case study on my case study website.
                 </p>
                 <button class="content-body--button">
                   Read the casestudy
@@ -199,8 +199,8 @@
               <div class="content-body--text-wrapper">
                 <p class="content-body--text">
                   A simple survey generator to create, analyze and share
-                  beautiful and engaging questionairs. Visit my casestudy
-                  website for an indepth persepective or click the image to
+                  beautiful and engaging questionnaires. Visit my case study
+                  website for an in-depth perspective or click the image to
                   visit the website.
                 </p>
                 <button class="content-body--button">

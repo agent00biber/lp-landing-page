@@ -36,35 +36,31 @@
       <content-summery
         class="content-summery-layout js-content-observe"
         headline="Understanding conflict in teams"
-        text="Everyone in a team is important and has their teams success in mind. But sometimes not knowing what the others do, not talking to them or only talking to them late in the process creates conflict:"
+        text="Everyone in a team is important and has their team's success in mind. But sometimes not knowing what the others do, not talking to them or only talking to them late in the process creates conflict:"
         sectionID="intro"
         :summeryContent="[
           {
             headline: 'Just one more popup',
-            text:
-              'People abandon the shopping cart of hidden cost like shipping. Lets tell them immediately there are no shipping cost for first sign ups. This is the first information they should see, right?'
+            text: `People abandon the shopping cart of hidden costs like shipping. Let's tell them immediately there are no shipping costs for the first sign-ups. This is the first information they should see, right?`
           },
           {
             headline: 'Pixel-perfect',
-            text:
-              'I dont have time to align everything and do different kernings on all the headlines. The designer wont be mad, right? '
+            text: `I don't have time to align everything and do different kernings on all the headlines. The designer won't be mad, right? `
           },
           {
             headline: 'Look at these dope animation',
-            text:
-              'This animation will capture the user  attention. This will run on all devices just fine, right?'
+            text: `This animation will capture the user's attention. This will run on all devices just fine, right?`
           },
           {
             headline: 'Lets call it a day',
-            text:
-              'Here are the designs. This wont take long, right? Deadline is in a week.'
+            text: `Here are the designs. This won't take long, right? The deadline is in a week.`
           }
         ]"
       />
       <content-section
         class="content-section-layout js-content-observe"
         headline="Just one more pop-up"
-        text="Pop ups are the bane of every user’s experience and will reduce their delight & enjoyment of your app. This could make users abandon it and will decrease conversions. Markting still has to deliver results. Fortunatly there are other ways of deliving a message, like free shipping, without spooking the customers with just another pop up"
+        text="Pop-ups are the bane of every user’s experience and will reduce their delight & enjoyment of your app. This could make users abandon it and will decrease conversions. Marketing still has to deliver results. Fortunately, there are other ways of delivering a message, like free shipping, without spooking the customers with just another pop-up."
         sectionID="intro"
         alignExtraContent="right"
       >
@@ -88,8 +84,8 @@
       <content-section
         class="content-section-layout js-content-observe"
         headline="Pixel-Perfect"
-        text="The difference between a good design and a great design are often the details. These need to be implemented like everything else.
-        But developers often face immense time pressure and are trying to get the business-relevant implementations done first. Early communication between both departments and creating design systems help prioritising design decisions."
+        text="The difference between a good design and a great design is often the details. These need to be implemented like everything else.
+        But developers often face immense time pressure and are trying to get the business-relevant implementations done first. Early communication between both departments and creating design systems helps to prioritize design decisions."
         sectionID="intro"
         alignExtraContent="left"
       >
@@ -125,7 +121,7 @@
       <content-section
         class="content-section-layout js-content-observe"
         headline="These dope Animations"
-        text="Sure, they look great but will look janky on older devices and deminish the intendet delight and user experience. Consultating developers early about what is feasabile and what isn’t will avoid removing these dope animations and stop wasting creative moments."
+        text="Sure, they look great but will look janky on older devices and diminish the intended delight and user experience. Consulting developers early about what is feasible and what isn’t will avoid removing these dope animations and stop wasting creative moments."
         sectionID="intro"
         alignExtraContent="right"
       >

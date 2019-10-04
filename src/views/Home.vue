@@ -38,7 +38,7 @@
       <home-section
         class="observe-section"
         headline="FRONTEND"
-        body="I build javascript web apps with vue"
+        body="I build javascript web apps with Vue"
         sectionID="frontend"
       >
       </home-section>
@@ -46,7 +46,7 @@
       <home-section
         class="observe-section"
         headline="UX DESIGN"
-        body="I balance asthetics and functions for the user"
+        body="I balance aesthetics and functions for the user"
         sectionID="design"
       >
       </home-section>
@@ -62,7 +62,7 @@
       <home-section
         class="observe-section"
         headline="SCIENCE"
-        body="I dive deep into medical topics with a master in pharmcutical sciences"
+        body="I dive deep into medical topics with a master in pharmaceutical sciences"
         sectionID="science"
       >
       </home-section>
@@ -70,7 +70,7 @@
       <home-section
         class="observe-section"
         headline="TEAMWORK"
-        body="I thrive within creative discurse and in pursuit of a common goal"
+        body="I thrive within the creative discourse and in pursuit of a common goal"
         sectionID="teamwork"
       >
       </home-section>
