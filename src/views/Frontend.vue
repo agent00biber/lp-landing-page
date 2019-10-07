@@ -292,35 +292,43 @@ export default {
 }
 
 .editor-layout-main {
-  grid-area: em;
+  grid-column: 4/8;
+  grid-row: 4/5;
 }
 
 .editor-layout-1 {
-  grid-area: e1;
+  grid-column: 1/4;
+  grid-row: 1/2;
 }
 
 .editor-layout-2 {
-  grid-area: e2;
+  grid-column: 4/6;
+  grid-row: 1/2;
 }
 
 .editor-layout-3 {
-  grid-area: e3;
+  grid-column: 6/10;
+  grid-row: 1/2;
 }
 
 .editor-layout-4 {
-  grid-area: e4;
+  grid-column: 1/4;
+  grid-row: 2/5;
 }
 
 .editor-layout-5 {
-  grid-area: e5;
+  grid-column: 4/5;
+  grid-row: 2/3;
 }
 
 .editor-layout-6 {
-  grid-area: e6;
+  grid-column: 5/10;
+  grid-row: 2/4;
 }
 
 .editor-layout-7 {
-  grid-area: e7;
+  grid-column: 8/10;
+  grid-row: 4/5;
 }
 
 .editor--text {
