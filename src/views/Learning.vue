@@ -16,6 +16,7 @@
           <div class="loading-content">
             <p
               class="loading-content--entries"
+              :key="'loading-words' + index"
               v-for="(word, index) in [
                 'HTML',
                 'CSS',
@@ -136,8 +137,6 @@ export default {
     contentSection,
     iconArrow
   },
-
-  props: [],
   name: "learning",
   data() {
     return {
@@ -162,8 +161,8 @@ export default {
         ratio / 2 < 1 ? ratio / 2 : 1
       })`;
 
-      let scaleX = ratio;
-      let scaleY = Math.pow(ratio, 2) > 1 ? Math.pow(ratio, 2) : 1;
+      let scaleX = ratio * 2;
+      let scaleY = Math.pow(ratio, 3) > 1 ? Math.pow(ratio, 3) : 1;
 
       if (ratio / 2 > 2.5) {
         loadingbarZoom.style.transform = `scale(5, 25)`;
@@ -202,13 +201,9 @@ export default {
       if (!inView) {
         return;
       }
-      background.style.transform = `scaleX(${viewAmount - 0.1})`;
+      background.style.transform = `scaleX(${viewAmount - 0.15})`;
     }
   },
-  computed: {},
-  created() {},
-  //same check for route-view keep-alive
-  activated() {},
   mounted() {
     window.addEventListener("scroll", this.scrollProgress);
   },
@@ -232,7 +227,7 @@ export default {
 }
 
 .sticky-wrapper {
-  height: 700vh;
+  height: 500vh;
 }
 
 .sticky-content {
@@ -424,6 +419,10 @@ export default {
   color: var(--white);
 }
 
+.button:active {
+  transform: translateY(0.1rem);
+}
+
 .button1 {
   grid-row: 2/3;
 }
@@ -432,11 +431,6 @@ export default {
   grid-row: 3/4;
   border-radius: var(--fourthbase);
   color: var(--learning-color);
-}
-
-.button1:active,
-.button2:active {
-  transform: translateY(0.1rem);
 }
 
 .button3 {
@@ -456,14 +450,14 @@ export default {
   left: 50%;
   width: 5px;
   height: 5px;
-  background: var(--learning-gradient);
+  background-color: var(--learning-color);
   opacity: 0;
   border-radius: 100%;
   transform: scale(1, 1) translate(-50%);
   transform-origin: 50% 50%;
 }
 
-.button3:focus:not(:active)::after {
+.button3:focus:not(:active):after {
   animation: ripple 0.5s ease-out;
 }
 

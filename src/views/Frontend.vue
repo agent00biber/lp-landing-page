@@ -23,13 +23,26 @@
               create <span class="text--import__inside">webApp</span>
             </p>
           </editor>
-          <editor class="editor-layout-1"></editor>
-          <editor class="editor-layout-2"></editor>
-          <editor class="editor-layout-3"></editor>
-          <editor class="editor-layout-4"></editor>
-          <editor class="editor-layout-5"></editor>
-          <editor class="editor-layout-6"></editor>
-          <editor class="editor-layout-7"></editor>
+
+          <editor
+            v-for="(editor, index) in 7"
+            :class="[`editor-layout-${index + 1}`]"
+            :key="'editor' + index"
+            :id="'editor-id' + (index + 1)"
+          >
+            <div
+              class="editor--coding-bar"
+              v-for="(codingBar, codingIndex) in randomNumber(2, 7)"
+              :key="'coding-bar' + codingIndex"
+              :style="{
+                width: randomNumber(20, 70) + '%',
+                background: `linear-gradient(135deg, #3a6186 0%, #2c8925 ${randomNumber(
+                  20,
+                  100
+                )}%)`
+              }"
+            ></div
+          ></editor>
         </div>
       </div>
     </section>
@@ -91,6 +104,7 @@
         sectionID="frontend"
         alignExtraContent="right"
         buttonText="Github repo"
+        buttonLink="https://github.com/agent00biber/lovable-survey-creator"
       >
         <div class="extra-content-container ">
           <editor class="active js-editor-parallax extra-content--editor">
@@ -135,8 +149,6 @@ export default {
     contentSummery,
     contentSection
   },
-  //if the basics are being edited, this array contains existing basic information
-  props: [],
   name: "frontend",
   data() {
     return {
@@ -176,6 +188,11 @@ export default {
       this.parallaxImages();
     },
     parallaxImages() {
+      //dont use animations for mobile and tablets
+      if (window.innerWidth < 1000) {
+        return;
+      }
+
       const editors = document.querySelectorAll(".js-editor-parallax");
 
       editors.forEach(editor => {
@@ -188,11 +205,13 @@ export default {
         }
         editor.style.transform = `translateY( ${viewAmount - 2}rem )`;
       });
+    },
+    randomNumber(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min)) + min;
     }
   },
-  computed: {},
-  created() {},
-  activated() {},
   mounted() {
     const mainEditor = document.getElementById("js-editor");
     mainEditor.style.transform = `scale( ${this.scaleValue} )`;
@@ -367,6 +386,12 @@ export default {
 
 .text--import__inside {
   color: hsla(153, 48%, 49%, 100);
+}
+
+.editor--coding-bar {
+  height: var(--2base);
+  background: var(--frontend-gradient);
+  margin-bottom: calc(var(--1base) * -1);
 }
 
 /*----------------------------------------------------*/

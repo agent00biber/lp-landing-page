@@ -165,7 +165,7 @@
                   visuals. Read the full case study on my case study website.
                 </p>
                 <button class="content-body--button">
-                  Read the casestudy
+                  <a> comming soon</a>
                 </button>
               </div>
             </div>
@@ -204,7 +204,12 @@
                   visit the website.
                 </p>
                 <button class="content-body--button">
-                  Read the casestudy
+                  <a
+                    href="https://lovable-survey-creator.firebaseapp.com"
+                    rel="noopener noreferrer"
+                  >
+                    visit the site</a
+                  >
                 </button>
               </div>
             </div>
@@ -240,12 +245,7 @@
 
 <script>
 export default {
-  components: {},
-  props: [],
   name: "design",
-  data() {
-    return {};
-  },
   methods: {
     scrollWireframe() {
       let ratio = Math.max(window.scrollY) / window.innerHeight;
@@ -343,7 +343,6 @@ export default {
       }
     },
     phase4(ratio) {
-      const phase3 = document.querySelectorAll(".phase3");
       const lines = document.querySelectorAll(".line");
       if (ratio > 3) {
         lines.forEach((line, index) => {
@@ -358,6 +357,11 @@ export default {
       }
     },
     parallaxImages() {
+      //dont use animations for mobile and tablets
+      if (window.innerWidth < 1000) {
+        return;
+      }
+
       const images = document.querySelectorAll(".js-image-parallax");
 
       images.forEach(image => {
@@ -372,10 +376,6 @@ export default {
       });
     }
   },
-  computed: {},
-  created() {},
-  //same check for route-view keep-alive
-  activated() {},
   mounted() {
     window.addEventListener("scroll", this.scrollWireframe);
   },
@@ -399,7 +399,7 @@ export default {
 }
 
 .sticky-wrapper {
-  height: 900vh;
+  height: 700vh;
 }
 
 .sticky-content {
@@ -736,6 +736,43 @@ export default {
   border: 1px solid var(--grey-600);
   max-width: 60%;
   min-width: 8rem;
+}
+
+.content-body--button:active {
+  transform: translateY(0.1rem);
+}
+
+.content-body--button:after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background-color: var(--design-color);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+.content-body--button:focus:not(:active):after {
+  animation: ripple 0.5s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(30, 20);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(80, 40);
+  }
 }
 
 .content-section--content-extra {

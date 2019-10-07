@@ -77,11 +77,7 @@ export default {
     contentSummery,
     contentSection
   },
-  props: [],
   name: "marketing",
-  data() {
-    return {};
-  },
   methods: {
     scrollSilos() {
       const silos = document.querySelectorAll(".js-silo");
@@ -95,6 +91,10 @@ export default {
       this.parallaxImages();
     },
     parallaxImages() {
+      //dont use animations for mobile and tablets
+      if (window.innerWidth < 1000) {
+        return;
+      }
       const images = document.querySelectorAll(".js-image-parallax");
 
       images.forEach(image => {

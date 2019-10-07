@@ -43,16 +43,12 @@ export default {
   components: {
     arrowIcon
   },
-
   props: {
     headline: String,
     body: String,
     sectionID: String
   },
   name: "homeSection",
-  data() {
-    return {};
-  },
   methods: {
     goTo(locationName) {
       this.$router.push({
@@ -72,10 +68,7 @@ export default {
       }
       section.classList.remove("active");
     }
-  },
-  computed: {},
-  created() {},
-  activated() {}
+  }
 };
 </script>
 

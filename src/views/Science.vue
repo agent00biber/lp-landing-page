@@ -1,8 +1,8 @@
 <template>
   <article class="science">
     <section class="sticky-wrapper">
-      <div class="sticky-content" id="js-sticky-container-color-change">
-        <h1 class="sticky-content--headline" id="js-sticky-headline-background">
+      <div class="sticky-content">
+        <h1 class="sticky-content--headline">
           Astounding Science
         </h1>
 
@@ -21,6 +21,7 @@
             <div
               class="atom js-atom"
               v-for="(element, index) in chemicalElements"
+              :key="'element' + index"
               :style="{ transitionDelay: `${index / 100}s` }"
             >
               <p class="atom--weight">{{ Math.round(element.mass) }}</p>
@@ -51,7 +52,7 @@
         sectionID="science"
         :summeryContent="[
           {
-            headline: 'Digital <3 pharma',
+            headline: 'Digital ❤ pharma',
             text:
               'I am really interested in bringing pharmaceutical sciences and digital services together. Eventually, I want to build a digital therapeutic to help people in their life.'
           },
@@ -64,24 +65,38 @@
       />
       <content-section
         class="content-section-layout js-content-observe"
-        headline="Digital <3 pharma"
+        headline="Digital ❤ pharma"
         text="There are many ways to enhance the patient journey with digital solutions, like providing accessible information,  preordering medications,  using apps to document adverse reactions or to remember medication intake times. I would love to help to envision and to develop these together with you."
         sectionID="science"
         alignExtraContent="right"
         buttonText="lets get in contact"
+        buttonLink="mailto:career.lucas.paetow@gmail.com"
       >
         <div class="extra-content-container extra-content-container1">
           <notification
             class="notification--layout js-notification-translate"
+            time="3min ago"
+            sender="Worried patient"
+            message="My friend told me I will be fine if I drink while taking antibiotics. Is this true?"
           />
           <notification
             class="notification--layout js-notification-translate"
+            time="4h ago"
+            sender="Adverse Reaction diary app"
+            message="You reported stomach ache 3 times this week while taking ibuprofen. Maybe you should switch to a different drug."
+          />
+
+          <notification
+            class="notification--layout js-notification-translate"
+            time="Yesterday"
+            sender="Pill Reminder App"
+            message="Don't forget to take your medication with a glass of water at least 30min before your next meal."
           />
           <notification
             class="notification--layout js-notification-translate"
-          />
-          <notification
-            class="notification--layout js-notification-translate"
+            time="Yesterday"
+            sender="Workaholic patient"
+            message="I need a refill for my prescription. I'm free after my working lunch, can I come by at 2:15?"
           />
         </div>
       </content-section>
@@ -134,7 +149,6 @@ export default {
     contentSection,
     notification
   },
-  props: [],
   name: "science",
   data() {
     return {
@@ -146,14 +160,8 @@ export default {
   },
   methods: {
     scrollAtoms() {
-      const stickyContainer = document.getElementById(
-        "js-sticky-container-color-change"
-      );
       const atomContainerBackground = document.getElementById(
         "js-atom-container-background-appear"
-      );
-      const stickyHeadline = document.getElementById(
-        "js-sticky-headline-background"
       );
       const atoms = document.querySelectorAll(".js-atom");
 
@@ -175,11 +183,16 @@ export default {
       this.parallaxImages();
     },
     parallaxImages() {
+      //dont use animations for mobile and tablets
+      if (window.innerWidth < 1000) {
+        return;
+      }
+
       const notifications = document.querySelectorAll(
         ".js-notification-translate"
       );
 
-      notifications.forEach((notification, index) => {
+      notifications.forEach(notification => {
         let inView =
           notification.getBoundingClientRect().top < window.innerHeight;
         let viewAmount =
@@ -190,10 +203,6 @@ export default {
         }
 
         let translateAmount = viewAmount * 100 - 50;
-
-        if (index === 0) {
-          console.log(Math.floor(translateAmount));
-        }
 
         notification.style.transform = `translateY( ${
           translateAmount >= 0 ? translateAmount : 0
@@ -219,9 +228,6 @@ export default {
       }
     }
   },
-  created() {},
-  //same check for route-view keep-alive
-  activated() {},
   mounted() {
     window.addEventListener("scroll", this.scrollAtoms);
   },
@@ -305,6 +311,13 @@ export default {
   .atom {
     padding: var(--1base);
     width: 8rem;
+  }
+}
+
+@media (min-width: 90em) {
+  .atom {
+    padding: var(--2base);
+    width: 10rem;
   }
 }
 
@@ -442,7 +455,7 @@ export default {
 
 .container--row {
   display: grid;
-  grid-template-columns: 6rem min-content 3fr;
+  grid-template-columns: 30vw min-content 1fr;
   min-height: 8rem;
 }
 
@@ -458,10 +471,9 @@ export default {
   align-self: center;
 }
 
-@media (min-width: 27em) {
+@media (min-width: 45em) {
   .container--row {
-    grid-template-columns: 10rem min-content 3fr;
-    min-height: 8rem;
+    grid-template-columns: 15vw min-content 1fr;
   }
   .row--content {
     font-size: var(--2base);
@@ -469,34 +481,10 @@ export default {
   }
 }
 
-@media (min-width: 45em) {
-  .container--row {
-    grid-template-columns: 6rem min-content 3fr;
-    min-height: 6rem;
-  }
-  .row--content {
-    font-size: var(--2base);
-    padding: var(--2base) var(--1base);
-  }
-}
-
-@media (min-width: 56em) {
-  .container--row {
-    grid-template-columns: 7rem min-content 3fr;
-  }
-  .row--content {
-    padding: var(--3base) var(--2base);
-  }
-}
-
 @media (min-width: 70em) {
-  .container--row {
-    grid-template-columns: 10rem min-content 3fr;
-    min-height: 10rem;
-  }
   .row--content {
     font-size: 2vw;
-    padding: var(--4base) var(--2base);
+    padding: var(--4base) var(--1base);
   }
 }
 

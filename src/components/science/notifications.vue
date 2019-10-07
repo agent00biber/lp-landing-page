@@ -2,16 +2,23 @@
   <div class="notification">
     <div class="notification--color"></div>
     <p class="notification--title">Messages</p>
-    <p class="notification--time">3min ago</p>
-    <h4 class="notification--sender">Lucas</h4>
+    <p class="notification--time">{{ time }}</p>
+    <h4 class="notification--sender">{{ sender }}</h4>
     <p class="notification--message">
-      What do you you mean by "this is the wrong way"
+      {{ message }}
     </p>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    time: String,
+    sender: String,
+    message: String
+  },
+  name: "notification"
+};
 </script>
 
 <style scoped>

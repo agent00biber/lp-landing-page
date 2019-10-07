@@ -12,7 +12,8 @@
       <ul class="content-summery--projects">
         <li
           class="content-summery--projects__project content-summery--projects__project1"
-          v-for="content in summeryContent"
+          v-for="(content, index) in summeryContent"
+          :key="'content-summery' + index"
         >
           <h3 class="project--headline">{{ content.headline }}</h3>
           <p class="project--text">
@@ -32,10 +33,7 @@ export default {
     sectionID: String,
     summeryContent: Array
   },
-  name: "contentSummery",
-  data() {
-    return {};
-  }
+  name: "contentSummery"
 };
 </script>
 

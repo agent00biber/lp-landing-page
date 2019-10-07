@@ -27,30 +27,6 @@
   </aside>
 </template>
 
-<script>
-export default {
-  components: {},
-  //if the basics are being edited, this array contains existing basic information
-  props: [],
-  name: "terminal",
-  data() {
-    return {};
-  },
-  methods: {
-    //navigation
-    goTo(locationName) {
-      this.$router.push({
-        name: locationName
-      });
-    }
-  },
-  computed: {},
-  created() {},
-  //same check for route-view keep-alive
-  activated() {}
-};
-</script>
-
 <style scoped>
 @import url("https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap");
 
