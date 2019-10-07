@@ -12,7 +12,7 @@
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
-    "vue-scrollto": "^2.16.3"
+    "vue-scrollto": "^2.17.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.11.0",
@@ -24,7 +24,7 @@
     "brotli-webpack-plugin": "^1.1.0",
     "compression-webpack-plugin": "^3.0.0",
     "eslint": "^5.16.0",
-    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-vue": "^5.0.0",
     "prerender-spa-plugin": "^3.4.0",
     "prettier": "^1.18.2",
