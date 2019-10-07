@@ -96,18 +96,15 @@
 </template>
 
 <script>
-import arrowIcon from "@/components/icons/arrow.vue";
 import emailIcon from "@/components/icons/email.vue";
 import homeSection from "@/components/homepage/HomeSection.vue";
 
 export default {
   name: "home",
   components: {
-    arrowIcon,
     emailIcon,
     homeSection
   },
-
   methods: {
     scrollSVG() {
       const heroContent = document.getElementById("hero-content");
@@ -165,12 +162,12 @@ export default {
 
     const options = {
       rootMargin: "0px",
-      threshold: 0.85
+      threshold: [0, 0.85]
     };
 
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
+        if (entry.intersectionRatio > 0.85) {
           this.addClasses(entry);
         } else {
           this.removeClasses(entry);

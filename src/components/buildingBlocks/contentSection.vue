@@ -15,7 +15,10 @@
       <div class="content-body--text-wrapper">
         <p class="content-body--text">{{ text }}</p>
         <button v-if="buttonText" class="content-body--button">
-          {{ buttonText }}
+          <a v-if="buttonLink" :href="buttonLink" rel="noopener noreferrer">
+            {{ buttonText }}</a
+          >
+          <a v-else> comming soon</a>
         </button>
       </div>
     </div>
@@ -33,15 +36,13 @@ export default {
     text: String,
     sectionID: String,
     buttonText: String,
+    buttonLink: String,
     alignExtraContent: {
       type: String,
       default: "right"
     }
   },
-  name: "contentSection",
-  data() {
-    return {};
-  }
+  name: "contentSection"
 };
 </script>
 
@@ -102,6 +103,43 @@ export default {
   border: 1px solid var(--grey-600);
   max-width: 60%;
   min-width: 8rem;
+}
+
+.content-body--button:active {
+  transform: translateY(0.1rem);
+}
+
+.content-body--button:after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background-color: var(--frontend-color);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+.content-body--button:focus:not(:active):after {
+  animation: ripple 0.5s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(30, 20);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(80, 40);
+  }
 }
 
 .content-section--content-extra {

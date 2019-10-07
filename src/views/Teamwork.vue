@@ -165,11 +165,7 @@ export default {
     contentSummery,
     contentSection
   },
-  props: [],
   name: "teamwork",
-  data() {
-    return {};
-  },
   methods: {
     hover(boolean, rowNumber) {
       if (window.innerWidth < 600) {
@@ -184,11 +180,7 @@ export default {
       }
       row[rowNumber].classList.remove("active");
     }
-  },
-  computed: {},
-  created() {},
-  //same check for route-view keep-alive
-  activated() {}
+  }
 };
 </script>
 

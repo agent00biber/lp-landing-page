@@ -4,7 +4,7 @@
       <div class="sticky-content" id="js-sticky-content">
         <section class="teams-forground" id="js-team-scale-down">
           <h1 class="teams-forground--headline">
-            Conflict and miss&shy;communication
+            Conflicts and miss-communication
           </h1>
           <h2 class="teams-forground--subline">
             can seperate even the best teams
@@ -13,12 +13,20 @@
         <section class="teams-background">
           <div class="triangle triangle1">
             <div class="triangle--line-wrapper">
-              <div class="line-vertical" v-for="line in 8"></div>
+              <div
+                class="line-vertical"
+                v-for="(line, index) in 8"
+                :key="'triangle1' + index"
+              ></div>
             </div>
           </div>
           <div class="triangle triangle2">
             <div class="triangle--line-wrapper triangle--line-wrapper2">
-              <div class="line-vertical" v-for="line in 8"></div>
+              <div
+                class="line-vertical"
+                v-for="(line, index) in 8"
+                :key="'triangle2' + index"
+              ></div>
             </div>
           </div>
           <div class="triangle triangle3"></div>
@@ -135,6 +143,7 @@
               borderRadius: index / 4 + 'rem',
               animationDelay: `${index / 5}s`
             }"
+            :key="'cube' + index"
           ></div>
         </div>
       </content-section>
@@ -188,8 +197,6 @@ export default {
     contentSection,
     popup
   },
-
-  props: [],
   name: "intro",
   data() {
     return {
@@ -203,13 +210,11 @@ export default {
       //get the amount of downward scroll
       let ratio = Math.max(window.scrollY) / window.innerHeight;
 
-      console.log(1 / (ratio * 4));
-
-      let scaleAmount = 1 / (ratio * 4);
+      let scaleAmount = 1 / (ratio * 5);
 
       forground.style.transform = `scale(${scaleAmount > 1 ? 1 : scaleAmount})`;
 
-      if (scaleAmount < 0.045) {
+      if (scaleAmount < 0.05) {
         forground.classList.add("hidden");
       } else {
         forground.classList.remove("hidden");
@@ -220,16 +225,14 @@ export default {
     parallaxImages() {
       const containers = document.querySelectorAll(".js-container-animation");
 
-      containers.forEach((container, index) => {
+      containers.forEach(container => {
         let inView =
           container.getBoundingClientRect().top >= 0 &&
           container.getBoundingClientRect().bottom <= window.innerHeight;
-        let viewAmount =
-          container.getBoundingClientRect().top / window.innerHeight;
 
         if (!inView) {
-          return;
           container.classList.remove("active");
+          return;
         }
         container.classList.add("active");
       });
@@ -238,10 +241,6 @@ export default {
       this.activePopup = !this.activePopup;
     }
   },
-  computed: {},
-  created() {},
-  //same check for route-view keep-alive
-  activated() {},
   mounted() {
     window.addEventListener("scroll", this.scrollSilos);
   },
@@ -265,7 +264,7 @@ export default {
 }
 
 .sticky-wrapper {
-  height: 700vh;
+  height: 600vh;
 }
 
 .sticky-content {
@@ -306,9 +305,7 @@ export default {
   padding: 0;
   text-align: center;
   font-size: var(--headline);
-  background: var(--intro-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--intro-color);
 }
 
 .teams-forground--subline {

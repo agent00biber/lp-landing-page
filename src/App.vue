@@ -394,4 +394,9 @@ ul {
   /* Misc */
   list-style: none;
 }
+
+button:active,
+button:focus {
+  outline: none;
+}
 </style>

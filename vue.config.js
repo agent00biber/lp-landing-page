@@ -1,4 +1,4 @@
-/*const CompressionPlugin = require("compression-webpack-plugin");
+const CompressionPlugin = require("compression-webpack-plugin");
 const BrotliPlugin = require("brotli-webpack-plugin");
 const path = require("path");
 const PrerenderSPAPlugin = require("prerender-spa-plugin");
@@ -31,4 +31,4 @@ module.exports = {
       }
     }
   }
-};*/
+};

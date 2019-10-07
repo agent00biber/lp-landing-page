@@ -71,5 +71,6 @@
   display: grid;
   grid-auto-rows: min-content;
   grid-row-gap: var(--row-gap);
+  overflow: hidden;
 }
 </style>
