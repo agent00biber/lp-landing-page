@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "cf805bf924f3ea823321",
+    "revision": "45f7553f4a263f007ac1",
     "url": "/css/app~d0ae3f07.52c23084.css"
   },
   {
-    "revision": "cf805bf924f3ea823321",
-    "url": "/js/app~d0ae3f07.242bf2a8.js"
+    "revision": "45f7553f4a263f007ac1",
+    "url": "/js/app~d0ae3f07.7cfe1c69.js"
   },
   {
     "revision": "8e093a242b73763ca300",
@@ -64,12 +64,12 @@ self.__precacheManifest = [
     "url": "/js/chunk-51ae6d57.d84feebe.js"
   },
   {
-    "revision": "155c44e5f043dbe115ff",
-    "url": "/css/chunk-79e7caf5.279ef968.css"
+    "revision": "2fe090203819de76e7bf",
+    "url": "/css/chunk-67fa3316.c6f35c26.css"
   },
   {
-    "revision": "155c44e5f043dbe115ff",
-    "url": "/js/chunk-79e7caf5.d840bf27.js"
+    "revision": "2fe090203819de76e7bf",
+    "url": "/js/chunk-67fa3316.8f493805.js"
   },
   {
     "revision": "60ecaa5df572e0620a21",
@@ -116,8 +116,12 @@ self.__precacheManifest = [
     "url": "/img/tshirt-store--mobile.68871a7d.png"
   },
   {
-    "revision": "09cda7565732a6efef0eb5e1f924a4a6",
+    "revision": "ce0f3b4ee182aee5d16bd44ef31ad55a",
     "url": "/index.html"
+  },
+  {
+    "revision": "5f52dbefcf63c9f677ace09fcf8bc7d8",
+    "url": "/_redirects"
   },
   {
     "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
