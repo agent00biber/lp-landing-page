@@ -1,29 +1,25 @@
-# lp-landing-page
+# My Landing Page
 
-## Project setup
-```
-npm install
-```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Table of Contents
 
-### Compiles and minifies for production
-```
-npm run build
-```
+- [About the Project](#about-the-project)
+- [What I learned from it](#what-i-learned-from-it)
 
-### Run your tests
-```
-npm run test
-```
 
-### Lints and fixes files
-```
-npm run lint
-```
+<!-- ABOUT THE PROJECT -->
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## About The Project
+
+- A portfolio website should be clean, elegant, not distracting and somehow "wow" the visitor. In my opinion, it cant be done without compromises and I didn't want that.
+
+So here is a Landing Page, where there is no limit to the "wow"
+
+![Example 1 of the intro animations](https://github.com/LucasPaetow/lp-landing-page/blob/master/lp--science-intro.gif)
+![Example 2 of the intro animations](https://github.com/LucasPaetow/lp-landing-page/blob/master/lp--frontend-intro.gif)
+
+<!-- Learnings -->
+
+## What I learned from it
+
+- I heavily relied on bright colors/gradients and scroll animations after learning about the brilliant combination of `position: sticky`and percentage-based scroll listeners
