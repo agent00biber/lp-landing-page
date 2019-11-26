@@ -93,6 +93,8 @@ export default {
 }
 
 .content-body--button {
+  position: relative;
+  overflow: hidden;
   font-size: var(--1base);
   text-transform: uppercase;
   font-weight: bold;

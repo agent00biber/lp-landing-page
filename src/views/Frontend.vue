@@ -74,6 +74,7 @@
         sectionID="frontend"
         alignExtraContent="left"
         buttonText="Github repo"
+        buttonLink="https://github.com/LucasPaetow/WIP-t-shirt-store"
       >
         <div class="extra-content-container">
           <editor class="active js-editor-parallax extra-content--editor">
@@ -104,7 +105,7 @@
         sectionID="frontend"
         alignExtraContent="right"
         buttonText="Github repo"
-        buttonLink="https://github.com/agent00biber/lovable-survey-creator"
+        buttonLink="https://github.com/LucasPaetow/lovable-survey-creator"
       >
         <div class="extra-content-container ">
           <editor class="active js-editor-parallax extra-content--editor">
