@@ -3,7 +3,10 @@
     <section class="sticky-wrapper">
       <div class="sticky-content" id="js-sticky-content">
         <div class="main-content">
-          <aside class="main-content--background phase0"></aside>
+          <aside
+            class="main-content--background phase0"
+            id="design--main-background"
+          ></aside>
           <div class="line line-vertical line1a hidden"></div>
           <div class="line line-vertical line1b hidden"></div>
           <div class="line line-horizontal line1c hidden"></div>
@@ -165,7 +168,9 @@
                   visuals. Read the full case study on my case study website.
                 </p>
                 <button class="content-body--button">
-                  <a> comming soon</a>
+                  <a href="https://github.com/LucasPaetow/WIP-t-shirt-store">
+                    comming soon</a
+                  >
                 </button>
               </div>
             </div>
@@ -269,15 +274,18 @@ export default {
     },
     phase0(ratio) {
       const phase0 = document.querySelectorAll(".phase0");
+      const background = document.getElementById("design--main-background");
 
       if (ratio > 0.1) {
         phase0.forEach(item => {
           item.classList.add("hidden");
         });
+        background.classList.add("completelyHidden");
       } else {
         phase0.forEach(line => {
           line.classList.remove("hidden");
         });
+        background.classList.remove("completelyHidden");
       }
     },
     phase1(ratio) {
@@ -439,6 +447,10 @@ export default {
 .hidden {
   opacity: 0;
   transition: all 0.4s var(--moving-out);
+}
+
+.completelyHidden {
+  display: none;
 }
 
 .re-hidden {
@@ -726,6 +738,8 @@ export default {
 }
 
 .content-body--button {
+  position: relative;
+  overflow: hidden;
   font-size: var(--1base);
   text-transform: uppercase;
   font-weight: bold;
