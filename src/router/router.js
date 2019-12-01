@@ -15,65 +15,46 @@ export default new Router({
     {
       path: "/intro",
       name: "intro",
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import("@/views/Intro.vue")
     },
     {
       path: "/frontend",
       name: "frontend",
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import("@/views/Frontend.vue")
     },
     {
       path: "/design",
       name: "design",
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import("@/views/Design.vue")
     },
     {
       path: "/marketing",
       name: "marketing",
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import("@/views/Marketing.vue")
     },
     {
       path: "/science",
       name: "science",
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import("@/views/Science.vue")
     },
     {
       path: "/teamwork",
       name: "teamwork",
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import("@/views/Teamwork.vue")
     },
     {
       path: "/learning",
       name: "learning",
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import("@/views/Learning.vue")
+    },
+    {
+      path: "/legal",
+      name: "legal",
+      component: () => import("@/views/Legal.vue")
     },
     {
       path: "/outro",
       name: "outro",
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       redirect: { name: "home", hash: "#outro" }
     }
   ],
