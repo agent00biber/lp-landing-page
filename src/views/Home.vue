@@ -91,6 +91,9 @@
       <a href="mailto:career.lucas.paetow@gmail.com">
         <email-icon class="icon--link" />
       </a>
+      <router-link :to="{ name: 'legal' }" class="legal-link"
+        >legal and impressum</router-link
+      >
     </section>
   </article>
 </template>
@@ -345,10 +348,17 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 .text--outro {
   font-weight: bold;
   font-size: var(--2base);
   padding-bottom: var(--halfbase);
+}
+
+.legal-link {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
 }
 </style>
